@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { NbMenuItem, NbLayoutModule, NbSidebarModule, NbMenuModule, NbUserModule, NbActionsModule, NbIconModule } from '@nebular/theme';
 import { Subject, takeUntil } from 'rxjs';
 import { AuthService, UserContext } from '../core/services/auth.service';
 import { RemoteLoaderService } from '../core/services/remote-loader.service';
@@ -11,112 +10,164 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
-    NbLayoutModule,
-    NbSidebarModule,
-    NbMenuModule,
-    NbUserModule,
-    NbActionsModule,
-    NbIconModule
+    RouterOutlet
   ],
   template: `
-    <nb-layout>
-      <nb-layout-header fixed>
+    <div class="layout">
+      <header class="header">
         <div class="header-container">
           <div class="logo">
-            <img src="/favicon.ico" alt="BuildAQ" />
-            <span class="logo-text">BuildAQ</span>
+            <span class="logo-text">BuildAQ Shell</span>
           </div>
           <div class="header-actions">
-            <nb-user 
-              *ngIf="userContext"
-              [name]="userContext.name"
-              [title]="userContext.email"
-              (click)="openUserMenu()">
-            </nb-user>
-            <nb-actions *ngIf="!userContext">
-              <nb-action (click)="login()">
-                <nb-icon icon="log-in-outline"></nb-icon>
-                Login
-              </nb-action>
-            </nb-actions>
+            <div *ngIf="userContext" class="user-info">
+              Welcome, {{userContext.name}}!
+              <button (click)="logout()" class="btn-logout">Logout</button>
+            </div>
+            <div *ngIf="!userContext">
+              <button (click)="login()" class="btn-login">🔐 Login</button>
+            </div>
           </div>
         </div>
-      </nb-layout-header>
+      </header>
 
-      <nb-layout-sidebar>
-        <nb-menu [items]="menuItems"></nb-menu>
-      </nb-layout-sidebar>
-
-      <nb-layout-column>
-        <div class="content-area">
-          <router-outlet></router-outlet>
+      <nav class="sidebar">
+        <div class="nav-items">
+          <a href="/dashboard" class="nav-item">🏠 Dashboard</a>
+          <a href="/schools" class="nav-item">🏫 Schools</a>
+          <div class="nav-section">Remote Apps</div>
+          <a href="/schools" class="nav-item sub-item">📚 School Management</a>
         </div>
-      </nb-layout-column>
-    </nb-layout>
+      </nav>
+
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
   `,
   styles: [`
+    .layout {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    
+    .header {
+      background-color: #fff;
+      border-bottom: 1px solid #e4e9f0;
+      z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+    }
+    
     .header-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 0 1rem;
       height: 100%;
+      max-width: 100%;
     }
     
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .logo img {
-      height: 32px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2a2a2a;
     }
     
     .logo-text {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--color-primary-500);
+      margin-left: 0.5rem;
     }
     
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 1rem;
-    }
-
-    .content-area {
-      padding: 1rem;
     }
     
-    nb-layout-column {
-      min-height: calc(100vh - 4rem);
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: #666;
+    }
+    
+    .btn-logout, .btn-login {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    
+    .btn-logout:hover, .btn-login:hover {
+      background: #0056b3;
+    }
+    
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 60px;
+      bottom: 0;
+      width: 250px;
+      background-color: #f8f9fa;
+      border-right: 1px solid #e4e9f0;
+      padding: 1rem 0;
+      overflow-y: auto;
+    }
+    
+    .nav-items {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .nav-item {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #495057;
+      text-decoration: none;
+      border-bottom: 1px solid #e4e9f0;
+      transition: background-color 0.2s;
+    }
+    
+    .nav-item:hover {
+      background-color: #e9ecef;
+      color: #007bff;
+    }
+    
+    .nav-section {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #6c757d;
+      background-color: #e9ecef;
+    }
+    
+    .sub-item {
+      padding-left: 2rem;
+      font-size: 0.875rem;
+    }
+    
+    .content {
+      margin-left: 250px;
+      margin-top: 60px;
+      padding: 2rem;
+      min-height: calc(100vh - 60px);
+      background-color: #f8f9fa;
     }
   `]
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
-  
   userContext: UserContext | null = null;
-  menuItems: NbMenuItem[] = [
-    {
-      title: 'Dashboard',
-      icon: 'home-outline',
-      link: '/dashboard'
-    },
-    {
-      title: 'Remote Apps',
-      icon: 'grid-outline',
-      children: [
-        {
-          title: 'Schools',
-          icon: 'book-outline',
-          link: '/schools'
-        }
-      ]
-    }
-  ];
 
   constructor(
     private authService: AuthService,
@@ -153,11 +204,6 @@ export class LayoutComponent implements OnInit, OnDestroy {
     } catch (error) {
       console.error('Logout failed:', error);
     }
-  }
-
-  openUserMenu(): void {
-    // Implement user menu functionality
-    console.log('User menu clicked');
   }
 
   private async loadRemoteApplications(): Promise<void> {
