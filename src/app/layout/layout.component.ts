@@ -18,6 +18,7 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
       <header class="header">
         <div class="header-container">
           <div class="logo">
+            <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">☰</button>
             <span class="logo-text">BuildAQ Shell</span>
           </div>
           <div class="header-actions">
@@ -32,7 +33,7 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
         </div>
       </header>
 
-      <nav class="sidebar">
+      <nav class="sidebar" [class.open]="isMobileMenuOpen">
         <div class="nav-items">
           <a routerLink="/dashboard" class="nav-item">🏠 Dashboard</a>
           <a routerLink="/schools" class="nav-item">🏫 Schools</a>
@@ -166,11 +167,67 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
       min-height: calc(100vh - 60px);
       background-color: #f8f9fa;
     }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 1rem;
+      }
+      
+      .logo-text {
+        font-size: 1rem;
+      }
+      
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+      }
+      
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      
+      .content {
+        margin-left: 0;
+        padding: 1rem;
+      }
+      
+      .nav-item {
+        padding: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .user-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-end;
+        font-size: 0.8rem;
+      }
+    }
+    
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
   `]
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   userContext: UserContext | null = null;
+  isMobileMenuOpen = false;
 
   constructor(
     private authService: AuthService,
@@ -207,6 +264,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
     } catch (error) {
       console.error('Logout failed:', error);
     }
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
   private async loadRemoteApplications(): Promise<void> {
