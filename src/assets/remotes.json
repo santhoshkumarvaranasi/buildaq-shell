@@ -1,0 +1,10 @@
+{
+  "schools": {
+    "url": "http://localhost:4201/remoteEntry.js",
+    "exposed": "./SchoolsModule",
+    "displayName": "School Management",
+    "route": "/schools",
+    "version": "1.0.0",
+    "enabled": true
+  }
+}
