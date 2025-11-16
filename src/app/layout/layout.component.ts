@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { AuthService, UserContext } from '../core/services/auth.service';
@@ -10,7 +10,8 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet
+    RouterOutlet,
+    RouterLink
   ],
   template: `
     <div class="layout">
@@ -33,10 +34,10 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
 
       <nav class="sidebar">
         <div class="nav-items">
-          <a href="/dashboard" class="nav-item">🏠 Dashboard</a>
-          <a href="/schools" class="nav-item">🏫 Schools</a>
+          <a routerLink="/dashboard" class="nav-item">🏠 Dashboard</a>
+          <a routerLink="/schools" class="nav-item">🏫 Schools</a>
           <div class="nav-section">Remote Apps</div>
-          <a href="/schools" class="nav-item sub-item">📚 School Management</a>
+          <a routerLink="/schools" class="nav-item sub-item">📚 School Management</a>
         </div>
       </nav>
 

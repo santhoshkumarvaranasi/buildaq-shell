@@ -12,7 +12,9 @@ export const routes: Routes = [
     loadChildren: () => 
       loadRemoteModule({
         type: 'module',
-        remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        remoteEntry: window.location.hostname === 'shell.buildaq.com' 
+          ? 'https://schools.buildaq.com/remoteEntry.js'
+          : 'http://localhost:4201/remoteEntry.js',
         exposedModule: './SchoolsModule'
       }).then(m => m.SchoolsModule).catch(err => {
         console.error('Failed to load schools remote:', err);
