@@ -35,7 +35,7 @@
 						],
 						"main": "src/main.ts",
 						"outputPath": "dist/buildaq-shell",
-						"index": "src\\index.html",
+						"index": "src/index.html",
 						"extraWebpackConfig": "webpack.config.js",
 						"commonChunk": false
 					},
