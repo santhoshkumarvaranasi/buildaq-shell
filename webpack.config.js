@@ -3,7 +3,9 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 module.exports = withModuleFederationPlugin({
 
   remotes: {
-    "schools": "http://localhost:4201/remoteEntry.js",    
+    "schools": process.env['NODE_ENV'] === 'production' 
+      ? "https://schools.buildaq.com/remoteEntry.js"
+      : "http://localhost:4201/remoteEntry.js",    
   },
 
   shared: {
