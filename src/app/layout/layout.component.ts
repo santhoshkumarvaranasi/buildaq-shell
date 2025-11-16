@@ -36,8 +36,10 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
         <div class="nav-items">
           <a routerLink="/dashboard" class="nav-item">🏠 Dashboard</a>
           <a routerLink="/schools" class="nav-item">🏫 Schools</a>
+          <a routerLink="/schools/students" class="nav-item">👨‍🎓 Students</a>
           <div class="nav-section">Remote Apps</div>
           <a routerLink="/schools" class="nav-item sub-item">📚 School Management</a>
+          <a routerLink="/schools/students" class="nav-item sub-item">👥 Student Directory</a>
         </div>
       </nav>
 
