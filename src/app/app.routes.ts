@@ -25,5 +25,7 @@ export const routes: Routes = [
         // Return a proper routes array fallback instead of component
         return Promise.resolve([]);
       })
-  }
+  },
+  // Wildcard route to catch all unknown paths and redirect to dashboard
+  { path: '**', redirectTo: '/dashboard' }
 ];
