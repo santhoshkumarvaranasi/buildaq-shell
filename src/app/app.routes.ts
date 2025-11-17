@@ -10,10 +10,13 @@ export const routes: Routes = [
   {
     path: 'schools',
     loadChildren: () => 
-      loadRemoteModule('schools', './SchoolsModule').then(m => m.SchoolsModule).catch(err => {
+      loadRemoteModule({
+        remoteEntry: 'http://localhost:4201/remoteEntry.json',
+        exposedModule: './SchoolsModule'
+      }).then(m => m.SchoolsModule).catch(err => {
         console.error('Failed to load schools remote with Native Federation:', err);
-        // Fallback to dashboard
-        return import('./features/dashboard/dashboard.component').then(c => ({ default: c.DashboardComponent }));
+        // Return a proper routes array fallback instead of component
+        return Promise.resolve([]);
       })
   }
 ];

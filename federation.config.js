@@ -3,9 +3,7 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 module.exports = withNativeFederation({
 
   remotes: {
-    'schools': process.env['NODE_ENV'] === 'production' 
-      ? 'https://schools.buildaq.com'
-      : 'http://localhost:4201',
+    'schools': 'http://localhost:4201/remoteEntry.json',
   },
 
   shared: shareAll({ 
