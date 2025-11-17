@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { loadRemoteModule } from '@angular-architects/native-federation';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -10,14 +10,8 @@ export const routes: Routes = [
   {
     path: 'schools',
     loadChildren: () => 
-      loadRemoteModule({
-        type: 'module',
-        remoteEntry: window.location.hostname === 'shell.buildaq.com' 
-          ? 'https://schools.buildaq.com/remoteEntry.js'
-          : 'http://localhost:4201/remoteEntry.js',
-        exposedModule: './SchoolsModule'
-      }).then(m => m.SchoolsModule).catch(err => {
-        console.error('Failed to load schools remote:', err);
+      loadRemoteModule('schools', './SchoolsModule').then(m => m.SchoolsModule).catch(err => {
+        console.error('Failed to load schools remote with Native Federation:', err);
         // Fallback to dashboard
         return import('./features/dashboard/dashboard.component').then(c => ({ default: c.DashboardComponent }));
       })

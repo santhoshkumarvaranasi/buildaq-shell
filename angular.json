@@ -19,69 +19,38 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "ngx-build-plus:browser",
-					"options": {
-						"tsConfig": "tsconfig.app.json",
-						"inlineStyleLanguage": "scss",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "public",
-								"output": "."
-							},
-							"src/assets"
-						],
-						"styles": [
-							"src/styles.scss"
-						],
-						"main": "src/main.ts",
-						"outputPath": "dist/buildaq-shell",
-						"index": "src/index.html",
-						"extraWebpackConfig": "webpack.config.js",
-						"commonChunk": false
-					},
+					"builder": "@angular-architects/native-federation:build",
+					"options": {},
 					"configurations": {
 						"production": {
-							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "500kB",
-									"maximumError": "1MB"
-								},
-								{
-									"type": "anyComponentStyle",
-									"maximumWarning": "4kB",
-									"maximumError": "8kB"
-								}
-							],
-							"outputHashing": "all",
-							"extraWebpackConfig": "webpack.prod.config.js"
+							"target": "buildaq-shell:esbuild:production"
 						},
 						"development": {
-							"optimization": false,
-							"extractLicenses": false,
-							"sourceMap": true
+							"target": "buildaq-shell:esbuild:development",
+							"dev": true
 						}
 					},
 					"defaultConfiguration": "production"
 				},
 				"serve": {
-					"builder": "ngx-build-plus:dev-server",
+					"builder": "@angular-architects/native-federation:build",
+					"options": {
+						"target": "buildaq-shell:serve-original",
+						"rebuildDelay": 0,
+						"dev": true,
+						"port": 4200
+					},
 					"configurations": {
 						"production": {
-							"buildTarget": "buildaq-shell:build:production",
-							"extraWebpackConfig": "webpack.prod.config.js"
+							"target": "buildaq-shell:serve-original:production",
+							"dev": false
 						},
 						"development": {
-							"buildTarget": "buildaq-shell:build:development"
+							"target": "buildaq-shell:serve-original:development",
+							"dev": true
 						}
 					},
-					"defaultConfiguration": "development",
-					"options": {
-						"port": 4200,
-						"publicHost": "http://localhost:4200",
-						"extraWebpackConfig": "webpack.config.js"
-					}
+					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular/build:extract-i18n"
@@ -100,6 +69,69 @@
 						"styles": [
 							"src/styles.scss"
 						]
+					}
+				},
+				"esbuild": {
+					"builder": "@angular/build:application",
+					"options": {
+						"tsConfig": "tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "public",
+								"output": "."
+							},
+							"src/assets"
+						],
+						"styles": [
+							"src/styles.scss"
+						],
+						"outputPath": "dist/buildaq-shell",
+						"index": "src/index.html",
+						"polyfills": [
+							"es-module-shims"
+						],
+						"browser": "src/main.ts"
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kB",
+									"maximumError": "1MB"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "4kB",
+									"maximumError": "8kB"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve-original": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "buildaq-shell:esbuild:production"
+						},
+						"development": {
+							"buildTarget": "buildaq-shell:esbuild:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4200,
+						"publicHost": "http://localhost:4200"
 					}
 				}
 			}

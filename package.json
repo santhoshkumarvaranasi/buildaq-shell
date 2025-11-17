@@ -24,7 +24,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-architects/module-federation": "^20.0.0",
+    "@angular-architects/native-federation": "^20.1.7",
     "@angular/animations": "^20.3.12",
     "@angular/common": "^20.3.0",
     "@angular/compiler": "^20.3.0",
@@ -36,6 +36,8 @@
     "@angular/ssr": "^20.3.10",
     "@nebular/eva-icons": "^16.0.0",
     "@nebular/theme": "^16.0.0",
+    "@softarc/native-federation-node": "^3.3.4",
+    "es-module-shims": "^1.5.12",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
