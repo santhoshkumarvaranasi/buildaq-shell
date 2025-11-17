@@ -31,13 +31,28 @@ export class RemoteLoaderService {
       if (registry) {
         for (const [name, config] of Object.entries(registry)) {
           if (config.enabled) {
-            await this.loadRemote(name, config);
+            // Update URL based on environment
+            const environmentAwareConfig = this.getEnvironmentAwareConfig(config);
+            await this.loadRemote(name, environmentAwareConfig);
           }
         }
       }
     } catch (error) {
       console.error('Failed to load remotes registry:', error);
     }
+  }
+
+  private getEnvironmentAwareConfig(config: RemoteConfig): RemoteConfig {
+    // If running in development (localhost), use localhost URLs
+    if (window.location.hostname === 'localhost') {
+      const devConfig = { ...config };
+      if (config.url.includes('schools.buildaq.com')) {
+        devConfig.url = 'http://localhost:4201/remoteEntry.js';
+      }
+      return devConfig;
+    }
+    // For production, keep the original URLs
+    return config;
   }
 
   private async loadRemote(name: string, config: RemoteConfig): Promise<void> {

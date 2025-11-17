@@ -1,6 +1,6 @@
 {
   "schools": {
-    "url": "http://localhost:4201/remoteEntry.js",
+    "url": "https://schools.buildaq.com/remoteEntry.js",
     "exposed": "./SchoolsModule",
     "displayName": "School Management",
     "route": "/schools",
