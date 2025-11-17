@@ -1,0 +1,150 @@
+{
+  "name": "",
+  "shared": [
+    {
+      "packageName": "@angular/animations/browser",
+      "outFileName": "_angular_animations_browser.60cqeUNGeX.js",
+      "requiredVersion": "^20.3.12",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/common",
+      "outFileName": "_angular_common.lHvg6nzGcn.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/common/http",
+      "outFileName": "_angular_common_http.XZal02c5Li.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/core",
+      "outFileName": "_angular_core.bB_Pnjx5UU.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/core/primitives/di",
+      "outFileName": "_angular_core_primitives_di.ilBin36Uw-.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/core/primitives/signals",
+      "outFileName": "_angular_core_primitives_signals.qP2kChn2b9.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/platform-browser",
+      "outFileName": "_angular_platform_browser.J31HRuAIzj.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/platform-browser/animations",
+      "outFileName": "_angular_platform_browser_animations.CtsxpjDy6z.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "@angular/router",
+      "outFileName": "_angular_router.sNJ6Er9FvC.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "20.3.12"
+    },
+    {
+      "packageName": "rxjs",
+      "outFileName": "rxjs.t9BQSP4AY1.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "rxjs/operators",
+      "outFileName": "rxjs_operators.0YVLbnnWX7.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "tslib",
+      "outFileName": "tslib.LCErYnBEjS.js",
+      "requiredVersion": "^2.3.0",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "2.8.1"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-TKMKNFS6",
+      "outFileName": "chunk-TKMKNFS6.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-22DQJWON",
+      "outFileName": "chunk-22DQJWON.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-AAVFZVJY",
+      "outFileName": "chunk-AAVFZVJY.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-DB6MCKHA",
+      "outFileName": "chunk-DB6MCKHA.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-BIP36BXZ",
+      "outFileName": "chunk-BIP36BXZ.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-4CLCTAJ7",
+      "outFileName": "chunk-4CLCTAJ7.js"
+    }
+  ],
+  "exposes": []
+}

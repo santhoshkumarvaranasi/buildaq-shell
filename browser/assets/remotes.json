@@ -1,0 +1,10 @@
+{
+  "schools": {
+    "url": "https://schools.buildaq.com/remoteEntry.js",
+    "exposed": "./SchoolsModule",
+    "displayName": "School Management",
+    "route": "/schools",
+    "version": "1.0.0",
+    "enabled": true
+  }
+}
