@@ -1,9 +1,15 @@
 const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
 
+
+const isProd = process.env.NODE_ENV === 'production' || process.env.NG_BUILD_ENV === 'production';
+const schoolsRemote = isProd
+  ? 'https://schools.buildaq.com/remoteEntry.json'
+  : 'http://localhost:4201/remoteEntry.json';
+
 module.exports = withNativeFederation({
 
   remotes: {
-    'schools': 'http://localhost:4201/remoteEntry.json',
+    'schools': schoolsRemote,
   },
 
   shared: shareAll({ 

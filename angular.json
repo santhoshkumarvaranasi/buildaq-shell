@@ -72,52 +72,57 @@
 					}
 				},
 				"esbuild": {
-					"builder": "@angular/build:application",
-					"options": {
-						"tsConfig": "tsconfig.app.json",
-						"inlineStyleLanguage": "scss",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "public",
-								"output": "."
-							},
-							"src/assets"
-						],
-						"styles": [
-							"src/styles.scss"
-						],
-						"outputPath": "dist/buildaq-shell",
-						"index": "src/index.html",
-						"polyfills": [
-							"es-module-shims"
-						],
-						"browser": "src/main.ts"
-					},
-					"configurations": {
-						"production": {
-							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "500kB",
-									"maximumError": "1MB"
+								"builder": "@angular/build:application",
+								"options": {
+									"tsConfig": "tsconfig.app.json",
+									"inlineStyleLanguage": "scss",
+									"assets": [
+										{
+											"glob": "**/*",
+											"input": "public",
+											"output": "."
+										},
+										{
+											"glob": "CNAME",
+											"input": "src",
+											"output": "."
+										},
+										"src/assets"
+									],
+									"styles": [
+										"src/styles.scss"
+									],
+									"outputPath": "dist/buildaq-shell",
+									"index": "src/index.html",
+									"polyfills": [
+										"es-module-shims"
+									]
 								},
-								{
-									"type": "anyComponentStyle",
-									"maximumWarning": "4kB",
-									"maximumError": "8kB"
-								}
-							],
-							"outputHashing": "all"
-						},
-						"development": {
-							"optimization": false,
-							"extractLicenses": false,
-							"sourceMap": true
-						}
-					},
-					"defaultConfiguration": "production"
-				},
+								"configurations": {
+									"production": {
+										"budgets": [
+											{
+												"type": "initial",
+												"maximumWarning": "500kB",
+												"maximumError": "1MB"
+											},
+											{
+												"type": "anyComponentStyle",
+												"maximumWarning": "4kB",
+												"maximumError": "8kB"
+											}
+										],
+										"outputHashing": "all",
+										"baseHref": "/"
+									},
+									"development": {
+										"optimization": false,
+										"extractLicenses": false,
+										"sourceMap": true
+									}
+								},
+								"defaultConfiguration": "production"
+							},
 				"serve-original": {
 					"builder": "ngx-build-plus:dev-server",
 					"configurations": {
