@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
@@ -18,7 +18,11 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
       <header class="header">
         <div class="header-container">
           <div class="logo">
-            <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
             <span class="logo-text">BuildAQ Shell</span>
           </div>
           <div class="header-actions">
@@ -33,14 +37,19 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
         </div>
       </header>
 
+      <!-- Mobile overlay -->
+      <div class="mobile-overlay" 
+           [class.active]="isMobileMenuOpen" 
+           (click)="closeMobileMenu()"></div>
+
       <nav class="sidebar" [class.open]="isMobileMenuOpen">
         <div class="nav-items">
-          <a routerLink="/dashboard" class="nav-item">🏠 Dashboard</a>
-          <a routerLink="/schools" class="nav-item">🏫 Schools</a>
-          <a routerLink="/schools/students" class="nav-item">👨‍🎓 Students</a>
+          <a routerLink="/dashboard" class="nav-item" (click)="closeMobileMenu()">🏠 Dashboard</a>
+          <a routerLink="/schools" class="nav-item" (click)="closeMobileMenu()">🏫 Schools</a>
+          <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()">👨‍🎓 Students</a>
           <div class="nav-section">Remote Apps</div>
-          <a routerLink="/schools" class="nav-item sub-item">📚 School Management</a>
-          <a routerLink="/schools/students" class="nav-item sub-item">👥 Student Directory</a>
+          <a routerLink="/schools" class="nav-item sub-item" (click)="closeMobileMenu()">📚 School Management</a>
+          <a routerLink="/schools/students" class="nav-item sub-item" (click)="closeMobileMenu()">👥 Student Directory</a>
         </div>
       </nav>
 
@@ -211,15 +220,61 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
       display: none;
       background: none;
       border: none;
-      font-size: 1.5rem;
-      color: white;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 0.25rem;
+      border-radius: 4px;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 32px;
+      height: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .hamburger-line {
+      display: block;
+      height: 3px;
+      width: 20px;
+      background-color: #333;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 60px);
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-overlay.active {
+      display: block;
+      opacity: 1;
     }
     
     @media (max-width: 768px) {
       .mobile-menu-toggle {
-        display: block;
+        display: flex;
+      }
+      
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .sidebar.open {
+        transform: translateX(0);
       }
     }
   `]
@@ -268,6 +323,15 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
+
+  @HostListener('document:keydown.escape')
+  handleEscapeKey(): void {
+    this.closeMobileMenu();
   }
 
   private async loadRemoteApplications(): Promise<void> {
