@@ -1,0 +1,1 @@
+import{a as r}from"./chunk-ABQXFKWW.js";import"./chunk-2NFLSA4Y.js";r().catch(o=>console.error("Federation init failed:",o)).then(o=>import("./chunk-47M724Y5.js")).catch(o=>console.error("Bootstrap failed:",o));
