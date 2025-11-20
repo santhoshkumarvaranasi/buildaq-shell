@@ -45,11 +45,9 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
       <nav class="sidebar" [class.open]="isMobileMenuOpen">
         <div class="nav-items">
           <a routerLink="/dashboard" class="nav-item" (click)="closeMobileMenu()">🏠 Dashboard</a>
-          <a routerLink="/schools" class="nav-item" (click)="closeMobileMenu()">🏫 Schools</a>
-          <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()">👨‍🎓 Students</a>
           <div class="nav-section">Remote Apps</div>
-          <a routerLink="/schools" class="nav-item sub-item" (click)="closeMobileMenu()">📚 School Management</a>
-          <a routerLink="/schools/students" class="nav-item sub-item" (click)="closeMobileMenu()">👥 Student Directory</a>
+          <a routerLink="/schools" class="nav-item" (click)="closeMobileMenu()">🏫 Schools</a>
+          <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()">�‍🎓 Students</a>
         </div>
       </nav>
 

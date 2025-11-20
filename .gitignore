@@ -41,3 +41,7 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+shell_run.log
+shell_start_output.log
+shell_verbose.log
+shell_verbose2.log

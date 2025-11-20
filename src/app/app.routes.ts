@@ -5,7 +5,7 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 // Dynamically determine remoteEntry URL based on environment
 const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
 const remoteEntryUrl = isProd
-  ? 'https://schools.buildaq.com/remoteEntry.json'
+  ? 'https://schools.buildaq.com/remoteEntry.js'
   : 'http://localhost:4201/remoteEntry.json';
 
 export const routes: Routes = [
@@ -22,8 +22,10 @@ export const routes: Routes = [
         exposedModule: './SchoolsModule'
       }).then(m => m.SchoolsModule).catch(err => {
         console.error('Failed to load schools remote with Native Federation:', err);
-        // Return a proper routes array fallback instead of component
-        return Promise.resolve([]);
+        // Fallback to a small local component explaining the problem
+        return Promise.resolve([
+          { path: '', loadComponent: () => import('./remote-fallback/remote-fallback.component').then(c => c.RemoteFallbackComponent) }
+        ]);
       })
   },
   // Wildcard route to catch all unknown paths and redirect to dashboard
