@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 export interface UserContext {
   userId: string;
-  email: string;
-  name: string;
-  tenantId: string;
-  roles: string[];
+  email?: string;
+  name?: string;
+  tenantId?: string;
+  roles?: string[];
 }
 
 @Injectable({ providedIn: 'root' })
@@ -14,42 +15,35 @@ export class AuthService {
   private userContextSubject = new BehaviorSubject<UserContext | null>(null);
   public userContext$ = this.userContextSubject.asObservable();
 
-  constructor() {
+  private readonly AUTH_TOKEN_KEY = 'auth_token';
+  private readonly TENANT_KEY = 'tenant_id';
+
+  constructor(private http: HttpClient) {
     this.initializeUserContext();
   }
 
-  async login(): Promise<void> {
-    try {
-      // Mock authentication for now
-      const mockUser: UserContext = {
-        userId: '12345',
-        email: 'demo@buildaq.com',
-        name: 'Demo User',
-        tenantId: 'buildaq-demo',
-        roles: ['admin']
-      };
+  async login(username: string, password: string, tenant?: string): Promise<void> {
+    const payload: any = { username, password };
+    if (tenant) payload.tenant = tenant;
+    const resp: any = await this.http.post('/api/auth/login', payload).toPromise();
+    if (!resp || !resp.token) throw new Error('Invalid login response');
 
-      this.userContextSubject.next(mockUser);
-      console.log('Mock login successful');
-    } catch (error) {
-      console.error('Login failed:', error);
-      throw error;
-    }
+    localStorage.setItem(this.AUTH_TOKEN_KEY, resp.token);
+    if (resp.tenant) localStorage.setItem(this.TENANT_KEY, resp.tenant);
+
+    // set user context from token payload or call /api/auth/me
+    const ctx = this.parseToken(resp.token);
+    this.userContextSubject.next({ userId: ctx.sub || ctx.sub || '', tenantId: ctx.tenant, name: ctx.name });
   }
 
   async logout(): Promise<void> {
-    try {
-      this.userContextSubject.next(null);
-      console.log('Logout successful');
-    } catch (error) {
-      console.error('Logout failed:', error);
-      throw error;
-    }
+    localStorage.removeItem(this.AUTH_TOKEN_KEY);
+    localStorage.removeItem(this.TENANT_KEY);
+    this.userContextSubject.next(null);
   }
 
-  async getAccessToken(): Promise<string> {
-    // Mock token for now
-    return 'mock-jwt-token';
+  async getAccessToken(): Promise<string | null> {
+    return localStorage.getItem(this.AUTH_TOKEN_KEY);
   }
 
   getUserContext(): UserContext | null {
@@ -57,11 +51,30 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return this.userContextSubject.value !== null;
+    return !!localStorage.getItem(this.AUTH_TOKEN_KEY);
   }
 
   private initializeUserContext(): void {
-    // Check for existing session/token
-    console.log('Initializing auth context');
+    const token = localStorage.getItem(this.AUTH_TOKEN_KEY);
+    if (!token) return;
+    try {
+      const payload = this.parseToken(token);
+      this.userContextSubject.next({ userId: payload.sub, tenantId: payload.tenant, name: payload.name });
+    } catch (e) {
+      console.warn('Failed to parse token during initialization', e);
+      localStorage.removeItem(this.AUTH_TOKEN_KEY);
+    }
+  }
+
+  private parseToken(token: string): any {
+    try {
+      const parts = token.split('.');
+      if (parts.length < 2) return {};
+      const payload = parts[1];
+      const json = atob(payload.replace(/-/g, '+').replace(/_/g, '/'));
+      return JSON.parse(decodeURIComponent(escape(json)));
+    } catch (e) {
+      return {};
+    }
   }
 }

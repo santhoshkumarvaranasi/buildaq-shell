@@ -2,20 +2,23 @@
 import { Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/native-federation';
 
+import { authGuard } from './core/services/auth.guard';
 // Dynamically determine remoteEntry URL based on environment
 const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
 const remoteEntryUrl = isProd
   ? 'https://schools.buildaq.com/remoteEntry.js'
-  : 'http://localhost:4201/remoteEntry.json';
+  : 'http://localhost:4201/remoteEntry.js';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'login', loadComponent: () => import('./features/login/login.component').then(c => c.LoginComponent) },
   { 
     path: 'dashboard', 
     loadComponent: () => import('./features/dashboard/dashboard.component').then(c => c.DashboardComponent)
   },
   {
     path: 'schools',
+    canActivate: [authGuard],
     loadChildren: () => 
       loadRemoteModule({
         remoteEntry: remoteEntryUrl,

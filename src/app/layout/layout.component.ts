@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { AuthService, UserContext } from '../core/services/auth.service';
@@ -283,7 +283,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private remoteLoader: RemoteLoaderService
+    private remoteLoader: RemoteLoaderService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -303,16 +304,18 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   async login(): Promise<void> {
-    try {
-      await this.authService.login();
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
+    this.router.navigate(['/login']);
   }
 
   async logout(): Promise<void> {
     try {
       await this.authService.logout();
+      // Ensure user is redirected to login after logout
+      try {
+        this.router.navigate(['/login']);
+      } catch (navErr) {
+        console.warn('Navigation after logout failed:', navErr);
+      }
     } catch (error) {
       console.error('Logout failed:', error);
     }
