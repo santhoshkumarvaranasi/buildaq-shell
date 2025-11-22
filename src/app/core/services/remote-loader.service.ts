@@ -26,7 +26,8 @@ export class RemoteLoaderService {
 
   async loadRemotes(): Promise<void> {
     try {
-      const registry = await this.http.get<RemoteRegistry>('/assets/remotes.json').toPromise();
+      // Request the remotes registry via backend proxy to avoid cross-port issues
+      const registry = await this.http.get<RemoteRegistry>('http://localhost:3000/assets/remotes.json').toPromise();
       
       if (registry) {
         for (const [name, config] of Object.entries(registry)) {
@@ -47,7 +48,8 @@ export class RemoteLoaderService {
     if (window.location.hostname === 'localhost') {
       const devConfig = { ...config };
       if (config.url.includes('schools.buildaq.com')) {
-        devConfig.url = 'http://localhost:4201/remoteEntry.js';
+        // Use backend-proxied path by default in development
+        devConfig.url = 'http://localhost:3000/assets/remoteEntry.js';
       }
       return devConfig;
     }

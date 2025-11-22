@@ -5,9 +5,11 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 import { authGuard } from './core/services/auth.guard';
 // Dynamically determine remoteEntry URL based on environment
 const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
+// In development use the backend-proxied manifest so the shell doesn't depend
+// on direct access to the MF static server (4201).
 const remoteEntryUrl = isProd
   ? 'https://schools.buildaq.com/remoteEntry.js'
-  : 'http://localhost:4201/remoteEntry.js';
+  : 'http://localhost:3000/assets/remoteEntry.js';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
