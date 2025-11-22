@@ -9,7 +9,7 @@ const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
 // on direct access to the MF static server (4201).
 const remoteEntryUrl = isProd
   ? 'https://schools.buildaq.com/remoteEntry.js'
-  : 'http://localhost:3000/assets/remoteEntry.js';
+  : 'http://localhost:3000/assets/remoteEntry.json';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
