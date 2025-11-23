@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
-import { RouterOutlet, RouterLink, Router } from '@angular/router';
+import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { AuthService, UserContext } from '../core/services/auth.service';
@@ -47,6 +47,14 @@ import { RemoteLoaderService } from '../core/services/remote-loader.service';
           <a routerLink="/dashboard" class="nav-item" (click)="closeMobileMenu()">🏠 Dashboard</a>
           <div class="nav-section">Remote Apps</div>
           <a routerLink="/schools" class="nav-item" (click)="closeMobileMenu()">🏫 School Management</a>
+          <div class="sub-item">
+            <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()">👨‍🎓 Students</a>
+            <a routerLink="/schools/teachers" class="nav-item" (click)="closeMobileMenu()">👩‍🏫 Teachers</a>
+            <a routerLink="/schools/attendance" class="nav-item" (click)="closeMobileMenu()">🕒 Attendance</a>
+            <a routerLink="/schools/fees" class="nav-item" (click)="closeMobileMenu()">💳 Fees</a>
+            <a routerLink="/schools/timetable" class="nav-item" (click)="closeMobileMenu()">📅 Timetable</a>
+            <a routerLink="/schools/exams" class="nav-item" (click)="closeMobileMenu()">📝 Exams</a>
+          </div>
         </div>
       </nav>
 
@@ -296,6 +304,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
           this.loadRemoteApplications();
         }
       });
+
+    // No longer hiding shell sidebar when remote is active; leave remote and
+    // shell navigation both available. The shell will deep-link into the
+    // remote using /schools/* routes.
   }
 
   ngOnDestroy(): void {
