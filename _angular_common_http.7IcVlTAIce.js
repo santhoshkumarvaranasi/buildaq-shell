@@ -1,7 +1,7 @@
 import { a as be, b as Pe } from "@nf-internal/chunk-22DQJWON";
 import { a as V, c as Re, d as re } from "@nf-internal/chunk-4CLCTAJ7";
 import * as l from "@angular/core";
-import { \u0275RuntimeError as A, InjectionToken as D, inject as v, NgZone as dt, DestroyRef as lt, \u0275formatRuntimeError as dr, PendingTasks as xe, runInInjectionContext as de, DOCUMENT as Fe, makeEnvironmentProviders as ut } from "@angular/core";
+import { ɵRuntimeError as A, InjectionToken as D, inject as v, NgZone as dt, DestroyRef as lt, ɵformatRuntimeError as dr, PendingTasks as xe, runInInjectionContext as de, DOCUMENT as Fe, makeEnvironmentProviders as ut } from "@angular/core";
 import { concatMap as ht, filter as ft, map as $, finalize as je, switchMap as pt } from "rxjs/operators";
 import { of as Le, Observable as le, from as mt } from "rxjs";
 var j = class {
@@ -169,7 +169,7 @@ var z = "Content-Type", q = "Accept", ue = "X-Request-URL", Ue = "text/plain", C
     serializeBody() { return this.body === null ? null : typeof this.body == "string" || Me(this.body) || Oe(this.body) || Ae(this.body) || vt(this.body) ? this.body : this.body instanceof O ? this.body.toString() : typeof this.body == "object" || typeof this.body == "boolean" || Array.isArray(this.body) ? JSON.stringify(this.body) : this.body.toString(); }
     detectContentTypeHeader() { return this.body === null || Ae(this.body) ? null : Oe(this.body) ? this.body.type || null : Me(this.body) ? null : typeof this.body == "string" ? Ue : this.body instanceof O ? "application/x-www-form-urlencoded;charset=UTF-8" : typeof this.body == "object" || typeof this.body == "number" || typeof this.body == "boolean" ? Ce : null; }
     clone(r = {}) { let t = r.method || this.method, n = r.url || this.url, s = r.responseType || this.responseType, i = r.keepalive ?? this.keepalive, o = r.priority || this.priority, d = r.cache || this.cache, a = r.mode || this.mode, f = r.redirect || this.redirect, y = r.credentials || this.credentials, p = r.referrer || this.referrer, g = r.integrity || this.integrity, E = r.transferCache ?? this.transferCache, c = r.timeout ?? this.timeout, M = r.body !== void 0 ? r.body : this.body, u = r.withCredentials ?? this.withCredentials, h = r.reportProgress ?? this.reportProgress, T = r.headers || this.headers, b = r.params || this.params, m = r.context ?? this.context; return r.setHeaders !== void 0 && (T = Object.keys(r.setHeaders).reduce((P, I) => P.set(I, r.setHeaders[I]), T)), r.setParams && (b = Object.keys(r.setParams).reduce((P, I) => P.set(I, r.setParams[I]), b)), new e(t, n, M, { params: b, headers: T, context: m, reportProgress: h, responseType: s, withCredentials: u, transferCache: E, keepalive: i, cache: d, priority: o, timeout: c, mode: a, redirect: f, credentials: y, referrer: p, integrity: g }); }
-}, N = (function (e) { return e[e.Sent = 0] = "Sent", e[e.UploadProgress = 1] = "UploadProgress", e[e.ResponseHeader = 2] = "ResponseHeader", e[e.DownloadProgress = 3] = "DownloadProgress", e[e.Response = 4] = "Response", e[e.User = 5] = "User", e; })(N || {}), C = class {
+}, N = function (e) { return e[e.Sent = 0] = "Sent", e[e.UploadProgress = 1] = "UploadProgress", e[e.ResponseHeader = 2] = "ResponseHeader", e[e.DownloadProgress = 3] = "DownloadProgress", e[e.Response = 4] = "Response", e[e.User = 5] = "User", e; }(N || {}), C = class {
     headers;
     status;
     statusText;
@@ -193,7 +193,7 @@ var z = "Content-Type", q = "Accept", ue = "X-Request-URL", Ue = "text/plain", C
     error;
     ok = !1;
     constructor(r) { super(r, 0, "Unknown Error"), this.status >= 200 && this.status < 300 ? this.message = `Http failure during parsing for ${r.url || "(unknown url)"}` : this.message = `Http failure response for ${r.url || "(unknown url)"}: ${r.status} ${r.statusText}`, this.error = r.error || null; }
-}, he = 200, wt = 204, Se = (function (e) { return e[e.Continue = 100] = "Continue", e[e.SwitchingProtocols = 101] = "SwitchingProtocols", e[e.Processing = 102] = "Processing", e[e.EarlyHints = 103] = "EarlyHints", e[e.Ok = 200] = "Ok", e[e.Created = 201] = "Created", e[e.Accepted = 202] = "Accepted", e[e.NonAuthoritativeInformation = 203] = "NonAuthoritativeInformation", e[e.NoContent = 204] = "NoContent", e[e.ResetContent = 205] = "ResetContent", e[e.PartialContent = 206] = "PartialContent", e[e.MultiStatus = 207] = "MultiStatus", e[e.AlreadyReported = 208] = "AlreadyReported", e[e.ImUsed = 226] = "ImUsed", e[e.MultipleChoices = 300] = "MultipleChoices", e[e.MovedPermanently = 301] = "MovedPermanently", e[e.Found = 302] = "Found", e[e.SeeOther = 303] = "SeeOther", e[e.NotModified = 304] = "NotModified", e[e.UseProxy = 305] = "UseProxy", e[e.Unused = 306] = "Unused", e[e.TemporaryRedirect = 307] = "TemporaryRedirect", e[e.PermanentRedirect = 308] = "PermanentRedirect", e[e.BadRequest = 400] = "BadRequest", e[e.Unauthorized = 401] = "Unauthorized", e[e.PaymentRequired = 402] = "PaymentRequired", e[e.Forbidden = 403] = "Forbidden", e[e.NotFound = 404] = "NotFound", e[e.MethodNotAllowed = 405] = "MethodNotAllowed", e[e.NotAcceptable = 406] = "NotAcceptable", e[e.ProxyAuthenticationRequired = 407] = "ProxyAuthenticationRequired", e[e.RequestTimeout = 408] = "RequestTimeout", e[e.Conflict = 409] = "Conflict", e[e.Gone = 410] = "Gone", e[e.LengthRequired = 411] = "LengthRequired", e[e.PreconditionFailed = 412] = "PreconditionFailed", e[e.PayloadTooLarge = 413] = "PayloadTooLarge", e[e.UriTooLong = 414] = "UriTooLong", e[e.UnsupportedMediaType = 415] = "UnsupportedMediaType", e[e.RangeNotSatisfiable = 416] = "RangeNotSatisfiable", e[e.ExpectationFailed = 417] = "ExpectationFailed", e[e.ImATeapot = 418] = "ImATeapot", e[e.MisdirectedRequest = 421] = "MisdirectedRequest", e[e.UnprocessableEntity = 422] = "UnprocessableEntity", e[e.Locked = 423] = "Locked", e[e.FailedDependency = 424] = "FailedDependency", e[e.TooEarly = 425] = "TooEarly", e[e.UpgradeRequired = 426] = "UpgradeRequired", e[e.PreconditionRequired = 428] = "PreconditionRequired", e[e.TooManyRequests = 429] = "TooManyRequests", e[e.RequestHeaderFieldsTooLarge = 431] = "RequestHeaderFieldsTooLarge", e[e.UnavailableForLegalReasons = 451] = "UnavailableForLegalReasons", e[e.InternalServerError = 500] = "InternalServerError", e[e.NotImplemented = 501] = "NotImplemented", e[e.BadGateway = 502] = "BadGateway", e[e.ServiceUnavailable = 503] = "ServiceUnavailable", e[e.GatewayTimeout = 504] = "GatewayTimeout", e[e.HttpVersionNotSupported = 505] = "HttpVersionNotSupported", e[e.VariantAlsoNegotiates = 506] = "VariantAlsoNegotiates", e[e.InsufficientStorage = 507] = "InsufficientStorage", e[e.LoopDetected = 508] = "LoopDetected", e[e.NotExtended = 510] = "NotExtended", e[e.NetworkAuthenticationRequired = 511] = "NetworkAuthenticationRequired", e; })(Se || {});
+}, he = 200, wt = 204, Se = function (e) { return e[e.Continue = 100] = "Continue", e[e.SwitchingProtocols = 101] = "SwitchingProtocols", e[e.Processing = 102] = "Processing", e[e.EarlyHints = 103] = "EarlyHints", e[e.Ok = 200] = "Ok", e[e.Created = 201] = "Created", e[e.Accepted = 202] = "Accepted", e[e.NonAuthoritativeInformation = 203] = "NonAuthoritativeInformation", e[e.NoContent = 204] = "NoContent", e[e.ResetContent = 205] = "ResetContent", e[e.PartialContent = 206] = "PartialContent", e[e.MultiStatus = 207] = "MultiStatus", e[e.AlreadyReported = 208] = "AlreadyReported", e[e.ImUsed = 226] = "ImUsed", e[e.MultipleChoices = 300] = "MultipleChoices", e[e.MovedPermanently = 301] = "MovedPermanently", e[e.Found = 302] = "Found", e[e.SeeOther = 303] = "SeeOther", e[e.NotModified = 304] = "NotModified", e[e.UseProxy = 305] = "UseProxy", e[e.Unused = 306] = "Unused", e[e.TemporaryRedirect = 307] = "TemporaryRedirect", e[e.PermanentRedirect = 308] = "PermanentRedirect", e[e.BadRequest = 400] = "BadRequest", e[e.Unauthorized = 401] = "Unauthorized", e[e.PaymentRequired = 402] = "PaymentRequired", e[e.Forbidden = 403] = "Forbidden", e[e.NotFound = 404] = "NotFound", e[e.MethodNotAllowed = 405] = "MethodNotAllowed", e[e.NotAcceptable = 406] = "NotAcceptable", e[e.ProxyAuthenticationRequired = 407] = "ProxyAuthenticationRequired", e[e.RequestTimeout = 408] = "RequestTimeout", e[e.Conflict = 409] = "Conflict", e[e.Gone = 410] = "Gone", e[e.LengthRequired = 411] = "LengthRequired", e[e.PreconditionFailed = 412] = "PreconditionFailed", e[e.PayloadTooLarge = 413] = "PayloadTooLarge", e[e.UriTooLong = 414] = "UriTooLong", e[e.UnsupportedMediaType = 415] = "UnsupportedMediaType", e[e.RangeNotSatisfiable = 416] = "RangeNotSatisfiable", e[e.ExpectationFailed = 417] = "ExpectationFailed", e[e.ImATeapot = 418] = "ImATeapot", e[e.MisdirectedRequest = 421] = "MisdirectedRequest", e[e.UnprocessableEntity = 422] = "UnprocessableEntity", e[e.Locked = 423] = "Locked", e[e.FailedDependency = 424] = "FailedDependency", e[e.TooEarly = 425] = "TooEarly", e[e.UpgradeRequired = 426] = "UpgradeRequired", e[e.PreconditionRequired = 428] = "PreconditionRequired", e[e.TooManyRequests = 429] = "TooManyRequests", e[e.RequestHeaderFieldsTooLarge = 431] = "RequestHeaderFieldsTooLarge", e[e.UnavailableForLegalReasons = 451] = "UnavailableForLegalReasons", e[e.InternalServerError = 500] = "InternalServerError", e[e.NotImplemented = 501] = "NotImplemented", e[e.BadGateway = 502] = "BadGateway", e[e.ServiceUnavailable = 503] = "ServiceUnavailable", e[e.GatewayTimeout = 504] = "GatewayTimeout", e[e.HttpVersionNotSupported = 505] = "HttpVersionNotSupported", e[e.VariantAlsoNegotiates = 506] = "VariantAlsoNegotiates", e[e.InsufficientStorage = 507] = "InsufficientStorage", e[e.LoopDetected = 508] = "LoopDetected", e[e.NotExtended = 510] = "NotExtended", e[e.NetworkAuthenticationRequired = 511] = "NetworkAuthenticationRequired", e; }(Se || {});
 function ne(e, r) { return { body: r, headers: e.headers, context: e.context, observe: e.observe, params: e.params, reportProgress: e.reportProgress, responseType: e.responseType, withCredentials: e.withCredentials, credentials: e.credentials, transferCache: e.transferCache, timeout: e.timeout, keepalive: e.keepalive, priority: e.priority, cache: e.cache, mode: e.mode, redirect: e.redirect, integrity: e.integrity, referrer: e.referrer }; }
 var fe = (() => { class e {
     handler;
@@ -228,8 +228,8 @@ var fe = (() => { class e {
     patch(t, n, s = {}) { return this.request("PATCH", t, ne(s, n)); }
     post(t, n, s = {}) { return this.request("POST", t, ne(s, n)); }
     put(t, n, s = {}) { return this.request("PUT", t, ne(s, n)); }
-    static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(j)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
+    static ɵfac = function (n) { return new (n || e)(l.ɵɵinject(j)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
 } return e; })(), Rt = /^\)\]\}',?\n/;
 function Ie(e) { if (e.url)
     return e.url; let r = ue.toLocaleLowerCase(); return e.headers.get(r); }
@@ -297,8 +297,8 @@ var ze = new D(""), W = (() => { class e {
     } return { body: t.serializeBody(), method: t.method, headers: n, credentials: s, keepalive: t.keepalive, cache: t.cache, priority: t.priority, mode: t.mode, redirect: t.redirect, referrer: t.referrer, integrity: t.integrity }; }
     concatChunks(t, n) { let s = new Uint8Array(n), i = 0; for (let o of t)
         s.set(o, i), i += o.length; return s; }
-    static \u0275fac = function (n) { return new (n || e); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
+    static ɵfac = function (n) { return new (n || e); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
 } return e; })(), oe = class {
 };
 function ie() { }
@@ -329,8 +329,8 @@ var Z = (() => { class e extends j {
     }
     else
         return this.chain(t, n => this.backend.handle(n)); }
-    static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(L), l.\u0275\u0275inject(l.EnvironmentInjector)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
+    static ɵfac = function (n) { return new (n || e)(l.ɵɵinject(L), l.ɵɵinject(l.EnvironmentInjector)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
 } return e; })(), Ot = 0, _e, At = "JSONP injected script did not invoke callback.";
 var Q = class {
 };
@@ -349,23 +349,23 @@ var ge = (() => { class e {
         return;
     } n.next(new _({ body: d, status: he, statusText: "OK", url: i })), n.complete(); }); }, p = g => { f(), n.error(new w({ error: g, status: 0, statusText: "JSONP Error", url: i })); }; return o.addEventListener("load", y), o.addEventListener("error", p), this.document.body.appendChild(o), n.next({ type: N.Sent }), () => { a || this.removeListeners(o), f(); }; }); }
     removeListeners(t) { _e ??= this.document.implementation.createHTMLDocument(), _e.adoptNode(t); }
-    static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(Q), l.\u0275\u0275inject(Fe)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
+    static ɵfac = function (n) { return new (n || e)(l.ɵɵinject(Q), l.ɵɵinject(Fe)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
 } return e; })();
 function Je(e, r) { return e.method === "JSONP" ? v(ge).handle(e) : r(e); }
 var _t = (() => { class e {
     injector;
     constructor(t) { this.injector = t; }
     intercept(t, n) { return de(this.injector, () => Je(t, s => n.handle(s))); }
-    static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(l.EnvironmentInjector)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
+    static ɵfac = function (n) { return new (n || e)(l.ɵɵinject(l.EnvironmentInjector)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
 } return e; })(), Dt = /^\)\]\}',?\n/, kt = RegExp(`^${ue}:`, "m");
 function xt(e) { return "responseURL" in e && e.responseURL ? e.responseURL : kt.test(e.getAllResponseHeaders()) ? e.getResponseHeader(ue) : null; }
 var ae = (() => { class e {
     xhrFactory;
     constructor(t) { this.xhrFactory = t; }
     handle(t) { if (t.method === "JSONP")
-        throw new A(-2800, !1); let n = this.xhrFactory; return (typeof ngServerMode < "u" && ngServerMode && n.\u0275loadImpl ? mt(n.\u0275loadImpl()) : Le(null)).pipe(pt(() => new le(i => { let o = n.build(); if (o.open(t.method, t.urlWithParams), t.withCredentials && (o.withCredentials = !0), t.headers.forEach((u, h) => o.setRequestHeader(u, h.join(","))), t.headers.has(q) || o.setRequestHeader(q, Be), !t.headers.has(z)) {
+        throw new A(-2800, !1); let n = this.xhrFactory; return (typeof ngServerMode < "u" && ngServerMode && n.ɵloadImpl ? mt(n.ɵloadImpl()) : Le(null)).pipe(pt(() => new le(i => { let o = n.build(); if (o.open(t.method, t.urlWithParams), t.withCredentials && (o.withCredentials = !0), t.headers.forEach((u, h) => o.setRequestHeader(u, h.join(","))), t.headers.has(q) || o.setRequestHeader(q, Be), !t.headers.has(z)) {
         let u = t.detectContentTypeHeader();
         u !== null && o.setRequestHeader(z, u);
     } if (t.timeout && (o.timeout = t.timeout), t.responseType) {
@@ -382,8 +382,8 @@ var ae = (() => { class e {
             m = I, P && (P = !1, m = { error: x, text: m });
         }
     } P ? (i.next(new _({ body: m, headers: u, status: h, statusText: T, url: b || void 0 })), i.complete()) : i.error(new w({ error: m, headers: u, status: h, statusText: T, url: b || void 0 })); }, p = u => { let { url: h } = f(), T = new w({ error: u, status: o.status || 0, statusText: o.statusText || "Unknown Error", url: h || void 0 }); i.error(T); }, g = p; t.timeout && (g = u => { let { url: h } = f(), T = new w({ error: new DOMException("Request timed out", "TimeoutError"), status: o.status || 0, statusText: o.statusText || "Request timeout", url: h || void 0 }); i.error(T); }); let E = !1, c = u => { E || (i.next(f()), E = !0); let h = { type: N.DownloadProgress, loaded: u.loaded }; u.lengthComputable && (h.total = u.total), t.responseType === "text" && o.responseText && (h.partialText = o.responseText), i.next(h); }, M = u => { let h = { type: N.UploadProgress, loaded: u.loaded }; u.lengthComputable && (h.total = u.total), i.next(h); }; return o.addEventListener("load", y), o.addEventListener("error", p), o.addEventListener("timeout", g), o.addEventListener("abort", p), t.reportProgress && (o.addEventListener("progress", c), d !== null && o.upload && o.upload.addEventListener("progress", M)), o.send(d), i.next({ type: N.Sent }), () => { o.removeEventListener("error", p), o.removeEventListener("abort", p), o.removeEventListener("load", y), o.removeEventListener("timeout", g), t.reportProgress && (o.removeEventListener("progress", c), d !== null && o.upload && o.upload.removeEventListener("progress", M)), o.readyState !== o.DONE && o.abort(); }; }))); }
-    static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(Pe)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
+    static ɵfac = function (n) { return new (n || e)(l.ɵɵinject(Pe)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
 } return e; })(), H = new D(""), Ve = "XSRF-TOKEN", $e = new D("", { providedIn: "root", factory: () => Ve }), Ge = "X-XSRF-TOKEN", We = new D("", { providedIn: "root", factory: () => Ge }), B = class {
 }, Ke = (() => { class e {
     doc;
@@ -394,8 +394,8 @@ var ae = (() => { class e {
     constructor(t, n) { this.doc = t, this.cookieName = n; }
     getToken() { if (typeof ngServerMode < "u" && ngServerMode)
         return null; let t = this.doc.cookie || ""; return t !== this.lastCookieString && (this.parseCount++, this.lastToken = be(t, this.cookieName), this.lastCookieString = t), this.lastToken; }
-    static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(Fe), l.\u0275\u0275inject($e)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
+    static ɵfac = function (n) { return new (n || e)(l.ɵɵinject(Fe), l.ɵɵinject($e)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
 } return e; })();
 function Ye(e, r) { let t = e.url.toLowerCase(); if (!v(H) || e.method === "GET" || e.method === "HEAD" || t.startsWith("http://") || t.startsWith("https://"))
     return r(e); let n = v(B).getToken(), s = v(We); return n != null && !e.headers.has(s) && (e = e.clone({ headers: e.headers.set(s, n) })), r(e); }
@@ -403,12 +403,12 @@ var De = (() => { class e {
     injector;
     constructor(t) { this.injector = t; }
     intercept(t, n) { return de(this.injector, () => Ye(t, s => n.handle(s))); }
-    static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(l.EnvironmentInjector)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
-} return e; })(), k = (function (e) { return e[e.Interceptors = 0] = "Interceptors", e[e.LegacyInterceptors = 1] = "LegacyInterceptors", e[e.CustomXsrfConfiguration = 2] = "CustomXsrfConfiguration", e[e.NoXsrfProtection = 3] = "NoXsrfProtection", e[e.JsonpSupport = 4] = "JsonpSupport", e[e.RequestsMadeViaParent = 5] = "RequestsMadeViaParent", e[e.Fetch = 6] = "Fetch", e; })(k || {});
-function U(e, r) { return { \u0275kind: e, \u0275providers: r }; }
+    static ɵfac = function (n) { return new (n || e)(l.ɵɵinject(l.EnvironmentInjector)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: e, factory: e.ɵfac });
+} return e; })(), k = function (e) { return e[e.Interceptors = 0] = "Interceptors", e[e.LegacyInterceptors = 1] = "LegacyInterceptors", e[e.CustomXsrfConfiguration = 2] = "CustomXsrfConfiguration", e[e.NoXsrfProtection = 3] = "NoXsrfProtection", e[e.JsonpSupport = 4] = "JsonpSupport", e[e.RequestsMadeViaParent = 5] = "RequestsMadeViaParent", e[e.Fetch = 6] = "Fetch", e; }(k || {});
+function U(e, r) { return { ɵkind: e, ɵproviders: r }; }
 function qe(...e) { let r = [fe, ae, Z, { provide: j, useExisting: Z }, { provide: L, useFactory: () => v(ze, { optional: !0 }) ?? v(ae) }, { provide: J, useValue: Ye, multi: !0 }, { provide: H, useValue: !0 }, { provide: B, useClass: Ke }]; for (let t of e)
-    r.push(...t.\u0275providers); return ut(r); }
+    r.push(...t.ɵproviders); return ut(r); }
 function Ft(e) { return U(k.Interceptors, e.map(r => ({ provide: J, useValue: r, multi: !0 }))); }
 var ke = new D("");
 function Ze() { return U(k.LegacyInterceptors, [{ provide: ke, useFactory: Mt }, { provide: J, useExisting: ke, multi: !0 }]); }
@@ -418,21 +418,21 @@ function He() { return U(k.JsonpSupport, [ge, { provide: Q, useFactory: It }, { 
 function jt() { return U(k.RequestsMadeViaParent, [{ provide: L, useFactory: () => v(j, { skipSelf: !0, optional: !0 }) }]); }
 function Lt() { return U(k.Fetch, [W, { provide: ze, useExisting: W }, { provide: L, useExisting: W }]); }
 var Ut = (() => { class e {
-    static disable() { return { ngModule: e, providers: [Qe().\u0275providers] }; }
-    static withOptions(t = {}) { return { ngModule: e, providers: ce(t).\u0275providers }; }
-    static \u0275fac = function (n) { return new (n || e); };
-    static \u0275mod = l.\u0275\u0275defineNgModule({ type: e });
-    static \u0275inj = l.\u0275\u0275defineInjector({ providers: [De, { provide: pe, useExisting: De, multi: !0 }, { provide: B, useClass: Ke }, ce({ cookieName: Ve, headerName: Ge }).\u0275providers, { provide: H, useValue: !0 }] });
+    static disable() { return { ngModule: e, providers: [Qe().ɵproviders] }; }
+    static withOptions(t = {}) { return { ngModule: e, providers: ce(t).ɵproviders }; }
+    static ɵfac = function (n) { return new (n || e); };
+    static ɵmod = l.ɵɵdefineNgModule({ type: e });
+    static ɵinj = l.ɵɵdefineInjector({ providers: [De, { provide: pe, useExisting: De, multi: !0 }, { provide: B, useClass: Ke }, ce({ cookieName: Ve, headerName: Ge }).ɵproviders, { provide: H, useValue: !0 }] });
 } return e; })(), Ct = (() => { class e {
-    static \u0275fac = function (n) { return new (n || e); };
-    static \u0275mod = l.\u0275\u0275defineNgModule({ type: e });
-    static \u0275inj = l.\u0275\u0275defineInjector({ providers: [qe(Ze())] });
+    static ɵfac = function (n) { return new (n || e); };
+    static ɵmod = l.ɵɵdefineNgModule({ type: e });
+    static ɵinj = l.ɵɵdefineInjector({ providers: [qe(Ze())] });
 } return e; })(), Bt = (() => { class e {
-    static \u0275fac = function (n) { return new (n || e); };
-    static \u0275mod = l.\u0275\u0275defineNgModule({ type: e });
-    static \u0275inj = l.\u0275\u0275defineInjector({ providers: [He().\u0275providers] });
+    static ɵfac = function (n) { return new (n || e); };
+    static ɵmod = l.ɵɵdefineNgModule({ type: e });
+    static ɵinj = l.ɵɵdefineInjector({ providers: [He().ɵproviders] });
 } return e; })();
-import { inject as S, Injector as St, \u0275ResourceImpl as zt, linkedSignal as Te, computed as Xt, signal as Jt, \u0275encapsulateResourceError as Vt, \u0275RuntimeError as at, InjectionToken as ct, \u0275performanceMarkFeature as $t, APP_BOOTSTRAP_LISTENER as Gt, ApplicationRef as Wt, TransferState as Kt, makeStateKey as Yt, \u0275truncateMiddle as wr, \u0275formatRuntimeError as Rr } from "@angular/core";
+import { inject as S, Injector as St, ɵResourceImpl as zt, linkedSignal as Te, computed as Xt, signal as Jt, ɵencapsulateResourceError as Vt, ɵRuntimeError as at, InjectionToken as ct, ɵperformanceMarkFeature as $t, APP_BOOTSTRAP_LISTENER as Gt, ApplicationRef as Wt, TransferState as Kt, makeStateKey as Yt, ɵtruncateMiddle as wr, ɵformatRuntimeError as Rr } from "@angular/core";
 import { of as qt } from "rxjs";
 import { tap as Zt } from "rxjs/operators";
 var Nr = (() => { let e = ee("json"); return e.arrayBuffer = ee("arraybuffer"), e.blob = ee("blob"), e.text = ee("text"), e; })();
@@ -490,8 +490,7 @@ function or(e) { let r = 0; for (let t of e)
     r = Math.imul(31, r) + t.charCodeAt(0) << 0; return r += 2147483648, r.toString(); }
 function Mr(e) { return [{ provide: ve, useFactory: () => ($t("NgHttpTransferCache"), V({ isCacheActive: !0 }, e)) }, { provide: me, useValue: tr, multi: !0 }, { provide: Gt, multi: !0, useFactory: () => { let r = S(Wt), t = S(ve); return () => { r.whenStable().then(() => { t.isCacheActive = !1; }); }; } }]; }
 function ir(e, r) { let t = new URL(e, "resolve://").origin, n = r[t]; return n ? e.replace(t, n) : e; }
-export { W as FetchBackend, pe as HTTP_INTERCEPTORS, Ht as HTTP_TRANSFER_CACHE_ORIGIN_MAP, L as HttpBackend, fe as HttpClient, Bt as HttpClientJsonpModule, Ct as HttpClientModule, Ut as HttpClientXsrfModule, Y as HttpContext, se as HttpContextToken, w as HttpErrorResponse, N as HttpEventType, k as HttpFeatureKind, j as HttpHandler, X as HttpHeaderResponse, R as HttpHeaders, O as HttpParams, F as HttpRequest, _ as HttpResponse, C as HttpResponseBase, Se as HttpStatusCode, K as HttpUrlEncodingCodec, ae as HttpXhrBackend, B as HttpXsrfTokenExtractor, ge as JsonpClientBackend, _t as JsonpInterceptor, Nr as httpResource, qe as provideHttpClient, Lt as withFetch, Ft as withInterceptors, Ze as withInterceptorsFromDi, He as withJsonpSupport, Qe as withNoXsrfProtection, jt as withRequestsMadeViaParent, ce as withXsrfConfiguration, me as \u0275HTTP_ROOT_INTERCEPTOR_FNS, Z as \u0275HttpInterceptingHandler, Z as \u0275HttpInterceptorHandler, ye as \u0275REQUESTS_CONTRIBUTE_TO_STABILITY, Mr as \u0275withHttpTransferCache };
-/*! Bundled license information:
+export { W as FetchBackend, pe as HTTP_INTERCEPTORS, Ht as HTTP_TRANSFER_CACHE_ORIGIN_MAP, L as HttpBackend, fe as HttpClient, Bt as HttpClientJsonpModule, Ct as HttpClientModule, Ut as HttpClientXsrfModule, Y as HttpContext, se as HttpContextToken, w as HttpErrorResponse, N as HttpEventType, k as HttpFeatureKind, j as HttpHandler, X as HttpHeaderResponse, R as HttpHeaders, O as HttpParams, F as HttpRequest, _ as HttpResponse, C as HttpResponseBase, Se as HttpStatusCode, K as HttpUrlEncodingCodec, ae as HttpXhrBackend, B as HttpXsrfTokenExtractor, ge as JsonpClientBackend, _t as JsonpInterceptor, Nr as httpResource, qe as provideHttpClient, Lt as withFetch, Ft as withInterceptors, Ze as withInterceptorsFromDi, He as withJsonpSupport, Qe as withNoXsrfProtection, jt as withRequestsMadeViaParent, ce as withXsrfConfiguration, me as ɵHTTP_ROOT_INTERCEPTOR_FNS, Z as ɵHttpInterceptingHandler, Z as ɵHttpInterceptorHandler, ye as ɵREQUESTS_CONTRIBUTE_TO_STABILITY, Mr as ɵwithHttpTransferCache }; /*! Bundled license information:
 
 @angular/common/fesm2022/module.mjs:
 @angular/common/fesm2022/http.mjs:

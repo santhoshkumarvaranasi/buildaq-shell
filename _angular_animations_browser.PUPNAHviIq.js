@@ -1,7 +1,7 @@
 import { a as me, c as Et } from "@nf-internal/chunk-4CLCTAJ7";
 import * as ps from "@angular/core";
 import "@angular/core";
-var _ = (function (n) { return n[n.State = 0] = "State", n[n.Transition = 1] = "Transition", n[n.Sequence = 2] = "Sequence", n[n.Group = 3] = "Group", n[n.Animate = 4] = "Animate", n[n.Keyframes = 5] = "Keyframes", n[n.Style = 6] = "Style", n[n.Trigger = 7] = "Trigger", n[n.Reference = 8] = "Reference", n[n.AnimateChild = 9] = "AnimateChild", n[n.AnimateRef = 10] = "AnimateRef", n[n.Query = 11] = "Query", n[n.Stagger = 12] = "Stagger", n; })(_ || {}), z = "*";
+var _ = function (n) { return n[n.State = 0] = "State", n[n.Transition = 1] = "Transition", n[n.Sequence = 2] = "Sequence", n[n.Group = 3] = "Group", n[n.Animate = 4] = "Animate", n[n.Keyframes = 5] = "Keyframes", n[n.Style = 6] = "Style", n[n.Trigger = 7] = "Trigger", n[n.Reference = 8] = "Reference", n[n.AnimateChild = 9] = "AnimateChild", n[n.AnimateRef = 10] = "AnimateRef", n[n.Query = 11] = "Query", n[n.Stagger = 12] = "Stagger", n; }(_ || {}), z = "*";
 function Tt(n, e = null) { return { type: _.Sequence, steps: n, options: e }; }
 function Le(n) { return { type: _.Style, styles: n, offset: null }; }
 var $ = class {
@@ -64,7 +64,7 @@ var $ = class {
     beforeDestroy() { this.players.forEach(e => { e.beforeDestroy && e.beforeDestroy(); }); }
     triggerCallback(e) { let t = e == "start" ? this._onStartFns : this._onDoneFns; t.forEach(s => s()), t.length = 0; }
 }, re = "!";
-import { \u0275RuntimeError as E } from "@angular/core";
+import { ɵRuntimeError as E } from "@angular/core";
 function vt(n) { return new E(3e3, !1); }
 function bs() { return new E(3100, !1); }
 function ws() { return new E(3101, !1); }
@@ -221,8 +221,8 @@ var gs = (() => { class n {
     query(t, s, i) { return Ve(t, s, i); }
     computeStyle(t, s, i) { return i || ""; }
     animate(t, s, i, r, a, o = [], l) { return new $(i, r); }
-    static \u0275fac = function (s) { return new (s || n); };
-    static \u0275prov = ps.\u0275\u0275defineInjectable({ token: n, factory: n.\u0275fac });
+    static ɵfac = function (s) { return new (s || n); };
+    static ɵprov = ps.ɵɵdefineInjectable({ token: n, factory: n.ɵfac });
 } return n; })(), ss = class {
     static NOOP = new gs;
 }, Je = class {
@@ -850,7 +850,7 @@ var ni = new ne, lt = class {
         } }), b.postStyleProps.forEach((C, Y) => { let L = u.get(Y); L || u.set(Y, L = new Set), C.forEach((de, Oe) => L.add(Oe)); }); }); if (B.length) {
         let f = [];
         B.forEach(m => { f.push(Xt(m.triggerName, m.errors)); }), J.forEach(m => m.destroy()), this.reportError(f);
-    } let M = new Map, k = new Map; a.forEach(f => { let m = f.element; s.has(m) && (k.set(m, m), this._beforeAnimationBuild(f.player.namespaceId, f.instruction, M)); }), i.forEach(f => { let m = f.element; this._getPreviousPlayers(m, !1, f.namespaceId, f.triggerName, null).forEach(T => { F(M, m, []).push(T), T.destroy(); }); }); let W = v.filter(f => fs(f, l, u)), Z = new Map; hs(Z, this.driver, P, u, z).forEach(f => { fs(f, l, u) && W.push(f); }); let H = new Map; y.forEach((f, m) => { hs(H, this.driver, new Set(f), l, re); }), W.forEach(f => { let m = Z.get(f), p = H.get(f); Z.set(f, new Map([...m?.entries() ?? [], ...p?.entries() ?? []])); }); let Re = [], yt = [], _t = {}; a.forEach(f => { let { element: m, player: p, instruction: T } = f; if (s.has(m)) {
+    } let M = new Map, k = new Map; a.forEach(f => { let m = f.element; s.has(m) && (k.set(m, m), this._beforeAnimationBuild(f.player.namespaceId, f.instruction, M)); }), i.forEach(f => { let m = f.element; this._getPreviousPlayers(m, !1, f.namespaceId, f.triggerName, null).forEach(T => { F(M, m, []).push(T), T.destroy(); }); }); let W = v.filter(f => fs(f, l, u)), Z = new Map; hs(Z, this.driver, P, u, z).forEach(f => { fs(f, l, u) && W.push(f); }); let H = new Map; y.forEach((f, m) => { hs(H, this.driver, new Set(f), l, re); }), W.forEach(f => { let m = Z.get(f), p = H.get(f); Z.set(f, new Map([...(m?.entries() ?? []), ...(p?.entries() ?? [])])); }); let Re = [], yt = [], _t = {}; a.forEach(f => { let { element: m, player: p, instruction: T } = f; if (s.has(m)) {
         if (c.has(m)) {
             p.onDestroy(() => K(m, T.toStyles)), p.disabled = !0, p.overrideTotalTime(T.totalTime), i.push(p);
             return;
@@ -1095,7 +1095,7 @@ var ke = class {
     computeStyle(e, t, s) { return Te(e, t); }
     animate(e, t, s, i, r, a = []) { let o = i == 0 ? "both" : "forwards", l = { duration: s, delay: i, fill: o }; r && (l.easing = r); let u = new Map, c = a.filter(y => y instanceof ke); es(s, i) && c.forEach(y => { y.currentSnapshot.forEach((d, g) => u.set(g, d)); }); let h = Jt(t).map(y => new Map(y)); h = ts(e, h, u); let S = yi(e, h); return new ke(e, h, l, S); }
 };
-function Mi(n, e) { return n === "noop" ? new Me(e, new gs, new Ze) : new Me(e, new ct, new et); }
+function Mi(n, e) { return n === "noop" ? new Me(e, new gs(), new Ze()) : new Me(e, new ct(), new et()); }
 var ds = class {
     _driver;
     _animationAst;
@@ -1108,7 +1108,7 @@ var ds = class {
     delegate;
     engine;
     _onDestroy;
-    \u0275type = 0;
+    ɵtype = 0;
     constructor(e, t, s, i) { this.namespaceId = e, this.delegate = t, this.engine = s, this._onDestroy = i; }
     get data() { return this.delegate.data; }
     destroyNode(e) { this.delegate.destroyNode?.(e); }
@@ -1179,8 +1179,7 @@ var ms = class {
     whenRenderingDone() { return this.engine.whenRenderingDone(); }
     componentReplaced(e) { this.engine.flush(), this.delegate.componentReplaced?.(e); }
 };
-export { ss as AnimationDriver, gs as NoopAnimationDriver, ds as \u0275Animation, Me as \u0275AnimationEngine, ft as \u0275AnimationRenderer, ms as \u0275AnimationRendererFactory, Je as \u0275AnimationStyleNormalizer, Fe as \u0275BaseAnimationRenderer, _e as \u0275ENTER_CLASSNAME, ae as \u0275LEAVE_CLASSNAME, Ze as \u0275NoopAnimationStyleNormalizer, fe as \u0275TransitionAnimationPlayer, ct as \u0275WebAnimationsDriver, ke as \u0275WebAnimationsPlayer, et as \u0275WebAnimationsStyleNormalizer, es as \u0275allowPreviousPlayerStylesMerge, qs as \u0275camelCaseToDashCase, Qe as \u0275containsElement, Mi as \u0275createEngine, ye as \u0275getParentElement, Ve as \u0275invokeQuery, Jt as \u0275normalizeKeyframes, xt as \u0275validateStyleProperty, Fs as \u0275validateWebAnimatableStyleProperty };
-/*! Bundled license information:
+export { ss as AnimationDriver, gs as NoopAnimationDriver, ds as ɵAnimation, Me as ɵAnimationEngine, ft as ɵAnimationRenderer, ms as ɵAnimationRendererFactory, Je as ɵAnimationStyleNormalizer, Fe as ɵBaseAnimationRenderer, _e as ɵENTER_CLASSNAME, ae as ɵLEAVE_CLASSNAME, Ze as ɵNoopAnimationStyleNormalizer, fe as ɵTransitionAnimationPlayer, ct as ɵWebAnimationsDriver, ke as ɵWebAnimationsPlayer, et as ɵWebAnimationsStyleNormalizer, es as ɵallowPreviousPlayerStylesMerge, qs as ɵcamelCaseToDashCase, Qe as ɵcontainsElement, Mi as ɵcreateEngine, ye as ɵgetParentElement, Ve as ɵinvokeQuery, Jt as ɵnormalizeKeyframes, xt as ɵvalidateStyleProperty, Fs as ɵvalidateWebAnimatableStyleProperty }; /*! Bundled license information:
 
 @angular/animations/fesm2022/private_export.mjs:
 @angular/animations/fesm2022/util.mjs:
