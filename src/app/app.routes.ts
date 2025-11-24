@@ -8,7 +8,7 @@ const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
 // In development use the backend-proxied manifest so the shell doesn't depend
 // on direct access to the MF static server (4201).
 const remoteEntryUrl = isProd
-  ? 'https://schools.buildaq.com/remoteEntry.js'
+  ? 'https://schools.buildaq.com/remoteEntry.json'
   : 'http://localhost:3000/assets/remoteEntry.json';
 
 export const routes: Routes = [
@@ -20,7 +20,6 @@ export const routes: Routes = [
   },
   {
     path: 'schools',
-    canActivate: [authGuard],
     loadChildren: () => 
       loadRemoteModule({
         remoteEntry: remoteEntryUrl,
