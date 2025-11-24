@@ -35,3 +35,43 @@
   .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 1001; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); }
   .sidebar.open { transform: translateX(0); }
 }
+
+/* Soft scrollbar theme (sidebar + main/remote area) */
+.sidebar,
+.content,
+:host ::ng-deep .content *,
+:host ::ng-deep body {
+  scrollbar-width: thin;
+  scrollbar-color: #b7c5ff #f2f5ff;
+}
+
+.sidebar::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+:host ::ng-deep .content *::-webkit-scrollbar,
+:host ::ng-deep body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.content::-webkit-scrollbar-track,
+:host ::ng-deep .content *::-webkit-scrollbar-track,
+:host ::ng-deep body::-webkit-scrollbar-track {
+  background: #f2f5ff;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb,
+:host ::ng-deep .content *::-webkit-scrollbar-thumb,
+:host ::ng-deep body::-webkit-scrollbar-thumb {
+  background: #b7c5ff;
+  border-radius: 999px;
+  border: 2px solid #f2f5ff;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover,
+:host ::ng-deep .content *::-webkit-scrollbar-thumb:hover,
+:host ::ng-deep body::-webkit-scrollbar-thumb:hover {
+  background: #8da6ff;
+}
