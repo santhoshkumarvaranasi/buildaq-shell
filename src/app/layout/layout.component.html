@@ -25,18 +25,66 @@
 
   <nav class="sidebar" [class.open]="isMobileMenuOpen">
     <div class="nav-items">
-      <a routerLink="/dashboard" class="nav-item" (click)="closeMobileMenu()">Dashboard</a>
+      <a routerLink="/dashboard" class="nav-item" (click)="closeMobileMenu()">
+        <span class="icon">🏠</span>
+        <span>Dashboard</span>
+      </a>
+
       <div class="nav-section">Remote Apps</div>
-      <a routerLink="/schools" class="nav-item" (click)="closeMobileMenu()">School Management</a>
-      <div class="sub-item">
-        <a routerLink="/schools/admissions" class="nav-item" (click)="closeMobileMenu()">Admissions</a>
-        <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()">Students</a>
-        <a routerLink="/schools/teachers" class="nav-item" (click)="closeMobileMenu()">Teachers</a>
-        <a routerLink="/schools/attendance" class="nav-item" (click)="closeMobileMenu()">Attendance</a>
-        <a routerLink="/schools/fees" class="nav-item" (click)="closeMobileMenu()">Fees</a>
-        <a routerLink="/schools/fees/receipts" class="nav-item" (click)="closeMobileMenu()">Receipts</a>
-        <a routerLink="/schools/timetable" class="nav-item" (click)="closeMobileMenu()">Timetable</a>
-        <a routerLink="/schools/exams" class="nav-item" (click)="closeMobileMenu()">Exams</a>
+      <a routerLink="/schools" class="nav-item" (click)="closeMobileMenu()">
+        <span class="icon">🏫</span>
+        <span>School Management</span>
+      </a>
+      <div class="nav-group">
+        <div class="nav-group-title">Admissions</div>
+        <a routerLink="/schools/admissions" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">📥</span>
+          <span>Admissions</span>
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Academics</div>
+        <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">🎓</span>
+          <span>Students</span>
+        </a>
+        <a routerLink="/schools/teachers" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">👩‍🏫</span>
+          <span>Teachers</span>
+        </a>
+        <a routerLink="/schools/attendance" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">🕒</span>
+          <span>Attendance</span>
+        </a>
+        <a routerLink="/schools/timetable" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">📅</span>
+          <span>Timetable</span>
+        </a>
+        <a routerLink="/schools/exams" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">📝</span>
+          <span>Exams</span>
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-title">Finance</div>
+        <a routerLink="/schools/fees" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">💳</span>
+          <span>Fees</span>
+        </a>
+        <a routerLink="/schools/fees/receipts" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">🧾</span>
+          <span>Receipts</span>
+        </a>
+        <a routerLink="/schools/fees/reminders" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">🔔</span>
+          <span>Reminders</span>
+        </a>
+        <a routerLink="/schools/fees/discounts" class="nav-item" (click)="closeMobileMenu()">
+          <span class="icon">🏷️</span>
+          <span>Discounts</span>
+        </a>
       </div>
     </div>
   </nav>
