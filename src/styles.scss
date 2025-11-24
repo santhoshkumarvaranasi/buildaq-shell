@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Ensure overlay/dropdown readability for Material/Angular components */
+.cdk-overlay-pane .mat-mdc-select-panel,
+.cdk-overlay-pane .mat-mdc-menu-panel {
+  background: #fff !important;
+  color: #111 !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16) !important;
+}
+
+.cdk-overlay-pane .mat-mdc-option,
+.cdk-overlay-pane .mdc-list-item {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+.cdk-overlay-pane .mat-mdc-option.mdc-list-item--selected,
+.cdk-overlay-pane .mat-mdc-option:hover,
+.cdk-overlay-pane .mat-mdc-option:focus,
+.cdk-overlay-pane .mdc-list-item:hover {
+  background: #eef2ff !important;
+  color: #111 !important;
+}
+
+.cdk-overlay-backdrop {
+  background: rgba(0,0,0,0.08);
+}
