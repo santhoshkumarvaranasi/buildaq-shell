@@ -1,4 +1,4 @@
-<div class="layout">
+﻿<div class="layout">
   <header class="header">
     <div class="header-container">
       <div class="logo">
@@ -62,17 +62,47 @@
           <a routerLink="/schools/attendance" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🕒</span><span>Attendance</span></a>
           <a routerLink="/schools/timetable" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📅</span><span>Timetable</span></a>
           <a routerLink="/schools/exams" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📝</span><span>Exams</span></a>
+          <a routerLink="/schools/performance" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🌟</span><span>Performance</span></a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button class="nav-group-toggle" (click)="toggleGroup('studentcare')">
+          <span class="icon">🧑‍🎓</span>
+          <span>Student Care</span>
+          <span class="chevron">{{ openGroups['studentcare'] ? '▾' : '▸' }}</span>
+        </button>
+        <div *ngIf="openGroups['studentcare']">
           <a routerLink="/schools/behavior" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🚦</span><span>Behavior</span></a>
-          <a routerLink="/schools/announcements" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📣</span><span>Announcements</span></a>
-          <a routerLink="/schools/library" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📚</span><span>Library</span></a>
-          <a routerLink="/schools/transport" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🚌</span><span>Transport</span></a>
-          <a routerLink="/schools/clubs" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🎯</span><span>Clubs</span></a>
           <a routerLink="/schools/parents" class="nav-item" (click)="closeMobileMenu()"><span class="icon">👪</span><span>Parents</span></a>
           <a routerLink="/schools/health" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🩺</span><span>Health</span></a>
+          <a routerLink="/schools/clubs" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🎯</span><span>Clubs</span></a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button class="nav-group-toggle" (click)="toggleGroup('operations')">
+          <span class="icon">🏢</span>
+          <span>Operations</span>
+          <span class="chevron">{{ openGroups['operations'] ? '▾' : '▸' }}</span>
+        </button>
+        <div *ngIf="openGroups['operations']">
+          <a routerLink="/schools/library" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📚</span><span>Library</span></a>
+          <a routerLink="/schools/transport" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🚌</span><span>Transport</span></a>
           <a routerLink="/schools/assets" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📦</span><span>Assets</span></a>
-          <a routerLink="/schools/events" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📅</span><span>Events</span></a>
           <a routerLink="/schools/resources" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🏢</span><span>Resources</span></a>
-          <a routerLink="/schools/performance" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🌟</span><span>Performance</span></a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button class="nav-group-toggle" (click)="toggleGroup('communication')">
+          <span class="icon">📣</span>
+          <span>Communication</span>
+          <span class="chevron">{{ openGroups['communication'] ? '▾' : '▸' }}</span>
+        </button>
+        <div *ngIf="openGroups['communication']">
+          <a routerLink="/schools/announcements" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📣</span><span>Announcements</span></a>
+          <a routerLink="/schools/events" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📅</span><span>Events</span></a>
           <a routerLink="/schools/analytics" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📊</span><span>Analytics</span></a>
         </div>
       </div>

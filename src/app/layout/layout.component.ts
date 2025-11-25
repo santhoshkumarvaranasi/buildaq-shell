@@ -19,6 +19,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
   openGroups: Record<string, boolean> = {
     admissions: false,
     academics: false,
+    studentcare: false,
+    operations: false,
+    communication: false,
     finance: false
   };
 
