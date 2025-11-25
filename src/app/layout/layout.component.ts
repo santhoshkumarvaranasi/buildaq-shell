@@ -16,6 +16,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   userContext: UserContext | null = null;
   isMobileMenuOpen = false;
+  openGroups: Record<string, boolean> = {
+    admissions: false,
+    academics: false,
+    finance: false
+  };
 
   constructor(
     private authService: AuthService,
@@ -52,6 +57,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   toggleMobileMenu(): void { this.isMobileMenuOpen = !this.isMobileMenuOpen; }
   closeMobileMenu(): void { this.isMobileMenuOpen = false; }
+  toggleGroup(key: string): void { this.openGroups[key] = !this.openGroups[key]; }
 
   @HostListener('document:keydown.escape') handleEscapeKey(): void { this.closeMobileMenu(); }
 

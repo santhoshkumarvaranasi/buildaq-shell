@@ -35,92 +35,57 @@
         <span class="icon">🏫</span>
         <span>School Management</span>
       </a>
+
       <div class="nav-group">
-        <div class="nav-group-title">Admissions</div>
-        <a routerLink="/schools/admissions" class="nav-item" (click)="closeMobileMenu()">
+        <button class="nav-group-toggle" (click)="toggleGroup('admissions')">
           <span class="icon">📥</span>
           <span>Admissions</span>
-        </a>
+          <span class="chevron">{{ openGroups['admissions'] ? '▾' : '▸' }}</span>
+        </button>
+        <div *ngIf="openGroups['admissions']">
+          <a routerLink="/schools/admissions" class="nav-item" (click)="closeMobileMenu()">
+            <span class="icon">📥</span>
+            <span>Admissions</span>
+          </a>
+        </div>
       </div>
 
       <div class="nav-group">
-        <div class="nav-group-title">Academics</div>
-        <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()">
+        <button class="nav-group-toggle" (click)="toggleGroup('academics')">
           <span class="icon">🎓</span>
-          <span>Students</span>
-        </a>
-        <a routerLink="/schools/teachers" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">👩‍🏫</span>
-          <span>Teachers</span>
-        </a>
-        <a routerLink="/schools/attendance" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🕒</span>
-          <span>Attendance</span>
-        </a>
-        <a routerLink="/schools/timetable" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">📅</span>
-          <span>Timetable</span>
-        </a>
-        <a routerLink="/schools/exams" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">📝</span>
-          <span>Exams</span>
-        </a>
-        <a routerLink="/schools/behavior" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🚦</span>
-          <span>Behavior</span>
-        </a>
-        <a routerLink="/schools/announcements" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">📣</span>
-          <span>Announcements</span>
-        </a>
-        <a routerLink="/schools/library" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">📚</span>
-          <span>Library</span>
-        </a>
-        <a routerLink="/schools/transport" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🚌</span>
-          <span>Transport</span>
-        </a>
-        <a routerLink="/schools/clubs" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🎯</span>
-          <span>Clubs</span>
-        </a>
-        <a routerLink="/schools/parents" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">👪</span>
-          <span>Parents</span>
-        </a>
-        <a routerLink="/schools/health" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🩺</span>
-          <span>Health</span>
-        </a>
-        <a routerLink="/schools/assets" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">📦</span>
-          <span>Assets</span>
-        </a>
-        <a routerLink="/schools/events" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">📅</span>
-          <span>Events</span>
-        </a>
+          <span>Academics</span>
+          <span class="chevron">{{ openGroups['academics'] ? '▾' : '▸' }}</span>
+        </button>
+        <div *ngIf="openGroups['academics']">
+          <a routerLink="/schools/students" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🎓</span><span>Students</span></a>
+          <a routerLink="/schools/teachers" class="nav-item" (click)="closeMobileMenu()"><span class="icon">👩‍🏫</span><span>Teachers</span></a>
+          <a routerLink="/schools/attendance" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🕒</span><span>Attendance</span></a>
+          <a routerLink="/schools/timetable" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📅</span><span>Timetable</span></a>
+          <a routerLink="/schools/exams" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📝</span><span>Exams</span></a>
+          <a routerLink="/schools/behavior" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🚦</span><span>Behavior</span></a>
+          <a routerLink="/schools/announcements" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📣</span><span>Announcements</span></a>
+          <a routerLink="/schools/library" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📚</span><span>Library</span></a>
+          <a routerLink="/schools/transport" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🚌</span><span>Transport</span></a>
+          <a routerLink="/schools/clubs" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🎯</span><span>Clubs</span></a>
+          <a routerLink="/schools/parents" class="nav-item" (click)="closeMobileMenu()"><span class="icon">👪</span><span>Parents</span></a>
+          <a routerLink="/schools/health" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🩺</span><span>Health</span></a>
+          <a routerLink="/schools/assets" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📦</span><span>Assets</span></a>
+          <a routerLink="/schools/events" class="nav-item" (click)="closeMobileMenu()"><span class="icon">📅</span><span>Events</span></a>
+        </div>
       </div>
 
       <div class="nav-group">
-        <div class="nav-group-title">Finance</div>
-        <a routerLink="/schools/fees" class="nav-item" (click)="closeMobileMenu()">
+        <button class="nav-group-toggle" (click)="toggleGroup('finance')">
           <span class="icon">💳</span>
-          <span>Fees</span>
-        </a>
-        <a routerLink="/schools/fees/receipts" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🧾</span>
-          <span>Receipts</span>
-        </a>
-        <a routerLink="/schools/fees/reminders" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🔔</span>
-          <span>Reminders</span>
-        </a>
-        <a routerLink="/schools/fees/discounts" class="nav-item" (click)="closeMobileMenu()">
-          <span class="icon">🏷️</span>
-          <span>Discounts</span>
-        </a>
+          <span>Finance</span>
+          <span class="chevron">{{ openGroups['finance'] ? '▾' : '▸' }}</span>
+        </button>
+        <div *ngIf="openGroups['finance']">
+          <a routerLink="/schools/fees" class="nav-item" (click)="closeMobileMenu()"><span class="icon">💳</span><span>Fees</span></a>
+          <a routerLink="/schools/fees/receipts" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🧾</span><span>Receipts</span></a>
+          <a routerLink="/schools/fees/reminders" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🔔</span><span>Reminders</span></a>
+          <a routerLink="/schools/fees/discounts" class="nav-item" (click)="closeMobileMenu()"><span class="icon">🏷️</span><span>Discounts</span></a>
+        </div>
       </div>
     </div>
   </nav>
