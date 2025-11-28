@@ -1,10 +1,31 @@
 {
   "schools": {
     "url": "https://schools.buildaq.com/remoteEntry.js",
+    "devUrl": "https://schools.buildaq.com/remoteEntry.js",
     "exposed": "./SchoolsModule",
     "displayName": "School Management",
     "route": "/schools",
     "version": "1.0.0",
-    "enabled": true
+    "enabled": true,
+    "nav": [
+      { "label": "Schools Dashboard", "route": "/schools/dashboard" },
+      { "label": "Admissions", "route": "/schools/admissions" },
+      { "label": "Attendance", "route": "/schools/attendance" },
+      { "label": "Fees", "route": "/schools/fees" },
+      { "label": "Announcements", "route": "/schools/announcements" },
+      { "label": "Analytics", "route": "/schools/analytics" }
+    ]
+  },
+  "healthcare": {
+    "url": "https://healthcare.buildaq.com/remoteEntry.js",
+    "devUrl": "https://healthcare.buildaq.com/remoteEntry.js",
+    "exposed": "./HealthcareModule",
+    "displayName": "Healthcare Management",
+    "route": "/healthcare",
+    "version": "0.1.0",
+    "enabled": true,
+    "nav": [
+      { "label": "Overview", "route": "/healthcare" }
+    ]
   }
 }

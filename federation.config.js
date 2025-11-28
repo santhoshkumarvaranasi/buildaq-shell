@@ -13,6 +13,7 @@ module.exports = withNativeFederation({
 
   remotes: {
     'schools': schoolsRemote,
+    'health': schoolsRemote,
   },
 
   shared: shareAll({ 

@@ -4,12 +4,7 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 
 import { authGuard } from './core/services/auth.guard';
 // Dynamically determine remoteEntry URL based on environment
-const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
-// In development use the backend-proxied manifest so the shell doesn't depend
-// on direct access to the MF static server (4201).
-const remoteEntryUrl = isProd
-  ? 'https://schools.buildaq.com/remoteEntry.json'
-  : 'http://localhost:3000/assets/remoteEntry.json';
+const remoteEntryUrl = 'https://schools.buildaq.com/remoteEntry.json';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -17,6 +12,19 @@ export const routes: Routes = [
   { 
     path: 'dashboard', 
     loadComponent: () => import('./features/dashboard/dashboard.component').then(c => c.DashboardComponent)
+  },
+  {
+    path: 'healthcare',
+    loadChildren: () => 
+      loadRemoteModule({
+        remoteEntry: 'https://healthcare.buildaq.com/remoteEntry.json',
+        exposedModule: './HealthcareModule'
+      }).then(m => m.HealthcareModule).catch(err => {
+        console.error('Failed to load healthcare remote with Native Federation:', err);
+        return Promise.resolve([
+          { path: '**', loadComponent: () => import('./remote-fallback/remote-fallback.component').then(c => c.RemoteFallbackComponent) }
+        ]);
+      })
   },
   {
     path: 'schools',
