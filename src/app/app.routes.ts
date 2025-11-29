@@ -3,8 +3,14 @@ import { Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/native-federation';
 
 import { authGuard } from './core/services/auth.guard';
-// Dynamically determine remoteEntry URL based on environment
-const remoteEntryUrl = 'https://schools.buildaq.com/remoteEntry.json';
+
+const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
+const schoolsRemoteEntry = isProd
+  ? 'https://schools.buildaq.com/remoteEntry.json'
+  : 'http://localhost:4201/remoteEntry.json';
+const healthcareRemoteEntry = isProd
+  ? 'https://healthcare.buildaq.com/remoteEntry.json'
+  : 'http://localhost:4202/remoteEntry.json';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -17,7 +23,7 @@ export const routes: Routes = [
     path: 'healthcare',
     loadChildren: () => 
       loadRemoteModule({
-        remoteEntry: 'https://healthcare.buildaq.com/remoteEntry.json',
+        remoteEntry: healthcareRemoteEntry,
         exposedModule: './HealthcareModule'
       }).then(m => m.HealthcareModule).catch(err => {
         console.error('Failed to load healthcare remote with Native Federation:', err);
@@ -30,7 +36,7 @@ export const routes: Routes = [
     path: 'schools',
     loadChildren: () => 
       loadRemoteModule({
-        remoteEntry: remoteEntryUrl,
+        remoteEntry: schoolsRemoteEntry,
         exposedModule: './SchoolsModule'
       }).then(m => m.SchoolsModule).catch(err => {
         console.error('Failed to load schools remote with Native Federation:', err);
