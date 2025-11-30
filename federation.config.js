@@ -14,7 +14,7 @@ const healthcareRemote = isProd
   : 'http://localhost:4202/remoteEntry.json';
 
 const apartmentsRemote = isProd
-  ? 'https://apps.buildaq.com/apartments/remoteEntry.json'
+  ? 'https://apartments.buildaq.com/remoteEntry.json'
   : 'http://localhost:4203/remoteEntry.json';
 
 module.exports = withNativeFederation({
