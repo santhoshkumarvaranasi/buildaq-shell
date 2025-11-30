@@ -1,7 +1,7 @@
 import { a as M, b as V } from "@nf-internal/chunk-4CLCTAJ7";
-import { DOCUMENT as L, \u0275getDOM as ae } from "@angular/common";
+import { DOCUMENT as L, ɵgetDOM as ae } from "@angular/common";
 import * as l from "@angular/core";
-import { InjectionToken as Y, \u0275RuntimeError as I, APP_ID as K, CSP_NONCE as W, PLATFORM_ID as le, ViewEncapsulation as w, \u0275TracingService as ce, RendererStyleFlags2 as R, \u0275allLeavingAnimations as de } from "@angular/core";
+import { InjectionToken as Y, ɵRuntimeError as I, APP_ID as K, CSP_NONCE as W, PLATFORM_ID as le, ViewEncapsulation as w, ɵTracingService as ce, RendererStyleFlags2 as R, ɵallLeavingAnimations as de } from "@angular/core";
 var v = class {
     _doc;
     constructor(n) { this._doc = n; }
@@ -11,8 +11,8 @@ var v = class {
     supports(e) { return !0; }
     addEventListener(e, t, r, s) { return e.addEventListener(t, r, s), () => this.removeEventListener(e, t, r, s); }
     removeEventListener(e, t, r, s) { return e.removeEventListener(t, r, s); }
-    static \u0275fac = function (t) { return new (t || o)(l.\u0275\u0275inject(L)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: o, factory: o.\u0275fac });
+    static ɵfac = function (t) { return new (t || o)(l.ɵɵinject(L)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: o, factory: o.ɵfac });
 } return o; })(), C = new Y(""), N = (() => { class o {
     _zone;
     _plugins;
@@ -23,8 +23,8 @@ var v = class {
     _findPluginFor(e) { let t = this._eventNameToPlugin.get(e); if (t)
         return t; if (t = this._plugins.find(s => s.supports(e)), !t)
         throw new I(5101, !1); return this._eventNameToPlugin.set(e, t), t; }
-    static \u0275fac = function (t) { return new (t || o)(l.\u0275\u0275inject(C), l.\u0275\u0275inject(l.NgZone)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: o, factory: o.\u0275fac });
+    static ɵfac = function (t) { return new (t || o)(l.ɵɵinject(C), l.ɵɵinject(l.NgZone)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: o, factory: o.ɵfac });
 } return o; })(), D = "ng-app-id";
 function $(o) { for (let n of o)
     n.remove(); }
@@ -54,8 +54,8 @@ var k = (() => { class o {
         r.push(this.addElement(e, b(t, this.doc))); }
     removeHost(e) { this.hosts.delete(e); }
     addElement(e, t) { return this.nonce && t.setAttribute("nonce", this.nonce), typeof ngServerMode < "u" && ngServerMode && t.setAttribute(D, this.appId), e.appendChild(t); }
-    static \u0275fac = function (t) { return new (t || o)(l.\u0275\u0275inject(L), l.\u0275\u0275inject(K), l.\u0275\u0275inject(W, 8), l.\u0275\u0275inject(le)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: o, factory: o.\u0275fac });
+    static ɵfac = function (t) { return new (t || o)(l.ɵɵinject(L), l.ɵɵinject(K), l.ɵɵinject(W, 8), l.ɵɵinject(le)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: o, factory: o.ɵfac });
 } return o; })(), _ = { svg: "http://www.w3.org/2000/svg", xhtml: "http://www.w3.org/1999/xhtml", xlink: "http://www.w3.org/1999/xlink", xml: "http://www.w3.org/XML/1998/namespace", xmlns: "http://www.w3.org/2000/xmlns/", math: "http://www.w3.org/1998/Math/MathML" }, x = /%COMP%/g;
 var z = "%COMP%", fe = `_nghost-${z}`, he = `_ngcontent-${z}`, pe = !0, me = new Y("", { providedIn: "root", factory: () => pe });
 function ge(o) { return he.replace(x, o); }
@@ -91,8 +91,8 @@ var U = (() => { class o {
     } return s; }
     ngOnDestroy() { this.rendererByCompId.clear(); }
     componentReplaced(e) { this.rendererByCompId.delete(e); }
-    static \u0275fac = function (t) { return new (t || o)(l.\u0275\u0275inject(N), l.\u0275\u0275inject(k), l.\u0275\u0275inject(K), l.\u0275\u0275inject(me), l.\u0275\u0275inject(L), l.\u0275\u0275inject(l.NgZone), l.\u0275\u0275inject(W), l.\u0275\u0275inject(ce, 8)); };
-    static \u0275prov = l.\u0275\u0275defineInjectable({ token: o, factory: o.\u0275fac });
+    static ɵfac = function (t) { return new (t || o)(l.ɵɵinject(N), l.ɵɵinject(k), l.ɵɵinject(K), l.ɵɵinject(me), l.ɵɵinject(L), l.ɵɵinject(l.NgZone), l.ɵɵinject(W), l.ɵɵinject(ce, 8)); };
+    static ɵprov = l.ɵɵdefineInjectable({ token: o, factory: o.ɵfac });
 } return o; })(), y = class {
     eventManager;
     doc;
@@ -172,9 +172,9 @@ var P = class extends y {
     applyToHost(n) { this.applyStyles(), this.setAttribute(n, this.hostAttr, ""); }
     createElement(n, e) { let t = super.createElement(n, e); return super.setAttribute(t, this.contentAttr, ""), t; }
 };
-import { \u0275DomAdapter as ye, \u0275setRootDomAdapter as Ee, \u0275parseCookieValue as Se, \u0275getDOM as ee, DOCUMENT as O, \u0275PLATFORM_BROWSER_ID as Me, XhrFactory as we, CommonModule as Re } from "@angular/common";
+import { ɵDomAdapter as ye, ɵsetRootDomAdapter as Ee, ɵparseCookieValue as Se, ɵgetDOM as ee, DOCUMENT as O, ɵPLATFORM_BROWSER_ID as Me, XhrFactory as we, CommonModule as Re } from "@angular/common";
 import * as f from "@angular/core";
-import { \u0275global as m, \u0275RuntimeError as De, \u0275internalCreateApplication as te, PLATFORM_ID as Ae, PLATFORM_INITIALIZER as Te, createPlatformFactory as Ce, platformCore as Oe, InjectionToken as tt, \u0275TESTABILITY_GETTER as B, \u0275TESTABILITY as _e, Testability as H, NgZone as q, TestabilityRegistry as J, \u0275INJECTOR_SCOPE as Ie, ErrorHandler as ne, RendererFactory2 as be, ApplicationModule as Pe, \u0275setDocument as Le } from "@angular/core";
+import { ɵglobal as m, ɵRuntimeError as De, ɵinternalCreateApplication as te, PLATFORM_ID as Ae, PLATFORM_INITIALIZER as Te, createPlatformFactory as Ce, platformCore as Oe, InjectionToken as tt, ɵTESTABILITY_GETTER as B, ɵTESTABILITY as _e, Testability as H, NgZone as q, TestabilityRegistry as J, ɵINJECTOR_SCOPE as Ie, ErrorHandler as ne, RendererFactory2 as be, ApplicationModule as Pe, ɵsetDocument as Le } from "@angular/core";
 var j = class o extends ye {
     supportsDOMEvents = !0;
     static makeCurrent() { Ee(new o); }
@@ -201,9 +201,9 @@ var F = class {
         return null; let r = n.getTestability(e); return r ?? (t ? ee().isShadowRoot(e) ? this.findTestabilityInTree(n, e.host, !0) : this.findTestabilityInTree(n, e.parentElement, !0) : null); }
 }, xe = (() => { class o {
     build() { return new XMLHttpRequest; }
-    static \u0275fac = function (t) { return new (t || o); };
-    static \u0275prov = f.\u0275\u0275defineInjectable({ token: o, factory: o.\u0275fac });
-} return o; })(), Q = ["alt", "control", "meta", "shift"], Ue = { "\b": "Backspace", "	": "Tab", "\x7F": "Delete", "\x1B": "Escape", Del: "Delete", Esc: "Escape", Left: "ArrowLeft", Right: "ArrowRight", Up: "ArrowUp", Down: "ArrowDown", Menu: "ContextMenu", Scroll: "ScrollLock", Win: "OS" }, Be = { alt: o => o.altKey, control: o => o.ctrlKey, meta: o => o.metaKey, shift: o => o.shiftKey }, He = (() => { class o extends v {
+    static ɵfac = function (t) { return new (t || o); };
+    static ɵprov = f.ɵɵdefineInjectable({ token: o, factory: o.ɵfac });
+} return o; })(), Q = ["alt", "control", "meta", "shift"], Ue = { "\b": "Backspace", "\t": "Tab", "\x7F": "Delete", "\x1B": "Escape", Del: "Delete", Esc: "Escape", Left: "ArrowLeft", Right: "ArrowRight", Up: "ArrowUp", Down: "ArrowDown", Menu: "ContextMenu", Scroll: "ScrollLock", Win: "OS" }, Be = { alt: o => o.altKey, control: o => o.ctrlKey, meta: o => o.metaKey, shift: o => o.shiftKey }, He = (() => { class o extends v {
     constructor(e) { super(e); }
     supports(e) { return o.parseEventName(e) != null; }
     addEventListener(e, t, r, s) { let i = o.parseEventName(t), a = o.eventCallback(i.fullKey, r, this.manager.getZone()); return this.manager.getZone().runOutsideAngular(() => ee().onAndCancel(e, i.domEventName, a, s)); }
@@ -216,12 +216,12 @@ var F = class {
     } }), s += r, s === t); }
     static eventCallback(e, t, r) { return s => { o.matchEventFullKeyCode(s, e) && r.runGuarded(() => t(s)); }; }
     static _normalizeKey(e) { return e === "esc" ? "escape" : e; }
-    static \u0275fac = function (t) { return new (t || o)(f.\u0275\u0275inject(O)); };
-    static \u0275prov = f.\u0275\u0275defineInjectable({ token: o, factory: o.\u0275fac });
+    static ɵfac = function (t) { return new (t || o)(f.ɵɵinject(O)); };
+    static ɵprov = f.ɵɵdefineInjectable({ token: o, factory: o.ɵfac });
 } return o; })();
 function st(o, n, e) { let t = M({ rootComponent: o, platformRef: e?.platformRef }, re(n)); return te(t); }
 function it(o) { return te(re(o)); }
-function re(o) { return { appProviders: [...ie, ...o?.providers ?? []], platformProviders: oe }; }
+function re(o) { return { appProviders: [...ie, ...(o?.providers ?? [])], platformProviders: oe }; }
 function at() { return [...se]; }
 function je() { j.makeCurrent(); }
 function Fe() { return new ne; }
@@ -229,12 +229,11 @@ function Ve() { return Le(document), document; }
 var oe = [{ provide: Ae, useValue: Me }, { provide: Te, useValue: je, multi: !0 }, { provide: O, useFactory: Ve }], lt = Ce(Oe, "browser", oe);
 var se = [{ provide: B, useClass: F }, { provide: _e, useClass: H, deps: [q, J, B] }, { provide: H, useClass: H, deps: [q, J, B] }], ie = [{ provide: Ie, useValue: "root" }, { provide: ne, useFactory: Fe }, { provide: C, useClass: A, multi: !0, deps: [O] }, { provide: C, useClass: He, multi: !0, deps: [O] }, U, k, N, { provide: be, useExisting: U }, { provide: we, useClass: xe }, []], ct = (() => { class o {
     constructor() { }
-    static \u0275fac = function (t) { return new (t || o); };
-    static \u0275mod = f.\u0275\u0275defineNgModule({ type: o });
-    static \u0275inj = f.\u0275\u0275defineInjector({ providers: [...ie, ...se], imports: [Re, Pe] });
+    static ɵfac = function (t) { return new (t || o); };
+    static ɵmod = f.ɵɵdefineNgModule({ type: o });
+    static ɵinj = f.ɵɵdefineInjector({ providers: [...ie, ...se], imports: [Re, Pe] });
 } return o; })();
-export { v as a, A as b, C as c, N as d, k as e, me as f, U as g, j as h, F as i, He as j, st as k, it as l, at as m, lt as n, ct as o };
-/*! Bundled license information:
+export { v as a, A as b, C as c, N as d, k as e, me as f, U as g, j as h, F as i, He as j, st as k, it as l, at as m, lt as n, ct as o }; /*! Bundled license information:
 
 @angular/platform-browser/fesm2022/dom_renderer.mjs:
 @angular/platform-browser/fesm2022/browser.mjs:

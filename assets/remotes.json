@@ -1,7 +1,7 @@
 {
   "schools": {
-    "url": "https://schools.buildaq.com/remoteEntry.js",
-    "devUrl": "https://schools.buildaq.com/remoteEntry.js",
+    "url": "https://schools.buildaq.com/remoteEntry.json",
+    "devUrl": "http://localhost:4201/remoteEntry.json",
     "exposed": "./SchoolsModule",
     "displayName": "School Management",
     "route": "/schools",
@@ -17,15 +17,38 @@
     ]
   },
   "healthcare": {
-    "url": "https://healthcare.buildaq.com/remoteEntry.js",
-    "devUrl": "https://healthcare.buildaq.com/remoteEntry.js",
+    "url": "https://healthcare.buildaq.com/remoteEntry.json",
+    "devUrl": "http://localhost:4202/remoteEntry.json",
     "exposed": "./HealthcareModule",
     "displayName": "Healthcare Management",
     "route": "/healthcare",
     "version": "0.1.0",
     "enabled": true,
     "nav": [
-      { "label": "Overview", "route": "/healthcare" }
+      { "label": "Overview", "route": "/healthcare/dashboard" },
+      { "label": "Patients", "route": "/healthcare/patients" },
+      { "label": "Appointments", "route": "/healthcare/appointments" },
+      { "label": "Bed Management", "route": "/healthcare/beds" },
+      { "label": "Billing", "route": "/healthcare/billing" },
+      { "label": "Announcements", "route": "/healthcare/announcements" }
+    ]
+  },
+  "apartments": {
+    "url": "https://apps.buildaq.com/apartments/remoteEntry.json",
+    "devUrl": "http://localhost:4203/remoteEntry.json",
+    "exposed": "./ApartmentsModule",
+    "displayName": "Apartments Management",
+    "route": "/apartments",
+    "version": "0.1.0",
+    "enabled": true,
+    "nav": [
+      { "label": "Dashboard", "route": "/apartments/dashboard" },
+      { "label": "Residents", "route": "/apartments/residents" },
+      { "label": "Units", "route": "/apartments/units" },
+      { "label": "Maintenance", "route": "/apartments/maintenance" },
+      { "label": "Amenities", "route": "/apartments/amenities" },
+      { "label": "Dues & Payments", "route": "/apartments/dues" },
+      { "label": "Announcements", "route": "/apartments/announcements" }
     ]
   }
 }

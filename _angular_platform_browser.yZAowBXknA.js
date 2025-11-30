@@ -1,10 +1,10 @@
 import { a as E, b as N, c as T, d as O, e as H, f as A, g as L, h as j, i as k, j as U, k as P, l as z, m as B, n as x, o as G } from "@nf-internal/chunk-BIP36BXZ";
 import "@nf-internal/chunk-4CLCTAJ7";
-import { \u0275getDOM as M, DOCUMENT as h } from "@angular/common";
-import { \u0275getDOM as Ve } from "@angular/common";
+import { ɵgetDOM as M, DOCUMENT as h } from "@angular/common";
+import { ɵgetDOM as Ve } from "@angular/common";
 import * as o from "@angular/core";
-import { \u0275global as w, ApplicationRef as V, InjectionToken as D, \u0275Console as ge, Optional as Z, Injector as $, \u0275RuntimeError as g, SecurityContext as l, \u0275allowSanitizationBypassAndThrow as p, \u0275unwrapSafeValue as f, \u0275_sanitizeUrl as Y, \u0275_sanitizeHtml as F, \u0275bypassSanitizationTrustHtml as J, \u0275bypassSanitizationTrustStyle as q, \u0275bypassSanitizationTrustScript as X, \u0275bypassSanitizationTrustUrl as K, \u0275bypassSanitizationTrustResourceUrl as Q, \u0275withI18nSupport as W, \u0275withEventReplay as ee, \u0275withIncrementalHydration as te, makeEnvironmentProviders as ne, \u0275withDomHydration as re, ENVIRONMENT_INITIALIZER as Ee, inject as Te, NgZone as we, \u0275ZONELESS_ENABLED as Se, \u0275formatRuntimeError as Me, \u0275IS_ENABLED_BLOCKING_INITIAL_NAVIGATION as De, Version as oe } from "@angular/core";
-import { \u0275withHttpTransferCache as b } from "@angular/common/http";
+import { ɵglobal as w, ApplicationRef as V, InjectionToken as D, ɵConsole as ge, Optional as Z, Injector as $, ɵRuntimeError as g, SecurityContext as l, ɵallowSanitizationBypassAndThrow as p, ɵunwrapSafeValue as f, ɵ_sanitizeUrl as Y, ɵ_sanitizeHtml as F, ɵbypassSanitizationTrustHtml as J, ɵbypassSanitizationTrustStyle as q, ɵbypassSanitizationTrustScript as X, ɵbypassSanitizationTrustUrl as K, ɵbypassSanitizationTrustResourceUrl as Q, ɵwithI18nSupport as W, ɵwithEventReplay as ee, ɵwithIncrementalHydration as te, makeEnvironmentProviders as ne, ɵwithDomHydration as re, ENVIRONMENT_INITIALIZER as Ee, inject as Te, NgZone as we, ɵZONELESS_ENABLED as Se, ɵformatRuntimeError as Me, ɵIS_ENABLED_BLOCKING_INITIAL_NAVIGATION as De, Version as oe } from "@angular/core";
+import { ɵwithHttpTransferCache as b } from "@angular/common/http";
 var Ce = (() => { class t {
     _doc;
     _dom;
@@ -27,15 +27,15 @@ var Ce = (() => { class t {
     _parseSelector(e) { let n = e.name ? "name" : "property"; return `${n}="${e[n]}"`; }
     _containsAttributes(e, n) { return Object.keys(e).every(r => n.getAttribute(this._getMetaKeyMap(r)) === e[r]); }
     _getMetaKeyMap(e) { return ie[e] || e; }
-    static \u0275fac = function (n) { return new (n || t)(o.\u0275\u0275inject(h)); };
-    static \u0275prov = o.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
+    static ɵfac = function (n) { return new (n || t)(o.ɵɵinject(h)); };
+    static ɵprov = o.ɵɵdefineInjectable({ token: t, factory: t.ɵfac, providedIn: "root" });
 } return t; })(), ie = { httpEquiv: "http-equiv" }, Re = (() => { class t {
     _doc;
     constructor(e) { this._doc = e; }
     getTitle() { return this._doc.title; }
     setTitle(e) { this._doc.title = e || ""; }
-    static \u0275fac = function (n) { return new (n || t)(o.\u0275\u0275inject(h)); };
-    static \u0275prov = o.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
+    static ɵfac = function (n) { return new (n || t)(o.ɵɵinject(h)); };
+    static ɵprov = o.ɵɵdefineInjectable({ token: t, factory: t.ɵfac, providedIn: "root" });
 } return t; })();
 function I(t, i) { if (typeof COMPILED > "u" || !COMPILED) {
     let e = w.ng = w.ng || {};
@@ -65,8 +65,8 @@ var ae = { pan: !0, panstart: !0, panmove: !0, panend: !0, pancancel: !0, panlef
     options;
     buildHammer(e) { let n = new Hammer(e, this.options); n.get("pinch").set({ enable: !0 }), n.get("rotate").set({ enable: !0 }); for (let r in this.overrides)
         n.get(r).set(this.overrides[r]); return n; }
-    static \u0275fac = function (n) { return new (n || t); };
-    static \u0275prov = o.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac });
+    static ɵfac = function (n) { return new (n || t); };
+    static ɵprov = o.ɵɵdefineInjectable({ token: t, factory: t.ɵfac });
 } return t; })(), ue = (() => { class t extends E {
     _config;
     _injector;
@@ -83,15 +83,15 @@ var ae = { pan: !0, panstart: !0, panmove: !0, panend: !0, pancancel: !0, panlef
         } c || (a = this.addEventListener(e, n, r)); }).catch(() => { a = () => { }; })), () => { a(); };
     } return s.runOutsideAngular(() => { let c = this._config.buildHammer(e), a = function (d) { s.runGuarded(function () { r(d); }); }; return c.on(n, a), () => { c.off(n, a), typeof c.destroy == "function" && c.destroy(); }; }); }
     isCustomEvent(e) { return this._config.events.indexOf(e) > -1; }
-    static \u0275fac = function (n) { return new (n || t)(o.\u0275\u0275inject(h), o.\u0275\u0275inject(v), o.\u0275\u0275inject(o.Injector), o.\u0275\u0275inject(R, 8)); };
-    static \u0275prov = o.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac });
+    static ɵfac = function (n) { return new (n || t)(o.ɵɵinject(h), o.ɵɵinject(v), o.ɵɵinject(o.Injector), o.ɵɵinject(R, 8)); };
+    static ɵprov = o.ɵɵdefineInjectable({ token: t, factory: t.ɵfac });
 } return t; })(), He = (() => { class t {
-    static \u0275fac = function (n) { return new (n || t); };
-    static \u0275mod = o.\u0275\u0275defineNgModule({ type: t });
-    static \u0275inj = o.\u0275\u0275defineInjector({ providers: [{ provide: T, useClass: ue, multi: !0, deps: [h, v, $, [new Z, R]] }, { provide: v, useClass: ce }] });
+    static ɵfac = function (n) { return new (n || t); };
+    static ɵmod = o.ɵɵdefineNgModule({ type: t });
+    static ɵinj = o.ɵɵdefineInjector({ providers: [{ provide: T, useClass: ue, multi: !0, deps: [h, v, $, [new Z, R]] }, { provide: v, useClass: ce }] });
 } return t; })(), le = (() => { class t {
-    static \u0275fac = function (n) { return new (n || t); };
-    static \u0275prov = o.\u0275\u0275defineInjectable({ token: t, factory: function (n) { let r = null; return n ? r = new (n || t) : r = o.\u0275\u0275inject(de), r; }, providedIn: "root" });
+    static ɵfac = function (n) { return new (n || t); };
+    static ɵprov = o.ɵɵdefineInjectable({ token: t, factory: function (n) { let r = null; return n ? r = new (n || t) : r = o.ɵɵinject(de), r; }, providedIn: "root" });
 } return t; })(), de = (() => { class t extends le {
     _doc;
     constructor(e) { super(), this._doc = e; }
@@ -116,20 +116,19 @@ var ae = { pan: !0, panstart: !0, panmove: !0, panend: !0, pancancel: !0, panlef
     bypassSecurityTrustScript(e) { return X(e); }
     bypassSecurityTrustUrl(e) { return K(e); }
     bypassSecurityTrustResourceUrl(e) { return Q(e); }
-    static \u0275fac = function (n) { return new (n || t)(o.\u0275\u0275inject(h)); };
-    static \u0275prov = o.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
-} return t; })(), u = (function (t) { return t[t.NoHttpTransferCache = 0] = "NoHttpTransferCache", t[t.HttpTransferCacheOptions = 1] = "HttpTransferCacheOptions", t[t.I18nSupport = 2] = "I18nSupport", t[t.EventReplay = 3] = "EventReplay", t[t.IncrementalHydration = 4] = "IncrementalHydration", t; })(u || {});
-function m(t, i = [], e = {}) { return { \u0275kind: t, \u0275providers: i }; }
+    static ɵfac = function (n) { return new (n || t)(o.ɵɵinject(h)); };
+    static ɵprov = o.ɵɵdefineInjectable({ token: t, factory: t.ɵfac, providedIn: "root" });
+} return t; })(), u = function (t) { return t[t.NoHttpTransferCache = 0] = "NoHttpTransferCache", t[t.HttpTransferCacheOptions = 1] = "HttpTransferCacheOptions", t[t.I18nSupport = 2] = "I18nSupport", t[t.EventReplay = 3] = "EventReplay", t[t.IncrementalHydration = 4] = "IncrementalHydration", t; }(u || {});
+function m(t, i = [], e = {}) { return { ɵkind: t, ɵproviders: i }; }
 function Ae() { return m(u.NoHttpTransferCache); }
 function Le(t) { return m(u.HttpTransferCacheOptions, b(t)); }
 function je() { return m(u.I18nSupport, W()); }
 function ke() { return m(u.EventReplay, ee()); }
 function Ue() { return m(u.IncrementalHydration, te()); }
-function Pe(...t) { let i = [], e = new Set; for (let { \u0275providers: r, \u0275kind: s } of t)
+function Pe(...t) { let i = [], e = new Set; for (let { ɵproviders: r, ɵkind: s } of t)
     e.add(s), r.length && i.push(r); let n = e.has(u.HttpTransferCacheOptions); return ne([[], [], re(), e.has(u.NoHttpTransferCache) || n ? [] : b({}), i]); }
 var ze = new oe("20.3.12");
-export { G as BrowserModule, S as By, le as DomSanitizer, T as EVENT_MANAGER_PLUGINS, O as EventManager, E as EventManagerPlugin, v as HAMMER_GESTURE_CONFIG, R as HAMMER_LOADER, ce as HammerGestureConfig, He as HammerModule, u as HydrationFeatureKind, Ce as Meta, A as REMOVE_STYLES_ON_COMPONENT_DESTROY, Re as Title, ze as VERSION, P as bootstrapApplication, z as createApplication, Oe as disableDebugTools, Ne as enableDebugTools, x as platformBrowser, Pe as provideClientHydration, B as provideProtractorTestingSupport, ke as withEventReplay, Le as withHttpTransferCacheOptions, je as withI18nSupport, Ue as withIncrementalHydration, Ae as withNoHttpTransferCache, j as \u0275BrowserDomAdapter, k as \u0275BrowserGetTestability, N as \u0275DomEventsPlugin, L as \u0275DomRendererFactory2, de as \u0275DomSanitizerImpl, ue as \u0275HammerGesturesPlugin, U as \u0275KeyEventsPlugin, H as \u0275SharedStylesHost, Ve as \u0275getDOM };
-/*! Bundled license information:
+export { G as BrowserModule, S as By, le as DomSanitizer, T as EVENT_MANAGER_PLUGINS, O as EventManager, E as EventManagerPlugin, v as HAMMER_GESTURE_CONFIG, R as HAMMER_LOADER, ce as HammerGestureConfig, He as HammerModule, u as HydrationFeatureKind, Ce as Meta, A as REMOVE_STYLES_ON_COMPONENT_DESTROY, Re as Title, ze as VERSION, P as bootstrapApplication, z as createApplication, Oe as disableDebugTools, Ne as enableDebugTools, x as platformBrowser, Pe as provideClientHydration, B as provideProtractorTestingSupport, ke as withEventReplay, Le as withHttpTransferCacheOptions, je as withI18nSupport, Ue as withIncrementalHydration, Ae as withNoHttpTransferCache, j as ɵBrowserDomAdapter, k as ɵBrowserGetTestability, N as ɵDomEventsPlugin, L as ɵDomRendererFactory2, de as ɵDomSanitizerImpl, ue as ɵHammerGesturesPlugin, U as ɵKeyEventsPlugin, H as ɵSharedStylesHost, Ve as ɵgetDOM }; /*! Bundled license information:
 
 @angular/platform-browser/fesm2022/platform-browser.mjs:
   (**

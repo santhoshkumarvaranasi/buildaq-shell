@@ -5,8 +5,7 @@ function l(c, o) { o = encodeURIComponent(o); for (let e of c.split(";")) {
 } return null; }
 var i = class {
 };
-export { l as a, i as b };
-/*! Bundled license information:
+export { l as a, i as b }; /*! Bundled license information:
 
 @angular/common/fesm2022/xhr.mjs:
   (**
