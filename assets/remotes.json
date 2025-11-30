@@ -34,7 +34,7 @@
     ]
   },
   "apartments": {
-    "url": "https://apps.buildaq.com/apartments/remoteEntry.json",
+    "url": "https://apartments.buildaq.com/remoteEntry.json",
     "devUrl": "http://localhost:4203/remoteEntry.json",
     "exposed": "./ApartmentsModule",
     "displayName": "Apartments Management",
