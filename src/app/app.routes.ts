@@ -12,7 +12,7 @@ const healthcareRemoteEntry = isProd
   ? 'https://healthcare.buildaq.com/remoteEntry.json'
   : 'http://localhost:4202/remoteEntry.json';
 const apartmentsRemoteEntry = isProd
-  ? 'https://apps.buildaq.com/apartments/remoteEntry.json'
+  ? 'https://apartments.buildaq.com/remoteEntry.json'
   : 'http://localhost:4203/remoteEntry.json';
 
 export const routes: Routes = [
