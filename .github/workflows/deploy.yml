@@ -2,9 +2,7 @@ name: Deploy Shell to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ gh-pages ]
 
 permissions:
   contents: read
