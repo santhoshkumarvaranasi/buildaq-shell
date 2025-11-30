@@ -8,19 +8,20 @@ export class RemoteReloadService {
     // Only enable in development on localhost
     try {
       if (typeof window !== 'undefined' && window.location && window.location.hostname === 'localhost') {
-        const url = 'http://localhost:3000/assets/remote-events';
-        this.es = new EventSource(url);
-        this.es.addEventListener('reload', (ev: MessageEvent) => {
-          try {
-            console.log('[remote-reload] remote rebuild detected, reloading shell', ev && ev.data);
-            // perform a full reload so new remoteEntry and assets are re-fetched
-            window.location.reload();
-          } catch (e) { /* ignore */ }
-        });
-        this.es.addEventListener('error', (e) => {
-          // ignore — will retry
-          console.warn('[remote-reload] SSE error', e);
-        });
+        // REMOTE EVENTS DISABLED
+        // const url = 'http://localhost:3000/assets/remote-events';
+        // this.es = new EventSource(url);
+        // this.es.addEventListener('reload', (ev: MessageEvent) => {
+        //   try {
+        //     console.log('[remote-reload] remote rebuild detected, reloading shell', ev && ev.data);
+        //     // perform a full reload so new remoteEntry and assets are re-fetched
+        //     window.location.reload();
+        //   } catch (e) { /* ignore */ }
+        // });
+        // this.es.addEventListener('error', (e) => {
+        //   // ignore — will retry
+        //   console.warn('[remote-reload] SSE error', e);
+        // });
       }
     } catch (e) {
       // ignore
