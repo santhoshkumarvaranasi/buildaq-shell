@@ -9,11 +9,20 @@ const schoolsRemote = isProd
   ? 'https://schools.buildaq.com/remoteEntry.json'
   : 'http://localhost:3000/assets/remoteEntry.json';
 
+const healthcareRemote = isProd
+  ? 'https://healthcare.buildaq.com/remoteEntry.json'
+  : 'http://localhost:4202/remoteEntry.json';
+
+const apartmentsRemote = isProd
+  ? 'https://apps.buildaq.com/apartments/remoteEntry.json'
+  : 'http://localhost:4203/remoteEntry.json';
+
 module.exports = withNativeFederation({
 
   remotes: {
     'schools': schoolsRemote,
-    'health': schoolsRemote,
+    'healthcare': healthcareRemote,
+    'apartments': apartmentsRemote,
   },
 
   shared: shareAll({ 

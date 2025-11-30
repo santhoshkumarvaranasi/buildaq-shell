@@ -11,6 +11,9 @@ const schoolsRemoteEntry = isProd
 const healthcareRemoteEntry = isProd
   ? 'https://healthcare.buildaq.com/remoteEntry.json'
   : 'http://localhost:4202/remoteEntry.json';
+const apartmentsRemoteEntry = isProd
+  ? 'https://apps.buildaq.com/apartments/remoteEntry.json'
+  : 'http://localhost:4203/remoteEntry.json';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -27,6 +30,19 @@ export const routes: Routes = [
         exposedModule: './HealthcareModule'
       }).then(m => m.HealthcareModule).catch(err => {
         console.error('Failed to load healthcare remote with Native Federation:', err);
+        return Promise.resolve([
+          { path: '**', loadComponent: () => import('./remote-fallback/remote-fallback.component').then(c => c.RemoteFallbackComponent) }
+        ]);
+      })
+  },
+  {
+    path: 'apartments',
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteEntry: apartmentsRemoteEntry,
+        exposedModule: './ApartmentsModule'
+      }).then(m => m.ApartmentsModule).catch(err => {
+        console.error('Failed to load apartments remote with Native Federation:', err);
         return Promise.resolve([
           { path: '**', loadComponent: () => import('./remote-fallback/remote-fallback.component').then(c => c.RemoteFallbackComponent) }
         ]);

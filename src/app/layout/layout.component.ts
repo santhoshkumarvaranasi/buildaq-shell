@@ -149,6 +149,22 @@ export class LayoutComponent implements OnInit, OnDestroy {
           { label: 'Notifications', route: '/healthcare/notifications', icon: '🔔' }
         ]
       }
+    ],
+    apartments: [
+      {
+        id: 'overview',
+        label: 'Overview',
+        icon: 'apt',
+        children: [
+          { label: 'Dashboard', route: '/apartments/dashboard', icon: 'apt' },
+          { label: 'Residents', route: '/apartments/residents', icon: 'res' },
+          { label: 'Units', route: '/apartments/units', icon: 'unit' },
+          { label: 'Maintenance', route: '/apartments/maintenance', icon: 'mnt' },
+          { label: 'Amenities', route: '/apartments/amenities', icon: 'amn' },
+          { label: 'Dues & Payments', route: '/apartments/dues', icon: 'due' },
+          { label: 'Announcements', route: '/apartments/announcements', icon: 'ann' }
+        ]
+      }
     ]
   };
 

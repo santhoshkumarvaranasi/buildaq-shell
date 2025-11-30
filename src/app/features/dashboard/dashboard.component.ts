@@ -67,6 +67,19 @@ import { RouterLink } from '@angular/router';
             <span class="tag muted">Queued</span>
           </div>
         </div>
+
+        <div class="domain-card">
+          <div class="domain-icon">🏢</div>
+          <div class="domain-header">
+            <h3>Apartments Management</h3>
+            <p>Residents, units, maintenance, dues</p>
+          </div>
+          <div class="domain-actions">
+            <a class="btn-primary ghost" routerLink="/apartments/dashboard">Open Apartments</a>
+            <span class="tag info">Preview</span>
+          </div>
+        </div>
+
       </div>
     </div>
   `,
