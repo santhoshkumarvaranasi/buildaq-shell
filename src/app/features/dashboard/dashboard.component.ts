@@ -15,13 +15,14 @@ import { RouterLink } from '@angular/router';
           <div class="cta-row">
             <a class="btn-primary" routerLink="/schools">🏫 Open Schools</a>
             <a class="btn-primary ghost" routerLink="/healthcare">🏥 Open Healthcare</a>
+            <a class="btn-primary ghost" routerLink="/pharmacy/visual-mapper">Open Pharmacy</a>
           </div>
         </div>
         <div class="hero-metrics">
           <div class="metric">
             <div class="metric-label">Active domains</div>
-            <div class="metric-value">2</div>
-            <div class="metric-meta">Schools, Healthcare</div>
+            <div class="metric-value">3</div>
+            <div class="metric-meta">Schools, Healthcare, Pharmacy</div>
           </div>
           <div class="metric">
             <div class="metric-label">Shell version</div>
@@ -56,6 +57,17 @@ import { RouterLink } from '@angular/router';
           </div>
         </div>
         
+        <div class="domain-card">
+          <div class="domain-icon">PH</div>
+          <div class="domain-header">
+            <h3>Pharmacy Operations</h3>
+            <p>Visual mapper, products, and order flows</p>
+          </div>
+          <div class="domain-actions">
+            <a class="btn-primary ghost" routerLink="/pharmacy/visual-mapper">Open Pharmacy</a>
+            <span class="tag info">Preview</span>
+          </div>
+        </div>
         <div class="domain-card disabled">
           <div class="domain-icon">🏠</div>
           <div class="domain-header">
@@ -221,3 +233,7 @@ import { RouterLink } from '@angular/router';
   `]
 })
 export class DashboardComponent { }
+
+
+
+

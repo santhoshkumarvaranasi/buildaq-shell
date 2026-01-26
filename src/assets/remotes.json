@@ -50,5 +50,21 @@
       { "label": "Dues & Payments", "route": "/apartments/dues" },
       { "label": "Announcements", "route": "/apartments/announcements" }
     ]
+  },
+  "pharmacy": {
+    "url": "https://pharmacy.buildaq.com/remoteEntry.json",
+    "devUrl": "http://localhost:4204/remoteEntry.json",
+    "exposed": "./Module",
+    "displayName": "Pharmacy Visual Ops",
+    "route": "/pharmacy",
+    "version": "0.1.0",
+    "enabled": true,
+    "nav": [
+      { "label": "Visual Mapper", "route": "/pharmacy/visual-mapper" },
+      { "label": "Products", "route": "/pharmacy/products" },
+      { "label": "Orders", "route": "/pharmacy/orders" },
+      { "label": "Shelf Management", "route": "/pharmacy/shelf-management" },
+      { "label": "Medicine Detection", "route": "/pharmacy/medicine-detection" }
+    ]
   }
 }

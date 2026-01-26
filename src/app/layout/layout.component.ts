@@ -165,6 +165,20 @@ export class LayoutComponent implements OnInit, OnDestroy {
           { label: 'Announcements', route: '/apartments/announcements', icon: 'ann' }
         ]
       }
+    ],
+    pharmacy: [
+      {
+        id: 'pharmacy-ops',
+        label: 'Operations',
+        icon: 'Rx',
+        children: [
+          { label: 'Visual Mapper', route: '/pharmacy/visual-mapper', icon: 'V' },
+          { label: 'Products', route: '/pharmacy/products', icon: 'P' },
+          { label: 'Orders', route: '/pharmacy/orders', icon: 'O' },
+          { label: 'Shelf Management', route: '/pharmacy/shelf-management', icon: 'S' },
+          { label: 'Medicine Detection', route: '/pharmacy/medicine-detection', icon: 'D' }
+        ]
+      }
     ]
   };
 

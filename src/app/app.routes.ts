@@ -4,16 +4,31 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 
 import { authGuard } from './core/services/auth.guard';
 
-const isProd = typeof ngDevMode === 'undefined' || !ngDevMode;
-const schoolsRemoteEntry = isProd
-  ? 'https://schools.buildaq.com/remoteEntry.json'
-  : 'http://localhost:4201/remoteEntry.json';
-const healthcareRemoteEntry = isProd
-  ? 'https://healthcare.buildaq.com/remoteEntry.json'
-  : 'http://localhost:4202/remoteEntry.json';
-const apartmentsRemoteEntry = isProd
-  ? 'https://apartments.buildaq.com/remoteEntry.json'
-  : 'http://localhost:4203/remoteEntry.json';
+const isLocalhost =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname === '0.0.0.0');
+
+const selectRemoteEntry = (prodUrl: string, devUrl: string) =>
+  isLocalhost ? devUrl : prodUrl;
+
+const schoolsRemoteEntry = selectRemoteEntry(
+  'https://schools.buildaq.com/remoteEntry.json',
+  'http://localhost:4201/remoteEntry.json'
+);
+const healthcareRemoteEntry = selectRemoteEntry(
+  'https://healthcare.buildaq.com/remoteEntry.json',
+  'http://localhost:4202/remoteEntry.json'
+);
+const apartmentsRemoteEntry = selectRemoteEntry(
+  'https://apartments.buildaq.com/remoteEntry.json',
+  'http://localhost:4203/remoteEntry.json'
+);
+const pharmacyRemoteEntry = selectRemoteEntry(
+  'https://pharmacy.buildaq.com/remoteEntry.json',
+  'http://localhost:4204/remoteEntry.json'
+);
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -43,6 +58,19 @@ export const routes: Routes = [
         exposedModule: './ApartmentsModule'
       }).then(m => m.ApartmentsModule).catch(err => {
         console.error('Failed to load apartments remote with Native Federation:', err);
+        return Promise.resolve([
+          { path: '**', loadComponent: () => import('./remote-fallback/remote-fallback.component').then(c => c.RemoteFallbackComponent) }
+        ]);
+      })
+  },
+  {
+    path: 'pharmacy',
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteEntry: pharmacyRemoteEntry,
+        exposedModule: './Module'
+      }).then(m => m.PharmacyModule).catch(err => {
+        console.error('Failed to load pharmacy remote with Native Federation:', err);
         return Promise.resolve([
           { path: '**', loadComponent: () => import('./remote-fallback/remote-fallback.component').then(c => c.RemoteFallbackComponent) }
         ]);

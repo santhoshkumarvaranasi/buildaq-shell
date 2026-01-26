@@ -7,12 +7,14 @@ import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { authInterceptor } from './core/auth.interceptor';
 
+const enableHydration = typeof ngServerMode !== 'undefined' && ngServerMode;
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes), 
-    provideClientHydration(withEventReplay()),
+    ...(enableHydration ? [provideClientHydration(withEventReplay())] : []),
     provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimations()
   ]
