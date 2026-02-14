@@ -4,7 +4,7 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 const isProd = process.env.NODE_ENV === 'production' || process.env.NG_BUILD_ENV === 'production';
 // In development load schools remote directly from the schools frontend dev server.
 const schoolsRemote = isProd
-  ? 'https://apps.buildaq.com/schools/remoteEntry.json'
+  ? 'https://schools.buildaq.com/remoteEntry.json'
   : 'http://localhost:4201/remoteEntry.json';
 
 const healthcareRemote = isProd

@@ -14,7 +14,7 @@ const selectRemoteEntry = (prodUrl: string, devUrl: string) =>
   isLocalhost ? devUrl : prodUrl;
 
 const schoolsRemoteEntry = selectRemoteEntry(
-  'https://apps.buildaq.com/schools/remoteEntry.json',
+  'https://schools.buildaq.com/remoteEntry.json',
   'http://localhost:4201/remoteEntry.json'
 );
 const healthcareRemoteEntry = selectRemoteEntry(
