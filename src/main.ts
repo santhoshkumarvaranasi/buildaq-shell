@@ -1,5 +1,11 @@
 import { initFederation } from '@angular-architects/native-federation';
 
+declare const globalThis: { ngDevMode?: boolean };
+
+if (typeof globalThis.ngDevMode === 'undefined') {
+  globalThis.ngDevMode = false;
+}
+
 const isLocalhost =
   typeof window !== 'undefined' &&
   (window.location.hostname === 'localhost' ||
