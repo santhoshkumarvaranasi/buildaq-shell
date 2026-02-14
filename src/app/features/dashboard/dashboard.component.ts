@@ -11,18 +11,20 @@ import { RouterLink } from '@angular/router';
         <div>
           <p class="eyebrow">Multi-domain shell</p>
           <h1>Welcome to BuildAQ</h1>
-          <p class="lede">Launch domain apps from one control surface.</p>
+          <p class="lede">Launch and monitor all BuildAQ apps from one control surface.</p>
           <div class="cta-row">
-            <a class="btn-primary" routerLink="/schools">🏫 Open Schools</a>
-            <a class="btn-primary ghost" routerLink="/healthcare">🏥 Open Healthcare</a>
+            <a class="btn-primary" routerLink="/schools/dashboard">Open Schools</a>
+            <a class="btn-primary ghost" routerLink="/healthcare/dashboard">Open Healthcare</a>
             <a class="btn-primary ghost" routerLink="/pharmacy/visual-mapper">Open Pharmacy</a>
+            <a class="btn-primary ghost" routerLink="/apartments/dashboard">Open Apartments</a>
           </div>
         </div>
+
         <div class="hero-metrics">
           <div class="metric">
             <div class="metric-label">Active domains</div>
-            <div class="metric-value">3</div>
-            <div class="metric-meta">Schools, Healthcare, Pharmacy</div>
+            <div class="metric-value">{{ activeDomainCount }}</div>
+            <div class="metric-meta">Schools, Healthcare, Pharmacy, Apartments</div>
           </div>
           <div class="metric">
             <div class="metric-label">Shell version</div>
@@ -32,67 +34,51 @@ import { RouterLink } from '@angular/router';
         </div>
       </section>
 
-      <div class="domain-cards">
-        <div class="domain-card">
-          <div class="domain-icon">🏫</div>
-          <div class="domain-header">
-            <h3>Schools Management</h3>
-            <p>Manage educational institutions, students, and staff</p>
-          </div>
-          <div class="domain-actions">
-            <a class="btn-primary" routerLink="/schools/dashboard">Open Schools</a>
-            <span class="tag success">Live</span>
-          </div>
+      <section>
+        <h2 class="section-title">Domain apps</h2>
+        <div class="domain-cards">
+          @for (app of domainApps; track app.name) {
+            <div class="domain-card" [class.disabled]="!app.live">
+              <div class="domain-icon">{{ app.icon }}</div>
+              <div class="domain-header">
+                <h3>{{ app.name }}</h3>
+                <p>{{ app.description }}</p>
+              </div>
+              <div class="domain-actions">
+                @if (app.route) {
+                  <a class="btn-primary" [class.ghost]="!app.live" [routerLink]="app.route">{{ app.cta }}</a>
+                } @else {
+                  <button class="btn-secondary" disabled>{{ app.cta }}</button>
+                }
+                <span class="tag" [class.success]="app.live" [class.info]="!app.live">{{ app.live ? 'Live' : 'Queued' }}</span>
+              </div>
+            </div>
+          }
         </div>
-        
-        <div class="domain-card">
-          <div class="domain-icon">🏥</div>
-          <div class="domain-header">
-            <h3>Healthcare System</h3>
-            <p>Healthcare management platform</p>
-          </div>
-          <div class="domain-actions">
-            <a class="btn-primary ghost" routerLink="/healthcare/dashboard">Open Healthcare</a>
-            <span class="tag info">Preview</span>
-          </div>
-        </div>
-        
-        <div class="domain-card">
-          <div class="domain-icon">PH</div>
-          <div class="domain-header">
-            <h3>Pharmacy Operations</h3>
-            <p>Visual mapper, products, and order flows</p>
-          </div>
-          <div class="domain-actions">
-            <a class="btn-primary ghost" routerLink="/pharmacy/visual-mapper">Open Pharmacy</a>
-            <span class="tag info">Preview</span>
-          </div>
-        </div>
-        <div class="domain-card disabled">
-          <div class="domain-icon">🏠</div>
-          <div class="domain-header">
-            <h3>Real Estate Portal</h3>
-            <p>Coming Soon - Property management system</p>
-          </div>
-          <div class="domain-actions">
-            <button class="btn-secondary" disabled>Coming Soon</button>
-            <span class="tag muted">Queued</span>
-          </div>
-        </div>
+      </section>
 
-        <div class="domain-card">
-          <div class="domain-icon">🏢</div>
-          <div class="domain-header">
-            <h3>Apartments Management</h3>
-            <p>Residents, units, maintenance, dues</p>
-          </div>
-          <div class="domain-actions">
-            <a class="btn-primary ghost" routerLink="/apartments/dashboard">Open Apartments</a>
-            <span class="tag info">Preview</span>
-          </div>
+      <section>
+        <h2 class="section-title">Other apps</h2>
+        <div class="domain-cards">
+          @for (app of otherApps; track app.name) {
+            <div class="domain-card" [class.disabled]="!app.live">
+              <div class="domain-icon">{{ app.icon }}</div>
+              <div class="domain-header">
+                <h3>{{ app.name }}</h3>
+                <p>{{ app.description }}</p>
+              </div>
+              <div class="domain-actions">
+                @if (app.url) {
+                  <a class="btn-primary ghost" [href]="app.url" target="_blank" rel="noopener">{{ app.cta }}</a>
+                } @else {
+                  <button class="btn-secondary" disabled>{{ app.cta }}</button>
+                }
+                <span class="tag" [class.success]="app.live" [class.muted]="!app.live">{{ app.live ? 'Available' : 'Planned' }}</span>
+              </div>
+            </div>
+          }
         </div>
-
-      </div>
+      </section>
     </div>
   `,
   styles: [`
@@ -102,13 +88,20 @@ import { RouterLink } from '@angular/router';
       flex-direction: column;
       gap: 1.5rem;
     }
-    
+
+    .section-title {
+      margin: 0 0 0.75rem 0;
+      color: var(--color-text);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
     .hero {
       display: grid;
       grid-template-columns: 1.4fr 1fr;
       gap: 1rem;
       align-items: center;
-      background: linear-gradient(135deg, #eef2ff, #e0f7ff);
+      background: var(--color-background);
       border: 1px solid var(--color-border);
       border-radius: 16px;
       padding: 1.75rem;
@@ -120,11 +113,12 @@ import { RouterLink } from '@angular/router';
     }
 
     .metric {
-      background: #fff;
+      background: var(--color-background);
       border: 1px solid var(--color-border);
       border-radius: 12px;
       padding: 0.9rem 1rem;
     }
+
     .metric-label { font-size: 0.85rem; color: var(--color-text-hint); }
     .metric-value { font-size: 1.6rem; font-weight: 700; color: var(--color-text); }
     .metric-meta { font-size: 0.9rem; color: var(--color-text-hint); }
@@ -145,30 +139,33 @@ import { RouterLink } from '@angular/router';
       gap: 0.4rem;
       font-weight: 600;
     }
+
     .btn-primary {
       background: var(--color-primary-500);
-      color: #0b1021;
+      color: var(--color-basic-900);
       text-decoration: none;
     }
+
     .btn-primary.ghost {
       background: transparent;
       color: var(--color-primary-500);
       border: 1px solid var(--color-primary-500);
       text-decoration: none;
     }
+
     .btn-secondary {
       background: var(--color-basic-400);
-      color: #0b1021;
+      color: var(--color-basic-900);
       cursor: not-allowed;
       text-decoration: none;
     }
-    
+
     .domain-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1rem;
     }
-    
+
     .domain-card {
       padding: 1.5rem;
       border: 1px solid var(--color-border);
@@ -181,14 +178,14 @@ import { RouterLink } from '@angular/router';
       grid-row-gap: 0.35rem;
       align-items: center;
     }
-    
+
     .domain-card.disabled { opacity: 0.65; }
 
     .domain-icon {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: #eef2ff;
+      background: var(--color-basic-400);
       display: grid;
       place-items: center;
       font-size: 1.1rem;
@@ -199,7 +196,7 @@ import { RouterLink } from '@angular/router';
       margin: 0;
       color: var(--color-text);
     }
-    
+
     .domain-header p {
       margin: 0.1rem 0 0 0;
       color: var(--color-text-hint);
@@ -218,22 +215,84 @@ import { RouterLink } from '@angular/router';
       font-size: 0.85rem;
       border: 1px solid;
     }
-    .tag.success { border-color: #22c55e; color: #16a34a; background: #ecfdf3; }
-    .tag.info { border-color: #0ea5e9; color: #0284c7; background: #e0f2fe; }
-    .tag.muted { border-color: #cbd5e1; color: #94a3b8; background: #f8fafc; }
 
-    .domain-card h3 {
-      margin-bottom: 0.25rem;
-    }
-    
-    .domain-card p {
-      margin-bottom: 1rem;
-      color: var(--color-text-hint);
-    }
+    .tag.success { border-color: var(--color-success-500); color: var(--color-success-500); background: var(--color-basic-200); }
+    .tag.info { border-color: var(--color-info-500); color: var(--color-info-500); background: var(--color-basic-200); }
+    .tag.muted { border-color: var(--color-basic-500); color: var(--color-basic-600); background: var(--color-basic-200); }
   `]
 })
-export class DashboardComponent { }
+export class DashboardComponent {
+  readonly domainApps = [
+    {
+      name: 'Schools Management',
+      description: 'Manage educational institutions, students, and staff',
+      icon: '🏫',
+      cta: 'Open Schools',
+      route: '/schools/dashboard',
+      live: true,
+    },
+    {
+      name: 'Healthcare System',
+      description: 'Healthcare management and patient operations',
+      icon: '🏥',
+      cta: 'Open Healthcare',
+      route: '/healthcare/dashboard',
+      live: true,
+    },
+    {
+      name: 'Pharmacy Operations',
+      description: 'Visual mapper, products, and order flows',
+      icon: 'PH',
+      cta: 'Open Pharmacy',
+      route: '/pharmacy/visual-mapper',
+      live: true,
+    },
+    {
+      name: 'Apartments Management',
+      description: 'Residents, units, maintenance, and dues',
+      icon: '🏢',
+      cta: 'Open Apartments',
+      route: '/apartments/dashboard',
+      live: true,
+    },
+  ];
 
+  readonly otherApps = [
+    {
+      name: 'Politician Hub',
+      description: 'Campaign and engagement workflows',
+      icon: '🗳️',
+      cta: 'Planned',
+      url: '',
+      live: false,
+    },
+    {
+      name: 'BuildAQ Chat',
+      description: 'Realtime chat app and relay integration',
+      icon: '💬',
+      cta: 'Open Chat',
+      url: 'https://chat.buildaq.com',
+      live: true,
+    },
+    {
+      name: 'BuildAQ Website',
+      description: 'Public portal and platform overview',
+      icon: '🌐',
+      cta: 'Open Website',
+      url: 'https://buildaq.com',
+      live: true,
+    },
+    {
+      name: 'BuildAQ Mobile',
+      description: 'Mobile client app',
+      icon: '📱',
+      cta: 'Planned',
+      url: '',
+      live: false,
+    },
+  ];
 
-
-
+  get activeDomainCount(): number {
+    return this.domainApps.filter((app) => app.live).length;
+  }
+}
