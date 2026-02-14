@@ -10,7 +10,7 @@ export { l as a, i as b };
 
 @angular/common/fesm2022/xhr.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

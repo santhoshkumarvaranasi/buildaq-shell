@@ -1,4 +1,4 @@
-import { A as $, B as R, C as B, D as G, E as V, F as q, G as z, H, I as J, J as K, K as Q, L as X, a as i, b, c as v, d, e as E, f as p, g as k, h as D, i as N, j as P, k as j, l as m, m as w, n as g, o as T, p as y, q as O, r as F, s as h, t as x, u as I, v as L, w as W, x as M, y as U, z as _ } from "@nf-internal/chunk-DB6MCKHA";
+import { A as $, B as R, C as B, D as G, E as V, F as q, G as z, H, I as J, J as K, K as Q, L as X, a as i, b, c as v, d, e as E, f as p, g as k, h as D, i as N, j as P, k as j, l as m, m as w, n as g, o as T, p as y, q as O, r as F, s as h, t as x, u as I, v as L, w as W, x as M, y as U, z as _ } from "@nf-internal/chunk-ZAXD3EXQ";
 import { a, b as l } from "@nf-internal/chunk-4CLCTAJ7";
 var c = { header: (e, o) => { if (!u(e) || o?.ngSkipFormatting)
         return null; let n; try {
@@ -40,7 +40,7 @@ export { K as BASE_EFFECT_NODE, p as REACTIVE_NODE, i as SIGNAL, V as SIGNAL_NOD
 
 @angular/core/fesm2022/primitives/signals.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

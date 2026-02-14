@@ -14,7 +14,7 @@ export { c as a, i as b, s as c, u as d, o as e, f };
 
 @angular/core/fesm2022/not_found.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

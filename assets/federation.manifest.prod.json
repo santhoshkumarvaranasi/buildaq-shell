@@ -1,0 +1,6 @@
+{
+  "schools": "https://schools.buildaq.com/remoteEntry.json",
+  "healthcare": "https://healthcare.buildaq.com/remoteEntry.json",
+  "apartments": "https://apartments.buildaq.com/remoteEntry.json",
+  "pharmacy": "https://pharmacy.buildaq.com/remoteEntry.json"
+}

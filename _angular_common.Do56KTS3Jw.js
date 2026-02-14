@@ -1,4 +1,4 @@
-import { a as Rt, b as Bt } from "@nf-internal/chunk-22DQJWON";
+import { a as Rt, b as Bt } from "@nf-internal/chunk-TPMJASNU";
 import { a as Y, b as K } from "@nf-internal/chunk-4CLCTAJ7";
 import * as a from "@angular/core";
 import { \u0275findLocaleData as y, \u0275LocaleDataIndex as f, \u0275getLocaleCurrencyCode as jt, \u0275getLocalePluralCase as Vt, \u0275RuntimeError as _, \u0275formatRuntimeError as Wi, LOCALE_ID as $, createNgModule as Gt, NgModuleRef as Ht, RendererStyleFlags2 as Zt, inject as Wt, \u0275INTERNAL_APPLICATION_ERROR_HANDLER as Yt, \u0275isPromise as Kt, \u0275isSubscribable as Xt, untracked as Ge, InjectionToken as Qe, DEFAULT_CURRENCY_CODE as qt } from "@angular/core";
@@ -981,7 +981,7 @@ function gr(e, i, t) { return ni(e, i, t); }
 var Di = "browser", pi = "server";
 function Dr(e) { return e === Di; }
 function pr(e) { return e === pi; }
-var mr = new ii("20.3.12"), Cr = (() => { class e {
+var mr = new ii("20.3.16"), Cr = (() => { class e {
     static \u0275prov = ri({ token: e, providedIn: "root", factory: () => typeof ngServerMode < "u" && ngServerMode ? new Me : new Le(O(Lt), window) });
 } return e; })(), Le = class {
     document;
@@ -1125,7 +1125,7 @@ export { Q as APP_BASE_HREF, kn as AsyncPipe, ze as BrowserPlatformLocation, ei 
 @angular/common/fesm2022/platform_navigation.mjs:
 @angular/common/fesm2022/common.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

@@ -818,7 +818,7 @@ var ut = (() => { class t {
     array(e, i, r) { return super.array(e, i, r); }
     static \u0275fac = (() => { let e; return function (r) { return (e || (e = s.\u0275\u0275getInheritedFactory(t)))(r || t); }; })();
     static \u0275prov = s.\u0275\u0275defineInjectable({ token: t, factory: t.\u0275fac, providedIn: "root" });
-} return t; })(), Jn = new gt("20.3.12"), Qn = (() => { class t {
+} return t; })(), Jn = new gt("20.3.16"), Qn = (() => { class t {
     static withConfig(e) { return { ngModule: t, providers: [{ provide: D, useValue: e.callSetDisabledState ?? B }] }; }
     static \u0275fac = function (i) { return new (i || t); };
     static \u0275mod = s.\u0275\u0275defineNgModule({ type: t });
@@ -834,7 +834,7 @@ export { w as AbstractControl, $ as AbstractControlDirective, Ke as AbstractForm
 
 @angular/forms/fesm2022/forms.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

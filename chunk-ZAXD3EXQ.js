@@ -146,7 +146,7 @@ export { S as a, p as b, H as c, J as d, Q as e, E as f, N as g, F as h, m as i,
 @angular/core/fesm2022/effect.mjs:
 @angular/core/fesm2022/weak_ref.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

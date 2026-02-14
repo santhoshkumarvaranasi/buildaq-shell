@@ -1,12 +1,12 @@
-import { a as be, b as Pe } from "@nf-internal/chunk-22DQJWON";
-import { a as V, c as Re, d as re } from "@nf-internal/chunk-4CLCTAJ7";
+import { a as be, b as Pe } from "@nf-internal/chunk-TPMJASNU";
+import { a as V, c as we, d as re } from "@nf-internal/chunk-4CLCTAJ7";
 import * as l from "@angular/core";
-import { \u0275RuntimeError as A, InjectionToken as D, inject as v, NgZone as dt, DestroyRef as lt, \u0275formatRuntimeError as dr, PendingTasks as xe, runInInjectionContext as de, DOCUMENT as Fe, makeEnvironmentProviders as ut } from "@angular/core";
+import { \u0275RuntimeError as A, InjectionToken as D, inject as v, NgZone as dt, DestroyRef as lt, \u0275formatRuntimeError as lr, PendingTasks as xe, runInInjectionContext as de, DOCUMENT as Fe, makeEnvironmentProviders as ut } from "@angular/core";
 import { concatMap as ht, filter as ft, map as $, finalize as je, switchMap as pt } from "rxjs/operators";
 import { of as Le, Observable as le, from as mt } from "rxjs";
 var j = class {
 }, L = class {
-}, R = class e {
+}, w = class e {
     headers;
     normalizedNames = new Map;
     lazyInit;
@@ -155,7 +155,7 @@ var z = "Content-Type", q = "Accept", ue = "X-Request-URL", Ue = "text/plain", C
             this.timeout = i.timeout;
         }
         i.mode && (this.mode = i.mode), i.redirect && (this.redirect = i.redirect), i.integrity && (this.integrity = i.integrity), i.referrer && (this.referrer = i.referrer), this.transferCache = i.transferCache;
-    } if (this.headers ??= new R, this.context ??= new Y, !this.params)
+    } if (this.headers ??= new w, this.context ??= new Y, !this.params)
         this.params = new O, this.urlWithParams = t;
     else {
         let o = this.params.toString();
@@ -168,7 +168,7 @@ var z = "Content-Type", q = "Accept", ue = "X-Request-URL", Ue = "text/plain", C
     } }
     serializeBody() { return this.body === null ? null : typeof this.body == "string" || Me(this.body) || Oe(this.body) || Ae(this.body) || vt(this.body) ? this.body : this.body instanceof O ? this.body.toString() : typeof this.body == "object" || typeof this.body == "boolean" || Array.isArray(this.body) ? JSON.stringify(this.body) : this.body.toString(); }
     detectContentTypeHeader() { return this.body === null || Ae(this.body) ? null : Oe(this.body) ? this.body.type || null : Me(this.body) ? null : typeof this.body == "string" ? Ue : this.body instanceof O ? "application/x-www-form-urlencoded;charset=UTF-8" : typeof this.body == "object" || typeof this.body == "number" || typeof this.body == "boolean" ? Ce : null; }
-    clone(r = {}) { let t = r.method || this.method, n = r.url || this.url, s = r.responseType || this.responseType, i = r.keepalive ?? this.keepalive, o = r.priority || this.priority, d = r.cache || this.cache, a = r.mode || this.mode, f = r.redirect || this.redirect, y = r.credentials || this.credentials, p = r.referrer || this.referrer, g = r.integrity || this.integrity, E = r.transferCache ?? this.transferCache, c = r.timeout ?? this.timeout, M = r.body !== void 0 ? r.body : this.body, u = r.withCredentials ?? this.withCredentials, h = r.reportProgress ?? this.reportProgress, T = r.headers || this.headers, b = r.params || this.params, m = r.context ?? this.context; return r.setHeaders !== void 0 && (T = Object.keys(r.setHeaders).reduce((P, I) => P.set(I, r.setHeaders[I]), T)), r.setParams && (b = Object.keys(r.setParams).reduce((P, I) => P.set(I, r.setParams[I]), b)), new e(t, n, M, { params: b, headers: T, context: m, reportProgress: h, responseType: s, withCredentials: u, transferCache: E, keepalive: i, cache: d, priority: o, timeout: c, mode: a, redirect: f, credentials: y, referrer: p, integrity: g }); }
+    clone(r = {}) { let t = r.method || this.method, n = r.url || this.url, s = r.responseType || this.responseType, i = r.keepalive ?? this.keepalive, o = r.priority || this.priority, d = r.cache || this.cache, a = r.mode || this.mode, f = r.redirect || this.redirect, y = r.credentials || this.credentials, p = r.referrer || this.referrer, g = r.integrity || this.integrity, E = r.transferCache ?? this.transferCache, c = r.timeout ?? this.timeout, M = r.body !== void 0 ? r.body : this.body, u = r.withCredentials ?? this.withCredentials, h = r.reportProgress ?? this.reportProgress, T = r.headers || this.headers, b = r.params || this.params, m = r.context ?? this.context; return r.setHeaders !== void 0 && (T = Object.keys(r.setHeaders).reduce((P, _) => P.set(_, r.setHeaders[_]), T)), r.setParams && (b = Object.keys(r.setParams).reduce((P, _) => P.set(_, r.setParams[_]), b)), new e(t, n, M, { params: b, headers: T, context: m, reportProgress: h, responseType: s, withCredentials: u, transferCache: E, keepalive: i, cache: d, priority: o, timeout: c, mode: a, redirect: f, credentials: y, referrer: p, integrity: g }); }
 }, N = (function (e) { return e[e.Sent = 0] = "Sent", e[e.UploadProgress = 1] = "UploadProgress", e[e.ResponseHeader = 2] = "ResponseHeader", e[e.DownloadProgress = 3] = "DownloadProgress", e[e.Response = 4] = "Response", e[e.User = 5] = "User", e; })(N || {}), C = class {
     headers;
     status;
@@ -177,23 +177,23 @@ var z = "Content-Type", q = "Accept", ue = "X-Request-URL", Ue = "text/plain", C
     ok;
     type;
     redirected;
-    constructor(r, t = 200, n = "OK") { this.headers = r.headers || new R, this.status = r.status !== void 0 ? r.status : t, this.statusText = r.statusText || n, this.url = r.url || null, this.redirected = r.redirected, this.ok = this.status >= 200 && this.status < 300; }
+    constructor(r, t = 200, n = "OK") { this.headers = r.headers || new w, this.status = r.status !== void 0 ? r.status : t, this.statusText = r.statusText || n, this.url = r.url || null, this.redirected = r.redirected, this.ok = this.status >= 200 && this.status < 300; }
 }, X = class e extends C {
     constructor(r = {}) { super(r); }
     type = N.ResponseHeader;
     clone(r = {}) { return new e({ headers: r.headers || this.headers, status: r.status !== void 0 ? r.status : this.status, statusText: r.statusText || this.statusText, url: r.url || this.url || void 0 }); }
-}, _ = class e extends C {
+}, I = class e extends C {
     body;
     constructor(r = {}) { super(r), this.body = r.body !== void 0 ? r.body : null; }
     type = N.Response;
     clone(r = {}) { return new e({ body: r.body !== void 0 ? r.body : this.body, headers: r.headers || this.headers, status: r.status !== void 0 ? r.status : this.status, statusText: r.statusText || this.statusText, url: r.url || this.url || void 0, redirected: r.redirected ?? this.redirected }); }
-}, w = class extends C {
+}, R = class extends C {
     name = "HttpErrorResponse";
     message;
     error;
     ok = !1;
     constructor(r) { super(r, 0, "Unknown Error"), this.status >= 200 && this.status < 300 ? this.message = `Http failure during parsing for ${r.url || "(unknown url)"}` : this.message = `Http failure response for ${r.url || "(unknown url)"}: ${r.status} ${r.statusText}`, this.error = r.error || null; }
-}, he = 200, wt = 204, Se = (function (e) { return e[e.Continue = 100] = "Continue", e[e.SwitchingProtocols = 101] = "SwitchingProtocols", e[e.Processing = 102] = "Processing", e[e.EarlyHints = 103] = "EarlyHints", e[e.Ok = 200] = "Ok", e[e.Created = 201] = "Created", e[e.Accepted = 202] = "Accepted", e[e.NonAuthoritativeInformation = 203] = "NonAuthoritativeInformation", e[e.NoContent = 204] = "NoContent", e[e.ResetContent = 205] = "ResetContent", e[e.PartialContent = 206] = "PartialContent", e[e.MultiStatus = 207] = "MultiStatus", e[e.AlreadyReported = 208] = "AlreadyReported", e[e.ImUsed = 226] = "ImUsed", e[e.MultipleChoices = 300] = "MultipleChoices", e[e.MovedPermanently = 301] = "MovedPermanently", e[e.Found = 302] = "Found", e[e.SeeOther = 303] = "SeeOther", e[e.NotModified = 304] = "NotModified", e[e.UseProxy = 305] = "UseProxy", e[e.Unused = 306] = "Unused", e[e.TemporaryRedirect = 307] = "TemporaryRedirect", e[e.PermanentRedirect = 308] = "PermanentRedirect", e[e.BadRequest = 400] = "BadRequest", e[e.Unauthorized = 401] = "Unauthorized", e[e.PaymentRequired = 402] = "PaymentRequired", e[e.Forbidden = 403] = "Forbidden", e[e.NotFound = 404] = "NotFound", e[e.MethodNotAllowed = 405] = "MethodNotAllowed", e[e.NotAcceptable = 406] = "NotAcceptable", e[e.ProxyAuthenticationRequired = 407] = "ProxyAuthenticationRequired", e[e.RequestTimeout = 408] = "RequestTimeout", e[e.Conflict = 409] = "Conflict", e[e.Gone = 410] = "Gone", e[e.LengthRequired = 411] = "LengthRequired", e[e.PreconditionFailed = 412] = "PreconditionFailed", e[e.PayloadTooLarge = 413] = "PayloadTooLarge", e[e.UriTooLong = 414] = "UriTooLong", e[e.UnsupportedMediaType = 415] = "UnsupportedMediaType", e[e.RangeNotSatisfiable = 416] = "RangeNotSatisfiable", e[e.ExpectationFailed = 417] = "ExpectationFailed", e[e.ImATeapot = 418] = "ImATeapot", e[e.MisdirectedRequest = 421] = "MisdirectedRequest", e[e.UnprocessableEntity = 422] = "UnprocessableEntity", e[e.Locked = 423] = "Locked", e[e.FailedDependency = 424] = "FailedDependency", e[e.TooEarly = 425] = "TooEarly", e[e.UpgradeRequired = 426] = "UpgradeRequired", e[e.PreconditionRequired = 428] = "PreconditionRequired", e[e.TooManyRequests = 429] = "TooManyRequests", e[e.RequestHeaderFieldsTooLarge = 431] = "RequestHeaderFieldsTooLarge", e[e.UnavailableForLegalReasons = 451] = "UnavailableForLegalReasons", e[e.InternalServerError = 500] = "InternalServerError", e[e.NotImplemented = 501] = "NotImplemented", e[e.BadGateway = 502] = "BadGateway", e[e.ServiceUnavailable = 503] = "ServiceUnavailable", e[e.GatewayTimeout = 504] = "GatewayTimeout", e[e.HttpVersionNotSupported = 505] = "HttpVersionNotSupported", e[e.VariantAlsoNegotiates = 506] = "VariantAlsoNegotiates", e[e.InsufficientStorage = 507] = "InsufficientStorage", e[e.LoopDetected = 508] = "LoopDetected", e[e.NotExtended = 510] = "NotExtended", e[e.NetworkAuthenticationRequired = 511] = "NetworkAuthenticationRequired", e; })(Se || {});
+}, he = 200, Rt = 204, Se = (function (e) { return e[e.Continue = 100] = "Continue", e[e.SwitchingProtocols = 101] = "SwitchingProtocols", e[e.Processing = 102] = "Processing", e[e.EarlyHints = 103] = "EarlyHints", e[e.Ok = 200] = "Ok", e[e.Created = 201] = "Created", e[e.Accepted = 202] = "Accepted", e[e.NonAuthoritativeInformation = 203] = "NonAuthoritativeInformation", e[e.NoContent = 204] = "NoContent", e[e.ResetContent = 205] = "ResetContent", e[e.PartialContent = 206] = "PartialContent", e[e.MultiStatus = 207] = "MultiStatus", e[e.AlreadyReported = 208] = "AlreadyReported", e[e.ImUsed = 226] = "ImUsed", e[e.MultipleChoices = 300] = "MultipleChoices", e[e.MovedPermanently = 301] = "MovedPermanently", e[e.Found = 302] = "Found", e[e.SeeOther = 303] = "SeeOther", e[e.NotModified = 304] = "NotModified", e[e.UseProxy = 305] = "UseProxy", e[e.Unused = 306] = "Unused", e[e.TemporaryRedirect = 307] = "TemporaryRedirect", e[e.PermanentRedirect = 308] = "PermanentRedirect", e[e.BadRequest = 400] = "BadRequest", e[e.Unauthorized = 401] = "Unauthorized", e[e.PaymentRequired = 402] = "PaymentRequired", e[e.Forbidden = 403] = "Forbidden", e[e.NotFound = 404] = "NotFound", e[e.MethodNotAllowed = 405] = "MethodNotAllowed", e[e.NotAcceptable = 406] = "NotAcceptable", e[e.ProxyAuthenticationRequired = 407] = "ProxyAuthenticationRequired", e[e.RequestTimeout = 408] = "RequestTimeout", e[e.Conflict = 409] = "Conflict", e[e.Gone = 410] = "Gone", e[e.LengthRequired = 411] = "LengthRequired", e[e.PreconditionFailed = 412] = "PreconditionFailed", e[e.PayloadTooLarge = 413] = "PayloadTooLarge", e[e.UriTooLong = 414] = "UriTooLong", e[e.UnsupportedMediaType = 415] = "UnsupportedMediaType", e[e.RangeNotSatisfiable = 416] = "RangeNotSatisfiable", e[e.ExpectationFailed = 417] = "ExpectationFailed", e[e.ImATeapot = 418] = "ImATeapot", e[e.MisdirectedRequest = 421] = "MisdirectedRequest", e[e.UnprocessableEntity = 422] = "UnprocessableEntity", e[e.Locked = 423] = "Locked", e[e.FailedDependency = 424] = "FailedDependency", e[e.TooEarly = 425] = "TooEarly", e[e.UpgradeRequired = 426] = "UpgradeRequired", e[e.PreconditionRequired = 428] = "PreconditionRequired", e[e.TooManyRequests = 429] = "TooManyRequests", e[e.RequestHeaderFieldsTooLarge = 431] = "RequestHeaderFieldsTooLarge", e[e.UnavailableForLegalReasons = 451] = "UnavailableForLegalReasons", e[e.InternalServerError = 500] = "InternalServerError", e[e.NotImplemented = 501] = "NotImplemented", e[e.BadGateway = 502] = "BadGateway", e[e.ServiceUnavailable = 503] = "ServiceUnavailable", e[e.GatewayTimeout = 504] = "GatewayTimeout", e[e.HttpVersionNotSupported = 505] = "HttpVersionNotSupported", e[e.VariantAlsoNegotiates = 506] = "VariantAlsoNegotiates", e[e.InsufficientStorage = 507] = "InsufficientStorage", e[e.LoopDetected = 508] = "LoopDetected", e[e.NotExtended = 510] = "NotExtended", e[e.NetworkAuthenticationRequired = 511] = "NetworkAuthenticationRequired", e; })(Se || {});
 function ne(e, r) { return { body: r, headers: e.headers, context: e.context, observe: e.observe, params: e.params, reportProgress: e.reportProgress, responseType: e.responseType, withCredentials: e.withCredentials, credentials: e.credentials, transferCache: e.transferCache, timeout: e.timeout, keepalive: e.keepalive, priority: e.priority, cache: e.cache, mode: e.mode, redirect: e.redirect, integrity: e.integrity, referrer: e.referrer }; }
 var fe = (() => { class e {
     handler;
@@ -202,11 +202,11 @@ var fe = (() => { class e {
         i = t;
     else {
         let a;
-        s.headers instanceof R ? a = s.headers : a = new R(s.headers);
+        s.headers instanceof w ? a = s.headers : a = new w(s.headers);
         let f;
         s.params && (s.params instanceof O ? f = s.params : f = new O({ fromObject: s.params })), i = new F(t, n, s.body !== void 0 ? s.body : null, { headers: a, context: s.context, params: f, reportProgress: s.reportProgress, responseType: s.responseType || "json", withCredentials: s.withCredentials, transferCache: s.transferCache, keepalive: s.keepalive, priority: s.priority, cache: s.cache, mode: s.mode, redirect: s.redirect, credentials: s.credentials, referrer: s.referrer, integrity: s.integrity, timeout: s.timeout });
     } let o = Le(i).pipe(ht(a => this.handler.handle(a))); if (t instanceof F || s.observe === "events")
-        return o; let d = o.pipe(ft(a => a instanceof _)); switch (s.observe || "body") {
+        return o; let d = o.pipe(ft(a => a instanceof I)); switch (s.observe || "body") {
         case "body": switch (i.responseType) {
             case "arraybuffer": return d.pipe($(a => { if (a.body !== null && !(a.body instanceof ArrayBuffer))
                 throw new A(2806, !1); return a.body; }));
@@ -230,22 +230,22 @@ var fe = (() => { class e {
     put(t, n, s = {}) { return this.request("PUT", t, ne(s, n)); }
     static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(j)); };
     static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
-} return e; })(), Rt = /^\)\]\}',?\n/;
-function Ie(e) { if (e.url)
+} return e; })(), wt = /^\)\]\}',?\n/;
+function _e(e) { if (e.url)
     return e.url; let r = ue.toLocaleLowerCase(); return e.headers.get(r); }
 var ze = new D(""), W = (() => { class e {
     fetchImpl = v(oe, { optional: !0 })?.fetch ?? ((...t) => globalThis.fetch(...t));
     ngZone = v(dt);
     destroyRef = v(lt);
-    handle(t) { return new le(n => { let s = new AbortController; this.doRequest(t, s.signal, n).then(ie, o => n.error(new w({ error: o }))); let i; return t.timeout && (i = this.ngZone.runOutsideAngular(() => setTimeout(() => { s.signal.aborted || s.abort(new DOMException("signal timed out", "TimeoutError")); }, t.timeout))), () => { i !== void 0 && clearTimeout(i), s.abort(); }; }); }
+    handle(t) { return new le(n => { let s = new AbortController; this.doRequest(t, s.signal, n).then(ie, o => n.error(new R({ error: o }))); let i; return t.timeout && (i = this.ngZone.runOutsideAngular(() => setTimeout(() => { s.signal.aborted || s.abort(new DOMException("signal timed out", "TimeoutError")); }, t.timeout))), () => { i !== void 0 && clearTimeout(i), s.abort(); }; }); }
     doRequest(t, n, s) { return re(this, null, function* () { let i = this.createRequestInit(t), o; try {
         let c = this.ngZone.runOutsideAngular(() => this.fetchImpl(t.urlWithParams, V({ signal: n }, i)));
         bt(c), s.next({ type: N.Sent }), o = yield c;
     }
     catch (c) {
-        s.error(new w({ error: c, status: c.status ?? 0, statusText: c.statusText, url: t.urlWithParams, headers: c.headers }));
+        s.error(new R({ error: c, status: c.status ?? 0, statusText: c.statusText, url: t.urlWithParams, headers: c.headers }));
         return;
-    } let d = new R(o.headers), a = o.statusText, f = Ie(o) ?? t.urlWithParams, y = o.status, p = null; if (t.reportProgress && s.next(new X({ headers: d, status: y, statusText: a, url: f })), o.body) {
+    } let d = new w(o.headers), a = o.statusText, f = _e(o) ?? t.urlWithParams, y = o.status, p = null; if (t.reportProgress && s.next(new X({ headers: d, status: y, statusText: a, url: f })), o.body) {
         let c = o.headers.get("content-length"), M = [], u = o.body.getReader(), h = 0, T, b, m = typeof Zone < "u" && Zone.current, P = !1;
         if (yield this.ngZone.runOutsideAngular(() => re(this, null, function* () { for (;;) {
             if (this.destroyRef.destroyed) {
@@ -257,26 +257,26 @@ var ze = new D(""), W = (() => { class e {
                 break;
             if (M.push(te), h += te.length, t.reportProgress) {
                 b = t.responseType === "text" ? (b ?? "") + (T ??= new TextDecoder).decode(te, { stream: !0 }) : void 0;
-                let we = () => s.next({ type: N.DownloadProgress, total: c ? +c : void 0, loaded: h, partialText: b });
-                m ? m.run(we) : we();
+                let Re = () => s.next({ type: N.DownloadProgress, total: c ? +c : void 0, loaded: h, partialText: b });
+                m ? m.run(Re) : Re();
             }
         } })), P) {
             s.complete();
             return;
         }
-        let I = this.concatChunks(M, h);
+        let _ = this.concatChunks(M, h);
         try {
             let x = o.headers.get(z) ?? "";
-            p = this.parseBody(t, I, x, y);
+            p = this.parseBody(t, _, x, y);
         }
         catch (x) {
-            s.error(new w({ error: x, headers: new R(o.headers), status: o.status, statusText: o.statusText, url: Ie(o) ?? t.urlWithParams }));
+            s.error(new R({ error: x, headers: new w(o.headers), status: o.status, statusText: o.statusText, url: _e(o) ?? t.urlWithParams }));
             return;
         }
-    } y === 0 && (y = p ? he : 0); let g = y >= 200 && y < 300, E = o.redirected; g ? (s.next(new _({ body: p, headers: d, status: y, statusText: a, url: f, redirected: E })), s.complete()) : s.error(new w({ error: p, headers: d, status: y, statusText: a, url: f, redirected: E })); }); }
+    } y === 0 && (y = p ? he : 0); let g = y >= 200 && y < 300, E = o.redirected; g ? (s.next(new I({ body: p, headers: d, status: y, statusText: a, url: f, redirected: E })), s.complete()) : s.error(new R({ error: p, headers: d, status: y, statusText: a, url: f, redirected: E })); }); }
     parseBody(t, n, s, i) { switch (t.responseType) {
         case "json":
-            let o = new TextDecoder().decode(n).replace(Rt, "");
+            let o = new TextDecoder().decode(n).replace(wt, "");
             if (o === "")
                 return null;
             try {
@@ -331,10 +331,10 @@ var Z = (() => { class e extends j {
         return this.chain(t, n => this.backend.handle(n)); }
     static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(L), l.\u0275\u0275inject(l.EnvironmentInjector)); };
     static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
-} return e; })(), Ot = 0, _e, At = "JSONP injected script did not invoke callback.";
+} return e; })(), Ot = 0, Ie, At = "JSONP injected script did not invoke callback.";
 var Q = class {
 };
-function It() { return typeof window == "object" ? window : {}; }
+function _t() { return typeof window == "object" ? window : {}; }
 var ge = (() => { class e {
     callbackMap;
     document;
@@ -345,15 +345,15 @@ var ge = (() => { class e {
         throw new A(2810, !1); if (t.responseType !== "json")
         throw new A(2811, !1); if (t.headers.keys().length > 0)
         throw new A(2812, !1); return new le(n => { let s = this.nextCallback(), i = t.urlWithParams.replace(/=JSONP_CALLBACK(&|$)/, `=${s}$1`), o = this.document.createElement("script"); o.src = i; let d = null, a = !1; this.callbackMap[s] = g => { delete this.callbackMap[s], d = g, a = !0; }; let f = () => { o.removeEventListener("load", y), o.removeEventListener("error", p), o.remove(), delete this.callbackMap[s]; }, y = () => { this.resolvedPromise.then(() => { if (f(), !a) {
-        n.error(new w({ url: i, status: 0, statusText: "JSONP Error", error: new Error(At) }));
+        n.error(new R({ url: i, status: 0, statusText: "JSONP Error", error: new Error(At) }));
         return;
-    } n.next(new _({ body: d, status: he, statusText: "OK", url: i })), n.complete(); }); }, p = g => { f(), n.error(new w({ error: g, status: 0, statusText: "JSONP Error", url: i })); }; return o.addEventListener("load", y), o.addEventListener("error", p), this.document.body.appendChild(o), n.next({ type: N.Sent }), () => { a || this.removeListeners(o), f(); }; }); }
-    removeListeners(t) { _e ??= this.document.implementation.createHTMLDocument(), _e.adoptNode(t); }
+    } n.next(new I({ body: d, status: he, statusText: "OK", url: i })), n.complete(); }); }, p = g => { f(), n.error(new R({ error: g, status: 0, statusText: "JSONP Error", url: i })); }; return o.addEventListener("load", y), o.addEventListener("error", p), this.document.body.appendChild(o), n.next({ type: N.Sent }), () => { a || this.removeListeners(o), f(); }; }); }
+    removeListeners(t) { Ie ??= this.document.implementation.createHTMLDocument(), Ie.adoptNode(t); }
     static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(Q), l.\u0275\u0275inject(Fe)); };
     static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
 } return e; })();
 function Je(e, r) { return e.method === "JSONP" ? v(ge).handle(e) : r(e); }
-var _t = (() => { class e {
+var It = (() => { class e {
     injector;
     constructor(t) { this.injector = t; }
     intercept(t, n) { return de(this.injector, () => Je(t, s => n.handle(s))); }
@@ -372,16 +372,16 @@ var ae = (() => { class e {
         let u = t.responseType.toLowerCase();
         o.responseType = u !== "json" ? u : "text";
     } let d = t.serializeBody(), a = null, f = () => { if (a !== null)
-        return a; let u = o.statusText || "OK", h = new R(o.getAllResponseHeaders()), T = xt(o) || t.url; return a = new X({ headers: h, status: o.status, statusText: u, url: T }), a; }, y = () => { let { headers: u, status: h, statusText: T, url: b } = f(), m = null; h !== wt && (m = typeof o.response > "u" ? o.responseText : o.response), h === 0 && (h = m ? he : 0); let P = h >= 200 && h < 300; if (t.responseType === "json" && typeof m == "string") {
-        let I = m;
+        return a; let u = o.statusText || "OK", h = new w(o.getAllResponseHeaders()), T = xt(o) || t.url; return a = new X({ headers: h, status: o.status, statusText: u, url: T }), a; }, y = () => { let { headers: u, status: h, statusText: T, url: b } = f(), m = null; h !== Rt && (m = typeof o.response > "u" ? o.responseText : o.response), h === 0 && (h = m ? he : 0); let P = h >= 200 && h < 300; if (t.responseType === "json" && typeof m == "string") {
+        let _ = m;
         m = m.replace(Dt, "");
         try {
             m = m !== "" ? JSON.parse(m) : null;
         }
         catch (x) {
-            m = I, P && (P = !1, m = { error: x, text: m });
+            m = _, P && (P = !1, m = { error: x, text: m });
         }
-    } P ? (i.next(new _({ body: m, headers: u, status: h, statusText: T, url: b || void 0 })), i.complete()) : i.error(new w({ error: m, headers: u, status: h, statusText: T, url: b || void 0 })); }, p = u => { let { url: h } = f(), T = new w({ error: u, status: o.status || 0, statusText: o.statusText || "Unknown Error", url: h || void 0 }); i.error(T); }, g = p; t.timeout && (g = u => { let { url: h } = f(), T = new w({ error: new DOMException("Request timed out", "TimeoutError"), status: o.status || 0, statusText: o.statusText || "Request timeout", url: h || void 0 }); i.error(T); }); let E = !1, c = u => { E || (i.next(f()), E = !0); let h = { type: N.DownloadProgress, loaded: u.loaded }; u.lengthComputable && (h.total = u.total), t.responseType === "text" && o.responseText && (h.partialText = o.responseText), i.next(h); }, M = u => { let h = { type: N.UploadProgress, loaded: u.loaded }; u.lengthComputable && (h.total = u.total), i.next(h); }; return o.addEventListener("load", y), o.addEventListener("error", p), o.addEventListener("timeout", g), o.addEventListener("abort", p), t.reportProgress && (o.addEventListener("progress", c), d !== null && o.upload && o.upload.addEventListener("progress", M)), o.send(d), i.next({ type: N.Sent }), () => { o.removeEventListener("error", p), o.removeEventListener("abort", p), o.removeEventListener("load", y), o.removeEventListener("timeout", g), t.reportProgress && (o.removeEventListener("progress", c), d !== null && o.upload && o.upload.removeEventListener("progress", M)), o.readyState !== o.DONE && o.abort(); }; }))); }
+    } P ? (i.next(new I({ body: m, headers: u, status: h, statusText: T, url: b || void 0 })), i.complete()) : i.error(new R({ error: m, headers: u, status: h, statusText: T, url: b || void 0 })); }, p = u => { let { url: h } = f(), T = new R({ error: u, status: o.status || 0, statusText: o.statusText || "Unknown Error", url: h || void 0 }); i.error(T); }, g = p; t.timeout && (g = u => { let { url: h } = f(), T = new R({ error: new DOMException("Request timed out", "TimeoutError"), status: o.status || 0, statusText: o.statusText || "Request timeout", url: h || void 0 }); i.error(T); }); let E = !1, c = u => { E || (i.next(f()), E = !0); let h = { type: N.DownloadProgress, loaded: u.loaded }; u.lengthComputable && (h.total = u.total), t.responseType === "text" && o.responseText && (h.partialText = o.responseText), i.next(h); }, M = u => { let h = { type: N.UploadProgress, loaded: u.loaded }; u.lengthComputable && (h.total = u.total), i.next(h); }; return o.addEventListener("load", y), o.addEventListener("error", p), o.addEventListener("timeout", g), o.addEventListener("abort", p), t.reportProgress && (o.addEventListener("progress", c), d !== null && o.upload && o.upload.addEventListener("progress", M)), o.send(d), i.next({ type: N.Sent }), () => { o.removeEventListener("error", p), o.removeEventListener("abort", p), o.removeEventListener("load", y), o.removeEventListener("timeout", g), t.reportProgress && (o.removeEventListener("progress", c), d !== null && o.upload && o.upload.removeEventListener("progress", M)), o.readyState !== o.DONE && o.abort(); }; }))); }
     static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(Pe)); };
     static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
 } return e; })(), H = new D(""), Ve = "XSRF-TOKEN", $e = new D("", { providedIn: "root", factory: () => Ve }), Ge = "X-XSRF-TOKEN", We = new D("", { providedIn: "root", factory: () => Ge }), B = class {
@@ -396,9 +396,9 @@ var ae = (() => { class e {
         return null; let t = this.doc.cookie || ""; return t !== this.lastCookieString && (this.parseCount++, this.lastToken = be(t, this.cookieName), this.lastCookieString = t), this.lastToken; }
     static \u0275fac = function (n) { return new (n || e)(l.\u0275\u0275inject(Fe), l.\u0275\u0275inject($e)); };
     static \u0275prov = l.\u0275\u0275defineInjectable({ token: e, factory: e.\u0275fac });
-} return e; })();
-function Ye(e, r) { let t = e.url.toLowerCase(); if (!v(H) || e.method === "GET" || e.method === "HEAD" || t.startsWith("http://") || t.startsWith("https://"))
-    return r(e); let n = v(B).getToken(), s = v(We); return n != null && !e.headers.has(s) && (e = e.clone({ headers: e.headers.set(s, n) })), r(e); }
+} return e; })(), Ft = /^(?:https?:)?\/\//i;
+function Ye(e, r) { if (!v(H) || e.method === "GET" || e.method === "HEAD" || Ft.test(e.url))
+    return r(e); let t = v(B).getToken(), n = v(We); return t != null && !e.headers.has(n) && (e = e.clone({ headers: e.headers.set(n, t) })), r(e); }
 var De = (() => { class e {
     injector;
     constructor(t) { this.injector = t; }
@@ -409,63 +409,63 @@ var De = (() => { class e {
 function U(e, r) { return { \u0275kind: e, \u0275providers: r }; }
 function qe(...e) { let r = [fe, ae, Z, { provide: j, useExisting: Z }, { provide: L, useFactory: () => v(ze, { optional: !0 }) ?? v(ae) }, { provide: J, useValue: Ye, multi: !0 }, { provide: H, useValue: !0 }, { provide: B, useClass: Ke }]; for (let t of e)
     r.push(...t.\u0275providers); return ut(r); }
-function Ft(e) { return U(k.Interceptors, e.map(r => ({ provide: J, useValue: r, multi: !0 }))); }
+function jt(e) { return U(k.Interceptors, e.map(r => ({ provide: J, useValue: r, multi: !0 }))); }
 var ke = new D("");
 function Ze() { return U(k.LegacyInterceptors, [{ provide: ke, useFactory: Mt }, { provide: J, useExisting: ke, multi: !0 }]); }
 function ce({ cookieName: e, headerName: r }) { let t = []; return e !== void 0 && t.push({ provide: $e, useValue: e }), r !== void 0 && t.push({ provide: We, useValue: r }), U(k.CustomXsrfConfiguration, t); }
 function Qe() { return U(k.NoXsrfProtection, [{ provide: H, useValue: !1 }]); }
-function He() { return U(k.JsonpSupport, [ge, { provide: Q, useFactory: It }, { provide: J, useValue: Je, multi: !0 }]); }
-function jt() { return U(k.RequestsMadeViaParent, [{ provide: L, useFactory: () => v(j, { skipSelf: !0, optional: !0 }) }]); }
-function Lt() { return U(k.Fetch, [W, { provide: ze, useExisting: W }, { provide: L, useExisting: W }]); }
-var Ut = (() => { class e {
+function He() { return U(k.JsonpSupport, [ge, { provide: Q, useFactory: _t }, { provide: J, useValue: Je, multi: !0 }]); }
+function Lt() { return U(k.RequestsMadeViaParent, [{ provide: L, useFactory: () => v(j, { skipSelf: !0, optional: !0 }) }]); }
+function Ut() { return U(k.Fetch, [W, { provide: ze, useExisting: W }, { provide: L, useExisting: W }]); }
+var Ct = (() => { class e {
     static disable() { return { ngModule: e, providers: [Qe().\u0275providers] }; }
     static withOptions(t = {}) { return { ngModule: e, providers: ce(t).\u0275providers }; }
     static \u0275fac = function (n) { return new (n || e); };
     static \u0275mod = l.\u0275\u0275defineNgModule({ type: e });
     static \u0275inj = l.\u0275\u0275defineInjector({ providers: [De, { provide: pe, useExisting: De, multi: !0 }, { provide: B, useClass: Ke }, ce({ cookieName: Ve, headerName: Ge }).\u0275providers, { provide: H, useValue: !0 }] });
-} return e; })(), Ct = (() => { class e {
+} return e; })(), Bt = (() => { class e {
     static \u0275fac = function (n) { return new (n || e); };
     static \u0275mod = l.\u0275\u0275defineNgModule({ type: e });
     static \u0275inj = l.\u0275\u0275defineInjector({ providers: [qe(Ze())] });
-} return e; })(), Bt = (() => { class e {
+} return e; })(), St = (() => { class e {
     static \u0275fac = function (n) { return new (n || e); };
     static \u0275mod = l.\u0275\u0275defineNgModule({ type: e });
     static \u0275inj = l.\u0275\u0275defineInjector({ providers: [He().\u0275providers] });
 } return e; })();
-import { inject as S, Injector as St, \u0275ResourceImpl as zt, linkedSignal as Te, computed as Xt, signal as Jt, \u0275encapsulateResourceError as Vt, \u0275RuntimeError as at, InjectionToken as ct, \u0275performanceMarkFeature as $t, APP_BOOTSTRAP_LISTENER as Gt, ApplicationRef as Wt, TransferState as Kt, makeStateKey as Yt, \u0275truncateMiddle as wr, \u0275formatRuntimeError as Rr } from "@angular/core";
-import { of as qt } from "rxjs";
-import { tap as Zt } from "rxjs/operators";
-var Nr = (() => { let e = ee("json"); return e.arrayBuffer = ee("arraybuffer"), e.blob = ee("blob"), e.text = ee("text"), e; })();
-function ee(e) { return function (t, n) { let s = n?.injector ?? S(St); return new Ee(s, () => Qt(t, e), n?.defaultValue, n?.parse, n?.equal); }; }
-function Qt(e, r) { let t = typeof e == "function" ? e() : e; if (t === void 0)
-    return; typeof t == "string" && (t = { url: t }); let n = t.headers instanceof R ? t.headers : new R(t.headers), s = t.params instanceof O ? t.params : new O({ fromObject: t.params }); return new F(t.method ?? "GET", t.url, t.body ?? null, { headers: n, params: s, reportProgress: t.reportProgress, withCredentials: t.withCredentials, keepalive: t.keepalive, cache: t.cache, priority: t.priority, mode: t.mode, redirect: t.redirect, responseType: r, context: t.context, transferCache: t.transferCache, credentials: t.credentials, referrer: t.referrer, integrity: t.integrity, timeout: t.timeout }); }
-var Ee = class extends zt {
+import { inject as S, Injector as zt, \u0275ResourceImpl as Xt, linkedSignal as Te, computed as Jt, signal as Vt, \u0275encapsulateResourceError as $t, \u0275RuntimeError as at, InjectionToken as ct, \u0275performanceMarkFeature as Gt, APP_BOOTSTRAP_LISTENER as Wt, ApplicationRef as Kt, TransferState as Yt, makeStateKey as qt, \u0275truncateMiddle as wr, \u0275formatRuntimeError as br } from "@angular/core";
+import { of as Zt } from "rxjs";
+import { tap as Qt } from "rxjs/operators";
+var Mr = (() => { let e = ee("json"); return e.arrayBuffer = ee("arraybuffer"), e.blob = ee("blob"), e.text = ee("text"), e; })();
+function ee(e) { return function (t, n) { let s = n?.injector ?? S(zt); return new Ee(s, () => Ht(t, e), n?.defaultValue, n?.parse, n?.equal); }; }
+function Ht(e, r) { let t = typeof e == "function" ? e() : e; if (t === void 0)
+    return; typeof t == "string" && (t = { url: t }); let n = t.headers instanceof w ? t.headers : new w(t.headers), s = t.params instanceof O ? t.params : new O({ fromObject: t.params }); return new F(t.method ?? "GET", t.url, t.body ?? null, { headers: n, params: s, reportProgress: t.reportProgress, withCredentials: t.withCredentials, keepalive: t.keepalive, cache: t.cache, priority: t.priority, mode: t.mode, redirect: t.redirect, responseType: r, context: t.context, transferCache: t.transferCache, credentials: t.credentials, referrer: t.referrer, integrity: t.integrity, timeout: t.timeout }); }
+var Ee = class extends Xt {
     client;
     _headers = Te({ source: this.extRequest, computation: () => { } });
     _progress = Te({ source: this.extRequest, computation: () => { } });
     _statusCode = Te({ source: this.extRequest, computation: () => { } });
-    headers = Xt(() => this.status() === "resolved" || this.status() === "error" ? this._headers() : void 0);
+    headers = Jt(() => this.status() === "resolved" || this.status() === "error" ? this._headers() : void 0);
     progress = this._progress.asReadonly();
     statusCode = this._statusCode.asReadonly();
-    constructor(r, t, n, s, i) { super(t, ({ params: o, abortSignal: d }) => { let a, f = () => a.unsubscribe(); d.addEventListener("abort", f); let y = Jt({ value: void 0 }), p, g = new Promise(c => p = c), E = c => { y.set(c), p?.(y), p = void 0; }; return a = this.client.request(o).subscribe({ next: c => { switch (c.type) {
+    constructor(r, t, n, s, i) { super(t, ({ params: o, abortSignal: d }) => { let a, f = () => a.unsubscribe(); d.addEventListener("abort", f); let y = Vt({ value: void 0 }), p, g = new Promise(c => p = c), E = c => { y.set(c), p?.(y), p = void 0; }; return a = this.client.request(o).subscribe({ next: c => { switch (c.type) {
             case N.Response:
                 this._headers.set(c.headers), this._statusCode.set(c.status);
                 try {
                     E({ value: s ? s(c.body) : c.body });
                 }
                 catch (M) {
-                    E({ error: Vt(M) });
+                    E({ error: $t(M) });
                 }
                 break;
             case N.DownloadProgress:
                 this._progress.set(c);
                 break;
-        } }, error: c => { c instanceof w && (this._headers.set(c.headers), this._statusCode.set(c.status)), E({ error: c }), d.removeEventListener("abort", f); }, complete: () => { p && E({ error: new at(991, !1) }), d.removeEventListener("abort", f); } }), g; }, n, i, r), this.client = r.get(fe); }
+        } }, error: c => { c instanceof R && (this._headers.set(c.headers), this._statusCode.set(c.status)), E({ error: c }), d.removeEventListener("abort", f); }, complete: () => { p && E({ error: new at(991, !1) }), d.removeEventListener("abort", f); } }), g; }, n, i, r), this.client = r.get(fe); }
     set(r) { super.set(r), this._headers.set(void 0), this._progress.set(void 0), this._statusCode.set(void 0); }
-}, Ht = new ct(""), et = "b", tt = "h", rt = "s", nt = "st", st = "u", ot = "rt", ve = new ct(""), er = ["GET", "HEAD"];
-function tr(e, r) { let E = S(ve), { isCacheActive: t } = E, n = Re(E, ["isCacheActive"]), { transferCache: s, method: i } = e; if (!t || s === !1 || i === "POST" && !n.includePostRequests && !s || i !== "POST" && !er.includes(i) || !n.includeRequestsWithAuthHeaders && rr(e) || n.filter?.(e) === !1)
-    return r(e); let o = S(Kt), d = S(Ht, { optional: !0 }); if (typeof ngServerMode < "u" && !ngServerMode && d)
-    throw new at(2803, !1); let a = typeof ngServerMode < "u" && ngServerMode && d ? ir(e.url, d) : e.url, f = sr(e, a), y = o.get(f, null), p = n.includeHeaders; if (typeof s == "object" && s.includeHeaders && (p = s.includeHeaders), y) {
+}, er = new ct(""), et = "b", tt = "h", rt = "s", nt = "st", st = "u", ot = "rt", ve = new ct(""), tr = ["GET", "HEAD"];
+function rr(e, r) { let E = S(ve), { isCacheActive: t } = E, n = we(E, ["isCacheActive"]), { transferCache: s, method: i } = e; if (!t || s === !1 || i === "POST" && !n.includePostRequests && !s || i !== "POST" && !tr.includes(i) || !n.includeRequestsWithAuthHeaders && nr(e) || n.filter?.(e) === !1)
+    return r(e); let o = S(Yt), d = S(er, { optional: !0 }); if (typeof ngServerMode < "u" && !ngServerMode && d)
+    throw new at(2803, !1); let a = typeof ngServerMode < "u" && ngServerMode && d ? ar(e.url, d) : e.url, f = or(e, a), y = o.get(f, null), p = n.includeHeaders; if (typeof s == "object" && s.includeHeaders && (p = s.includeHeaders), y) {
     let { [et]: c, [ot]: M, [tt]: u, [rt]: h, [nt]: T, [st]: b } = y, m = c;
     switch (M) {
         case "arraybuffer":
@@ -475,28 +475,28 @@ function tr(e, r) { let E = S(ve), { isCacheActive: t } = E, n = Re(E, ["isCache
             m = new Blob([c]);
             break;
     }
-    let P = new R(u);
-    return qt(new _({ body: m, headers: P, status: h, statusText: T, url: b }));
-} let g = r(e); return typeof ngServerMode < "u" && ngServerMode ? g.pipe(Zt(c => { c instanceof _ && o.set(f, { [et]: c.body, [tt]: nr(c.headers, p), [rt]: c.status, [nt]: c.statusText, [st]: a, [ot]: e.responseType }); })) : g; }
-function rr(e) { return e.headers.has("authorization") || e.headers.has("proxy-authorization"); }
-function nr(e, r) { if (!r)
+    let P = new w(u);
+    return Zt(new I({ body: m, headers: P, status: h, statusText: T, url: b }));
+} let g = r(e); return typeof ngServerMode < "u" && ngServerMode ? g.pipe(Qt(c => { c instanceof I && o.set(f, { [et]: c.body, [tt]: sr(c.headers, p), [rt]: c.status, [nt]: c.statusText, [st]: a, [ot]: e.responseType }); })) : g; }
+function nr(e) { return e.headers.has("authorization") || e.headers.has("proxy-authorization"); }
+function sr(e, r) { if (!r)
     return {}; let t = {}; for (let n of r) {
     let s = e.getAll(n);
     s !== null && (t[n] = s);
 } return t; }
 function it(e) { return [...e.keys()].sort().map(r => `${r}=${e.getAll(r)}`).join("&"); }
-function sr(e, r) { let { params: t, method: n, responseType: s } = e, i = it(t), o = e.serializeBody(); o instanceof URLSearchParams ? o = it(o) : typeof o != "string" && (o = ""); let d = [n, s, r, o, i].join("|"), a = or(d); return Yt(a); }
-function or(e) { let r = 0; for (let t of e)
+function or(e, r) { let { params: t, method: n, responseType: s } = e, i = it(t), o = e.serializeBody(); o instanceof URLSearchParams ? o = it(o) : typeof o != "string" && (o = ""); let d = [n, s, r, o, i].join("|"), a = ir(d); return qt(a); }
+function ir(e) { let r = 0; for (let t of e)
     r = Math.imul(31, r) + t.charCodeAt(0) << 0; return r += 2147483648, r.toString(); }
-function Mr(e) { return [{ provide: ve, useFactory: () => ($t("NgHttpTransferCache"), V({ isCacheActive: !0 }, e)) }, { provide: me, useValue: tr, multi: !0 }, { provide: Gt, multi: !0, useFactory: () => { let r = S(Wt), t = S(ve); return () => { r.whenStable().then(() => { t.isCacheActive = !1; }); }; } }]; }
-function ir(e, r) { let t = new URL(e, "resolve://").origin, n = r[t]; return n ? e.replace(t, n) : e; }
-export { W as FetchBackend, pe as HTTP_INTERCEPTORS, Ht as HTTP_TRANSFER_CACHE_ORIGIN_MAP, L as HttpBackend, fe as HttpClient, Bt as HttpClientJsonpModule, Ct as HttpClientModule, Ut as HttpClientXsrfModule, Y as HttpContext, se as HttpContextToken, w as HttpErrorResponse, N as HttpEventType, k as HttpFeatureKind, j as HttpHandler, X as HttpHeaderResponse, R as HttpHeaders, O as HttpParams, F as HttpRequest, _ as HttpResponse, C as HttpResponseBase, Se as HttpStatusCode, K as HttpUrlEncodingCodec, ae as HttpXhrBackend, B as HttpXsrfTokenExtractor, ge as JsonpClientBackend, _t as JsonpInterceptor, Nr as httpResource, qe as provideHttpClient, Lt as withFetch, Ft as withInterceptors, Ze as withInterceptorsFromDi, He as withJsonpSupport, Qe as withNoXsrfProtection, jt as withRequestsMadeViaParent, ce as withXsrfConfiguration, me as \u0275HTTP_ROOT_INTERCEPTOR_FNS, Z as \u0275HttpInterceptingHandler, Z as \u0275HttpInterceptorHandler, ye as \u0275REQUESTS_CONTRIBUTE_TO_STABILITY, Mr as \u0275withHttpTransferCache };
+function Or(e) { return [{ provide: ve, useFactory: () => (Gt("NgHttpTransferCache"), V({ isCacheActive: !0 }, e)) }, { provide: me, useValue: rr, multi: !0 }, { provide: Wt, multi: !0, useFactory: () => { let r = S(Kt), t = S(ve); return () => { r.whenStable().then(() => { t.isCacheActive = !1; }); }; } }]; }
+function ar(e, r) { let t = new URL(e, "resolve://").origin, n = r[t]; return n ? e.replace(t, n) : e; }
+export { W as FetchBackend, pe as HTTP_INTERCEPTORS, er as HTTP_TRANSFER_CACHE_ORIGIN_MAP, L as HttpBackend, fe as HttpClient, St as HttpClientJsonpModule, Bt as HttpClientModule, Ct as HttpClientXsrfModule, Y as HttpContext, se as HttpContextToken, R as HttpErrorResponse, N as HttpEventType, k as HttpFeatureKind, j as HttpHandler, X as HttpHeaderResponse, w as HttpHeaders, O as HttpParams, F as HttpRequest, I as HttpResponse, C as HttpResponseBase, Se as HttpStatusCode, K as HttpUrlEncodingCodec, ae as HttpXhrBackend, B as HttpXsrfTokenExtractor, ge as JsonpClientBackend, It as JsonpInterceptor, Mr as httpResource, qe as provideHttpClient, Ut as withFetch, jt as withInterceptors, Ze as withInterceptorsFromDi, He as withJsonpSupport, Qe as withNoXsrfProtection, Lt as withRequestsMadeViaParent, ce as withXsrfConfiguration, me as \u0275HTTP_ROOT_INTERCEPTOR_FNS, Z as \u0275HttpInterceptingHandler, Z as \u0275HttpInterceptorHandler, ye as \u0275REQUESTS_CONTRIBUTE_TO_STABILITY, Or as \u0275withHttpTransferCache };
 /*! Bundled license information:
 
 @angular/common/fesm2022/module.mjs:
 @angular/common/fesm2022/http.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

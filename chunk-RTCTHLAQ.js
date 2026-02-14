@@ -239,7 +239,7 @@ export { v as a, A as b, C as c, N as d, k as e, me as f, U as g, j as h, F as i
 @angular/platform-browser/fesm2022/dom_renderer.mjs:
 @angular/platform-browser/fesm2022/browser.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)

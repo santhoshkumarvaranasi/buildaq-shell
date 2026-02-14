@@ -1311,7 +1311,7 @@ function Zs(t) { return t.map(n => (...e) => Ve(n).canActivate(...e)); }
 function Js(t) { return t.map(n => (...e) => Ve(n).canActivateChild(...e)); }
 function Xs(t) { return t.map(n => (...e) => Ve(n).canDeactivate(...e)); }
 function ea(t) { return (...n) => Ve(t).resolve(...n); }
-var ta = new us("20.3.12");
+var ta = new us("20.3.16");
 export { q as ActivatedRoute, re as ActivatedRouteSnapshot, ht as ActivationEnd, lt as ActivationStart, mt as BaseRouteReuseStrategy, ct as ChildActivationEnd, ut as ChildActivationStart, se as ChildrenOutletContexts, Jr as DefaultTitleStrategy, K as DefaultUrlSerializer, y as EventType, nt as GuardsCheckEnd, rt as GuardsCheckStart, k as NavigationCancel, w as NavigationCancellationCode, M as NavigationEnd, ve as NavigationError, F as NavigationSkipped, ge as NavigationSkippedCode, Z as NavigationStart, Qo as NoPreloading, dt as OutletContext, d as PRIMARY_OUTLET, Wo as PreloadAllModules, Be as PreloadingStrategy, V as ROUTER_CONFIGURATION, or as ROUTER_INITIALIZER, Br as ROUTER_OUTLET_DATA, X as ROUTES, ye as RedirectCommand, ot as ResolveEnd, it as ResolveStart, at as RouteConfigLoadEnd, st as RouteConfigLoadStart, nn as RouteReuseStrategy, L as Router, O as RouterEvent, At as RouterLink, Vo as RouterLinkActive, At as RouterLinkWithHref, rs as RouterModule, Yt as RouterOutlet, pn as RouterPreloader, _e as RouterState, xe as RouterStateSnapshot, Ue as RoutesRecognized, me as Scroll, er as TitleStrategy, Ct as UrlHandlingStrategy, Q as UrlSegment, v as UrlSegmentGroup, J as UrlSerializer, z as UrlTree, ta as VERSION, ne as convertToParamMap, xr as createUrlTreeFromSnapshot, Ir as defaultUrlMatcher, Zs as mapToCanActivate, Js as mapToCanActivateChild, Xs as mapToCanDeactivate, Ys as mapToCanMatch, ea as mapToResolve, Ko as provideRouter, Yo as provideRoutes, bn as withComponentInputBinding, Jo as withDebugTracing, Sn as withDisabledInitialNavigation, yn as withEnabledBlockingInitialNavigation, es as withHashLocation, Zo as withInMemoryScrolling, ts as withNavigationErrorHandler, wn as withPreloading, Xo as withRouterConfig, In as withViewTransitions, Jt as \u0275EmptyOutletComponent, An as \u0275ROUTER_PROVIDERS, bt as \u0275afterNextNavigation, Xr as \u0275loadChildren };
 /*! Bundled license information:
 
@@ -1319,7 +1319,7 @@ export { q as ActivatedRoute, re as ActivatedRouteSnapshot, ht as ActivationEnd,
 @angular/router/fesm2022/router_module.mjs:
 @angular/router/fesm2022/router.mjs:
   (**
-   * @license Angular v20.3.12
+   * @license Angular v20.3.16
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)
