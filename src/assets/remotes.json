@@ -1,6 +1,6 @@
 {
   "schools": {
-    "url": "https://schools.buildaq.com/remoteEntry.json",
+    "url": "https://apps.buildaq.com/schools/remoteEntry.json",
     "devUrl": "http://localhost:4201/remoteEntry.json",
     "exposed": "./SchoolsModule",
     "displayName": "School Management",

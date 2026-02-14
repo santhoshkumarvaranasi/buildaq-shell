@@ -2,12 +2,10 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 
 
 const isProd = process.env.NODE_ENV === 'production' || process.env.NG_BUILD_ENV === 'production';
-// In development prefer fetching the MF manifest through the backend proxy
-// which runs on port 3000 (the orchestrator exposes /assets/*). This
-// avoids direct cross-port fetch issues or firewall blocking of 4201.
+// In development load schools remote directly from the schools frontend dev server.
 const schoolsRemote = isProd
-  ? 'https://schools.buildaq.com/remoteEntry.json'
-  : 'http://localhost:3000/assets/remoteEntry.json';
+  ? 'https://apps.buildaq.com/schools/remoteEntry.json'
+  : 'http://localhost:4201/remoteEntry.json';
 
 const healthcareRemote = isProd
   ? 'https://healthcare.buildaq.com/remoteEntry.json'
