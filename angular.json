@@ -35,22 +35,11 @@
 				"serve": {
 					"builder": "@angular-architects/native-federation:build",
 					"options": {
-						"target": "buildaq-shell:serve-original",
+						"target": "buildaq-shell:serve-original:development",
 						"rebuildDelay": 0,
 						"dev": true,
 						"port": 4200
-					},
-					"configurations": {
-						"production": {
-							"target": "buildaq-shell:serve-original:production",
-							"dev": false
-						},
-						"development": {
-							"target": "buildaq-shell:serve-original:development",
-							"dev": true
-						}
-					},
-					"defaultConfiguration": "development"
+					}
 				},
 				"extract-i18n": {
 					"builder": "@angular/build:extract-i18n"
@@ -124,7 +113,7 @@
 								"defaultConfiguration": "production"
 							},
 				"serve-original": {
-					"builder": "ngx-build-plus:dev-server",
+					"builder": "@angular/build:dev-server",
 					"configurations": {
 						"production": {
 							"buildTarget": "buildaq-shell:esbuild:production"
@@ -135,8 +124,7 @@
 					},
 					"defaultConfiguration": "development",
 					"options": {
-						"port": 4200,
-						"publicHost": "http://localhost:4200"
+						"port": 4200
 					}
 				}
 			}

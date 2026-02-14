@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { LayoutComponent } from './layout/layout.component';
-import { RemoteReloadService } from './core/services/remote-reload.service';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +10,4 @@ import { RemoteReloadService } from './core/services/remote-reload.service';
 })
 export class App {
   protected readonly title = signal('buildaq-shell');
-  constructor(_reload: RemoteReloadService) {}
 }

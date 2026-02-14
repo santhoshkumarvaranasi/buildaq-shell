@@ -31,7 +31,7 @@
       </a>
 
       <ng-container *ngIf="currentMenu.length">
-        <div class="nav-section">{{ activeRemote === 'schools' ? 'School Management' : 'Remote App' }}</div>
+        <div class="nav-section">{{ activeRemoteName }}</div>
         <div *ngFor="let group of currentMenu" class="nav-group">
           <button class="nav-group-toggle" (click)="toggleGroup(group.id)">
             <span class="icon">{{ group.icon || '*' }}</span>

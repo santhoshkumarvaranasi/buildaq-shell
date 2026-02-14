@@ -3,7 +3,6 @@ import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { AuthService, UserContext } from '../core/services/auth.service';
-import { RemoteLoaderService, RemoteNavItem } from '../core/services/remote-loader.service';
 import { filter } from 'rxjs/operators';
 
 interface NavChild {
@@ -20,6 +19,13 @@ interface NavGroup {
   children: NavChild[];
 }
 
+const REMOTE_NAMES: Record<string, string> = {
+  schools: 'School Management',
+  healthcare: 'Healthcare Management',
+  apartments: 'Apartments Management',
+  pharmacy: 'Pharmacy Operations'
+};
+
 @Component({
   selector: 'app-layout',
   standalone: true,
@@ -31,9 +37,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   userContext: UserContext | null = null;
   isMobileMenuOpen = false;
-  remoteNavItems: RemoteNavItem[] = [];
   showSidebar = false;
-  expandedRemote: string | null = null;
   activeRemote: string | null = null;
   openGroups: Record<string, boolean> = {};
 
@@ -92,8 +96,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
           { label: 'Announcements', route: '/schools/announcements', icon: '📣' },
           { label: 'Events', route: '/schools/events', icon: '🎉' },
           { label: 'Notifications', route: '/schools/notifications', icon: '🔔' },
-          { label: 'Analytics', route: '/schools/analytics', icon: '📊' },
-          { label: 'Staffing', route: '/schools/staffing', icon: '🗂️' }
+          { label: 'Analytics', route: '/schools/analytics', icon: '📊' }
         ]
       },
       {
@@ -184,26 +187,16 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private remoteLoader: RemoteLoaderService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    // Still listen for user context (for header display), but do not gate remote nav loading on auth
     this.authService.userContext$
       .pipe(takeUntil(this.destroy$))
       .subscribe(userContext => {
         this.userContext = userContext;
       });
 
-    // Always load remotes so nav is ready even on deep links like /schools/dashboard
-    this.loadRemoteApplications();
-
-    this.remoteLoader.getNavItems()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(items => this.remoteNavItems = items);
-
-    // Show sidebar only when not on dashboard/root/login
     this.router.events
       .pipe(
         takeUntil(this.destroy$),
@@ -233,25 +226,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
   }
 
   toggleMobileMenu(): void { this.isMobileMenuOpen = !this.isMobileMenuOpen; }
-  closeMobileMenu(): void { this.isMobileMenuOpen = false; }
-
-  @HostListener('document:keydown.escape') handleEscapeKey(): void { this.closeMobileMenu(); }
-
-  onRemoteClick(item: RemoteNavItem): void {
-    this.expandedRemote = this.expandedRemote === item.id ? null : item.id;
-    this.activeRemote = item.id;
-    this.resetGroups();
-
-    if (item.external) {
-      window.open(item.route, '_blank', 'noopener');
-      return;
-    }
-
-    if (item.route) {
-      this.router.navigate([item.route]);
-      this.showSidebar = true;
+  closeMobileMenu(): void {
+    if (this.isMobileViewport()) {
+      this.isMobileMenuOpen = false;
     }
   }
+
+  @HostListener('document:keydown.escape') handleEscapeKey(): void { this.closeMobileMenu(); }
 
   onChildClick(childRoute: string, external?: boolean): void {
     if (external) {
@@ -260,29 +241,13 @@ export class LayoutComponent implements OnInit, OnDestroy {
     }
     this.router.navigate([childRoute]);
     this.showSidebar = true;
-    this.closeMobileMenu();
-  }
-
-  private async loadRemoteApplications(): Promise<void> {
-    try {
-      await this.remoteLoader.loadRemotes();
-    } catch (error) {
-      console.error('Failed to load remote applications:', error);
+    if (this.isMobileViewport()) {
+      this.closeMobileMenu();
     }
   }
 
-  private isDashboardRoute(url: string): boolean {
-    return url === '/' || url.startsWith('/dashboard') || url.startsWith('/login');
-  }
-
-  private updateActiveRemote(url: string): void {
-    // Pick the first matching remote whose route is a prefix of the URL
-    const match = this.remoteNavItems.find(item => !item.external && url.startsWith(item.route));
-    this.activeRemote = match ? match.id : null;
-    if (this.activeRemote && this.expandedRemote !== this.activeRemote) {
-      this.expandedRemote = this.activeRemote;
-      this.resetGroups();
-    }
+  get activeRemoteName(): string {
+    return this.activeRemote ? REMOTE_NAMES[this.activeRemote] || 'Remote App' : '';
   }
 
   get currentMenu(): NavGroup[] {
@@ -293,7 +258,20 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.openGroups[id] = !this.openGroups[id];
   }
 
-  private resetGroups(): void {
-    this.openGroups = {};
+  private isDashboardRoute(url: string): boolean {
+    return url === '/' || url.startsWith('/dashboard') || url.startsWith('/login');
+  }
+
+  private updateActiveRemote(url: string): void {
+    const previousRemote = this.activeRemote;
+    const remoteKey = Object.keys(this.remoteMenus).find(key => url.startsWith('/' + key));
+    this.activeRemote = remoteKey || null;
+    if (this.activeRemote !== previousRemote) {
+      this.openGroups = {};
+    }
+  }
+
+  private isMobileViewport(): boolean {
+    return typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
   }
 }
