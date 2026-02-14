@@ -3,7 +3,7 @@
   "shared": [
     {
       "packageName": "@angular/animations/browser",
-      "outFileName": "_angular_animations_browser.EZGyAsRZb4.js",
+      "outFileName": "_angular_animations_browser.ZiXR6L9rHI.js",
       "requiredVersion": "^20.3.12",
       "singleton": true,
       "strictVersion": false,
@@ -11,7 +11,7 @@
     },
     {
       "packageName": "@angular/common",
-      "outFileName": "_angular_common.Q44RNNFl-c.js",
+      "outFileName": "_angular_common.9YILPtTvfP.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -19,7 +19,7 @@
     },
     {
       "packageName": "@angular/common/http",
-      "outFileName": "_angular_common_http.Yr_Lj1dwhZ.js",
+      "outFileName": "_angular_common_http.8rQNH5VALP.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -27,7 +27,7 @@
     },
     {
       "packageName": "@angular/core",
-      "outFileName": "_angular_core.C8q-b5rLTL.js",
+      "outFileName": "_angular_core.uTGM0DqJ-D.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -35,7 +35,7 @@
     },
     {
       "packageName": "@angular/core/primitives/di",
-      "outFileName": "_angular_core_primitives_di.B-SuJthr_y.js",
+      "outFileName": "_angular_core_primitives_di.37OoRI-yA4.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -43,7 +43,7 @@
     },
     {
       "packageName": "@angular/core/primitives/signals",
-      "outFileName": "_angular_core_primitives_signals.AiqeH1Q5gG.js",
+      "outFileName": "_angular_core_primitives_signals.bKpcOjVpGL.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -51,7 +51,7 @@
     },
     {
       "packageName": "@angular/forms",
-      "outFileName": "_angular_forms.L_4F-6-ki9.js",
+      "outFileName": "_angular_forms.8x_-bYuUrH.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -59,7 +59,7 @@
     },
     {
       "packageName": "@angular/platform-browser",
-      "outFileName": "_angular_platform_browser.GRBymmQ9ZX.js",
+      "outFileName": "_angular_platform_browser.TQplLVEE9u.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -67,7 +67,7 @@
     },
     {
       "packageName": "@angular/platform-browser/animations",
-      "outFileName": "_angular_platform_browser_animations.59i-iV0fSC.js",
+      "outFileName": "_angular_platform_browser_animations.CV85KaHYxj.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -75,7 +75,7 @@
     },
     {
       "packageName": "@angular/router",
-      "outFileName": "_angular_router.yEPeKJQhLr.js",
+      "outFileName": "_angular_router.TCC08KUDr0.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": false,
@@ -83,7 +83,7 @@
     },
     {
       "packageName": "rxjs",
-      "outFileName": "rxjs.R8S262lojx.js",
+      "outFileName": "rxjs.CGor3vzA1o.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": false,
@@ -91,7 +91,7 @@
     },
     {
       "packageName": "rxjs/operators",
-      "outFileName": "rxjs_operators.iuHr1wzLW_.js",
+      "outFileName": "rxjs_operators.QpHG5JUhVT.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": false,
@@ -99,7 +99,7 @@
     },
     {
       "packageName": "tslib",
-      "outFileName": "tslib.q1qZdaS_h7.js",
+      "outFileName": "tslib.cTfSbA9i6h.js",
       "requiredVersion": "^2.3.0",
       "singleton": true,
       "strictVersion": false,
