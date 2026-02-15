@@ -1,5 +1,6 @@
 {
   "schools": "http://localhost:4201/remoteEntry.json",
   "healthcare": "http://localhost:4202/remoteEntry.json",
+  "apartments": "http://localhost:4203/remoteEntry.json",
   "pharmacy": "http://localhost:4204/remoteEntry.json"
 }
